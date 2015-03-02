@@ -1,14 +1,15 @@
 # re-frame
 
-A Leiningen template for FIXME.
+A Leiningen template for re-frame.
 
 ## Usage
 
-FIXME
+`lein new re-frame <project_name>`
+
+**NOTE -- This has not been deployed to clojars yet, so lein will not auto-fetch the template.**
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2015 Dylan Paris
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the MIT License
