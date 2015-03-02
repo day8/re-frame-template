@@ -16,6 +16,6 @@
              ["{{sanitized}}.css" (render "project_name.css" data)]
              ["{{sanitized}}.html" (render "project_name.html" data)]
 
-             ["devsrc/{{sanitized}}/dev.cljs" (render "devsrc/project_name/dev.cljs")]
+             ["devsrc/{{sanitized}}/dev.cljs" (render "devsrc/project_name/dev.cljs" data)]
 
-             ["devsrc/{{sanitized}}/core.cljs" (render "src/project_name/core.cljs")])))
+             ["src/{{sanitized}}/core.cljs" (render "src/project_name/core.cljs" data)])))
