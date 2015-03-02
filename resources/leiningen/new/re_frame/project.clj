@@ -1,4 +1,4 @@
-(defproject {{name}} "0.5.0-alpha3"
+(defproject {{name}} "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2816"]
                  [reagent "0.5.0-alpha3"]
