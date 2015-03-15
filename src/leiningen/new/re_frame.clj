@@ -9,10 +9,10 @@
   [["env/dev/clj/{{sanitized}}/dev.clj"
     (render "env/dev/clj/project_name/dev.clj" data)]
 
-   ["env/dev/cljs/{{sanitized}}/dev.clj"
+   ["env/dev/cljs/{{sanitized}}/dev.cljs"
     (render "env/dev/cljs/project_name/dev.cljs" data)]
 
-   ["env/prod/cljs/{{sanitized}}/prod.clj"
+   ["env/prod/cljs/{{sanitized}}/prod.cljs"
     (render "env/prod/cljs/project_name/prod.cljs" data)]
 
    ["LICENSE" (render "LICENSE" data)]
