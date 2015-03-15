@@ -18,7 +18,8 @@
                  [prone "0.8.0"]
                  [compojure "1.3.2"]
                  [selmer "0.8.0"]
-                 [environ "1.0.0"]]
+                 [environ "1.0.0"]
+                 [re-frame "0.2.0"]]
 
   :plugins [
             [lein-cljsbuild "1.0.4"]
