@@ -1,4 +1,4 @@
-(ns cljs.{{name}}.views
+(ns {{name}}.views
   (:require [re-frame.core :refer [subscribe dispatch]]))
 
 (defn {{name}}-app

@@ -1,5 +1,5 @@
-(ns cljs.{{name}}.handlers
-  (:require [cljs.{{name}}.db :refer [default-value]]
+(ns {{name}}.handlers
+  (:require [{{name}}.db :refer [default-value]]
             [re-frame.core :refer [register-handler path trim-v]]))
 
 
