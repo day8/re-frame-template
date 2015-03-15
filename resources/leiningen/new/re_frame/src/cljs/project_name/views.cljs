@@ -3,6 +3,4 @@
 
 (defn {{name}}-app
   []
-  (let []
-    (fn []
-      [:div [:h2 "Welcome to {{name}}"]])))
+  [:div [:h2 "Welcome to {{name}}"]])
