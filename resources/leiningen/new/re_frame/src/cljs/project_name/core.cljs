@@ -1,12 +1,14 @@
 (ns {{name}}.core
   (:require-macros [secretary.core :refer [defroute]])
-  (:require [reagent.core :as reagent :refer [atom]]
+  (:require [cljsjs.react :as react]
+            [goog.events :as events]
+            [reagent.core :as reagent :refer [atom]]
             [reagent.session :as session]
             [re-frame.core :refer [dispatch dispatch-sync]]
             [secretary.core :as secretary]
-            [goog.events :as events]
-            [goog.history.EventType :as EventType]
-            [cljsjs.react :as react])
+            [{{name}}.handlers]
+            [{{name}}.subs]
+            [{{name}}.views])
   (:import [goog History]
            [goog.history EventType]))
 
