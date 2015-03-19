@@ -9,7 +9,7 @@
 (def standard-middlewares
   [trim-v
    ;; (if goog.DEBUG log-ex)    ;; will be available in v0.3.0
-   (when goog.DEBUG [debug (after db/valid-schema?)]))
+   (when goog.DEBUG [debug (after db/valid-schema?)])])
 
 ;; -- Helpers -----------------------------------------------------------------
 
@@ -23,8 +23,8 @@
 
 
 (register-handler                 ;; handlers changes the footer filter
-  :set-showing                    ;; event-id
-  [standard-middlewares (path :showing)]
+  :set-name                       ;; event-id
+  [standard-middlewares (path :name)]
   (fn                             ;; handler
-    [db [filter-kw]]
-    filter-kw))
+    [db [new-name]]               ;; because of trim-v, not [_ new-name]
+    new-name))
