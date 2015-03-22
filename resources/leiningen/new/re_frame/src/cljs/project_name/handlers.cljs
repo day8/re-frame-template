@@ -1,6 +1,6 @@
 (ns {{name}}.handlers
   (:require [{{name}}.db :refer [default-value valid-schema?]]
-            [re-frame.core :refer [register-handler path trim-v]]))
+            [re-frame.core :refer [register-handler debug after path trim-v]]))
 
 
 ;; -- Middleware --------------------------------------------------------------
@@ -9,7 +9,7 @@
 (def standard-middlewares
   [trim-v
    ;; (if goog.DEBUG log-ex)    ;; will be available in v0.3.0
-   (when goog.DEBUG [debug (after db/valid-schema?)])])
+   (when goog.DEBUG [debug (after valid-schema?)])])
 
 ;; -- Helpers -----------------------------------------------------------------
 

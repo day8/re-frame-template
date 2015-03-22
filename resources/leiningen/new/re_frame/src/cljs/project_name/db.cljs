@@ -4,7 +4,7 @@
 
 
 ;; -- Prismatic Schema  -------------------------------------------------------
-;; As exactly as possible, describe the correct shape of app-db
+;; As exactly as possible, describe the correct shape of app-db.
 ;; Add a lot of helpful comments. This will be an important resource
 ;; for anyone looking at the app for the first time.
 (def schema

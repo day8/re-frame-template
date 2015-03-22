@@ -4,7 +4,7 @@
 
 (defn main-panel    ;; the top level of our app
   []
-  (let [name  (subscribe :name)]   ;; obtain a reactive data source
+  (let [name  (subscribe [:name])]   ;; obtain a reactive data source
     (fn []
       [:div "Hello " @name])))
 
