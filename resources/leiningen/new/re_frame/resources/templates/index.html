@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% if dev %}
+      {% style "css/site.css" %}
+    {% else %}
+      {% style "css/site.min.css" %}
+    {% endif %}
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="js/app.js" type="text/javascript"></script>
+  </body>
+</html>
