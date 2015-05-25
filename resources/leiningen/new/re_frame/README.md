@@ -6,4 +6,4 @@ Any changes to ClojureScript source files (in `src`) will be reflected in the ru
 
 Run "`lein clean; lein with-profile prod compile`" to compile an optimized version.
 
-Original reagent example code found at https://github.com/reagent-project/reagent
+re-frame example code found at https://github.com/Day8/re-frame
