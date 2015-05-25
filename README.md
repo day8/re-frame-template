@@ -6,10 +6,9 @@ A Leiningen template for re-frame.
 
 `lein new re-frame <project_name>`
 
-**NOTE -- This has not been deployed to clojars yet, so lein will not auto-fetch the template.**
-
 ## License
 
 Copyright © 2015 Dylan Paris
+Copyright (c) 2015 Michael Thompson
 
 Distributed under the MIT License
