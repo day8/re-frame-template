@@ -1,5 +1,7 @@
-(defproject re-frame/lein-template "0.1.0"
+(defproject re-frame/lein-template "0.1.1"
   :description "A basic template for a Reagent web app that implements the re-frame pattern."
   :url "https://github.com/Day8/re-frame-template"
   :license {:name "MIT"}
+  :scm {:name "git"
+        :url "https://github.com/Day8/re-frame-template"}
   :eval-in-leiningen true)

@@ -4,22 +4,54 @@ A Leiningen template for [re-frame](https://github.com/Day8/re-frame).
 
 ## Usage
 
-`lein new re-frame <project_name>`
+To make a basic re-frame application:
 
-## Source
+```
+lein new re-frame <project_name>
+```
 
-This project is essentially a fork of https://github.com/reagent-project/reagent-template with the cljs parts amended 
-for re-frame.
+To add [re-com](https://github.com/Day8/re-com):
 
-But we're not religiously tracking further changes reagent-template, so at any point this repo will likely be a bit out of date. So, keep an eye on the original. 
+```
+lein new re-frame <project_name> +re-com
+```
 
+To add routing (implemented with [secretary](https://github.com/gf3/secretary)):
+
+```
+lein new re-frame <project_name> +routes
+```
+
+To add both re-com and routing:
+
+```
+lein new re-frame <project_name> +re-com +routes
+```
+
+## Development Mode
+
+```
+lein clean
+lein figwheel
+```
+
+Figwheel will automatically push cljs changes to the browser.
+
+Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
+## Production Build
+
+```
+lein clean
+lein cljsbuild once min
+```
 
 ## License
 
 ```
 The MIT License (MIT)
 
-Copyright © 2015 Dylan Paris
+Copyright © 2015 Matthew Jaoudi
 
 Copyright © 2015 Michael Thompson
 

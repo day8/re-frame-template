@@ -1,0 +1,1 @@
+(ns {{ns-name}}.core)
