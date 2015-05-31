@@ -52,7 +52,7 @@ lein cljsbuild once min
 The MIT License (MIT)
 
 Copyright © 2015 Matthew Jaoudi
-
+Copyright © 2015 Dylan Paris
 Copyright © 2015 Michael Thompson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
