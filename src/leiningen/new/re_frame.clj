@@ -32,15 +32,15 @@
     ["src/cljs/{{sanitized}}/handlers.cljs" (render "src/cljs/handlers.cljs" data)]]
    
    (if (re-com? options)
-     [["resources/public/assets/css/re-com.css" (render "resources/public/assets/css/re-com.css" data)]
-      ["resources/public/assets/css/chosen-sprite@2x.png" (render "resources/public/assets/css/chosen-sprite@2x.png" data)]
-      ["resources/public/assets/css/chosen-sprite.png" (render "resources/public/assets/css/chosen-sprite.png" data)]
-      ["resources/public/assets/css/material-design-iconic-font.min.css" (render "resources/public/assets/css/material-design-iconic-font.min.css" data)]
+     [["resources/public/assets/css/re-com.css" (render "resources/public/vendor/css/re-com.css" data)]
+      ["resources/public/assets/css/chosen-sprite@2x.png" (render "resources/public/vendor/css/chosen-sprite@2x.png" data)]
+      ["resources/public/assets/css/chosen-sprite.png" (render "resources/public/vendor/css/chosen-sprite.png" data)]
+      ["resources/public/assets/css/material-design-iconic-font.min.css" (render "resources/public/vendor/css/material-design-iconic-font.min.css" data)]
 
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.eot" (render "resources/public/assets/fonts/Material-Design-Iconic-Font.eot" data)]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.svg" (render "resources/public/assets/fonts/Material-Design-Iconic-Font.svg" data)]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.ttf" (render "resources/public/assets/fonts/Material-Design-Iconic-Font.ttf" data)]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff" (render "resources/public/assets/fonts/Material-Design-Iconic-Font.woff" data)]])
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.eot" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.eot" data)]
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.svg" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.svg" data)]
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.ttf" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.ttf" data)]
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff" data)]])
 
    (if (routes? options)
      [["src/cljs/{{sanitized}}/routes.cljs" (render "src/cljs/routes.cljs" data)]])
