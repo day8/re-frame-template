@@ -2,7 +2,7 @@
     (:require [re-frame.core :as re-frame]
               [re-com.core :as re-com]))
 
-(defn home-title []
+(defn title []
   (let [name (re-frame/subscribe [:name])]
     (fn []
       [re-com/title
@@ -13,4 +13,4 @@
   (fn []
     [re-com/v-box
      :height "100%"
-     :children [[home-title]]]))
+     :children [[title]]]))

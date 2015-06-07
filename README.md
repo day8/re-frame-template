@@ -1,6 +1,11 @@
 # re-frame-template
 
-A Leiningen template for [re-frame](https://github.com/Day8/re-frame).
+A Leiningen template that includes:
+
+* [re-frame](https://github.com/Day8/re-frame)
+* [figwheel](https://github.com/bhauman/lein-figwheel)
+* [re-com](https://github.com/Day8/re-com) (optional)
+* [secretary](https://github.com/gf3/secretary) (optional)
 
 ## Usage
 
@@ -10,13 +15,13 @@ To make a basic re-frame application:
 lein new re-frame <project_name>
 ```
 
-To add [re-com](https://github.com/Day8/re-com):
+To add re-com:
 
 ```
 lein new re-frame <project_name> +re-com
 ```
 
-To add routing (implemented with [secretary](https://github.com/gf3/secretary)):
+To add routing (implemented with secretary):
 
 ```
 lein new re-frame <project_name> +routes

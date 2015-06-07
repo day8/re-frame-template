@@ -1,7 +1,24 @@
 (ns leiningen.new.re-frame
-  (:use [leiningen.new.templates :only [renderer name-to-path sanitize-ns ->files]]))
+  (:use [leiningen.new.templates :only [renderer name-to-path sanitize sanitize-ns ->files]]
+        [clojure.java.io :as io]))
 
-(def render (renderer "re-frame"))
+(def template-name "re-frame")
+
+(def render-text (renderer template-name))
+
+(defn resource-input
+  "Get resource input stream. Useful for binary resources like images."
+  [resource-path]
+  (-> (str "leiningen/new/" (sanitize template-name) "/" resource-path)
+      io/resource
+      io/input-stream))
+
+(defn render
+  "Render the content of a resource"
+  ([resource-path]
+   (resource-input resource-path))
+  ([resource-path data]
+   (render-text resource-path data)))
 
 ;; --------------------
 (defn create-option [name]
@@ -33,14 +50,14 @@
    
    (if (re-com? options)
      [["resources/public/assets/css/re-com.css" (render "resources/public/vendor/css/re-com.css" data)]
-      ["resources/public/assets/css/chosen-sprite@2x.png" (render "resources/public/vendor/css/chosen-sprite@2x.png" data)]
-      ["resources/public/assets/css/chosen-sprite.png" (render "resources/public/vendor/css/chosen-sprite.png" data)]
+      ["resources/public/assets/css/chosen-sprite@2x.png" (render "resources/public/vendor/css/chosen-sprite@2x.png")]
+      ["resources/public/assets/css/chosen-sprite.png" (render "resources/public/vendor/css/chosen-sprite.png")]
       ["resources/public/assets/css/material-design-iconic-font.min.css" (render "resources/public/vendor/css/material-design-iconic-font.min.css" data)]
 
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.eot" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.eot" data)]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.svg" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.svg" data)]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.ttf" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.ttf" data)]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff" data)]])
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.eot" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.eot")]
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.svg" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.svg")]
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.ttf" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.ttf")]
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff")]])
 
    (if (routes? options)
      [["src/cljs/{{sanitized}}/routes.cljs" (render "src/cljs/routes.cljs" data)]])
