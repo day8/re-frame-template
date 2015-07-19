@@ -1,48 +1,59 @@
 # re-frame-template
 
-A Leiningen template that includes:
+Leiningen template for [reagent](https://github.com/reagent-project/reagent) web apps that implements the [re-frame](https://github.com/Day8/re-frame) pattern.
 
-* [re-frame](https://github.com/Day8/re-frame)
-* [figwheel](https://github.com/bhauman/lein-figwheel)
-* [re-com](https://github.com/Day8/re-com) (optional)
-* [secretary](https://github.com/gf3/secretary) (optional)
+Through the use of profiles, this template lets the developer pick and choose what is included in their application.
 
 ## Usage
 
-To make a basic re-frame application:
+The base template includes:
+
+* [re-frame](https://github.com/Day8/re-frame)
+* [figwheel](https://github.com/bhauman/lein-figwheel)
+
+To create an application with the base template:
 
 ```
 lein new re-frame <project_name>
 ```
 
-To add re-com:
+The optional profiles include:
+
+* [re-com](https://github.com/Day8/re-com) (`+re-com`)
+* [secretary](https://github.com/gf3/secretary) (`+routes`)
+* [cljs.test](https://groups.google.com/forum/#!topic/clojure/gnCl0CySSk8) (`+test`)
+
+To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
 
 ```
 lein new re-frame <project_name> +re-com
 ```
 
-To add routing (implemented with secretary):
+Any combination of profiles can be added at once (let's add all the profiles as an example):
 
 ```
-lein new re-frame <project_name> +routes
-```
-
-To add both re-com and routing:
-
-```
-lein new re-frame <project_name> +re-com +routes
+lein new re-frame <project_name> +re-com +routes +test
 ```
 
 ## Development Mode
 
+### Run application:
+
 ```
 lein clean
-lein figwheel
+lein figwheel dev
 ```
 
 Figwheel will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
+### Run tests:
+
+```
+lein clean
+lein cljsbuild auto test
+```
 
 ## Production Build
 
