@@ -36,6 +36,9 @@
 (defn routes? [options]
   ((create-option "routes") options))
 
+(defn test? [options]
+  ((create-option "test") options))
+
 ;; --------------------
 (defn app-files [data options]
   (concat
@@ -61,6 +64,14 @@
 
    (if (routes? options)
      [["src/cljs/{{sanitized}}/routes.cljs" (render "src/cljs/routes.cljs" data)]])
+
+   (if (test? options)
+     [["test/phantomjs-shims.js" (render "test/phantomjs-shims.js")]
+      ["test/unit-test.js" (render "test/unit-test.js")]
+      ["test/unit-test.html" (render "test/unit-test.html")]
+
+      ["test/cljs/test_runner.cljs" (render "test/cljs/test_runner.cljs" data)]
+      ["test/cljs/{{sanitized}}/core_test.cljs" (render "test/cljs/core_test.cljs" data)]])
    
    (cond (and (re-com? options) (routes? options))
          [["src/cljs/{{sanitized}}/views.cljs" (render "src/cljs/views_recom_routes.cljs" data)]]
@@ -80,7 +91,8 @@
    :ns-name (sanitize-ns name)
    :sanitized (name-to-path name)
    :re-com? (invoke-option re-com? options)
-   :routes? (invoke-option routes? options)})
+   :routes? (invoke-option routes? options)
+   :test? (invoke-option test? options)})
 
 (defn re-frame [name & options]
   (let [data (template-data name options)]
