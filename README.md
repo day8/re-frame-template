@@ -14,7 +14,7 @@ The base template includes:
 To create an application with the base template:
 
 ```
-lein new re-frame <project_name>
+lein new re-frame <project-name>
 ```
 
 The optional profiles include:
@@ -26,13 +26,13 @@ The optional profiles include:
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
 
 ```
-lein new re-frame <project_name> +re-com
+lein new re-frame <project-name> +re-com
 ```
 
 Any combination of profiles can be added at once (let's add all the profiles as an example):
 
 ```
-lein new re-frame <project_name> +re-com +routes +test
+lein new re-frame <project-name> +re-com +routes +test
 ```
 
 ## Development Mode
