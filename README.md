@@ -55,6 +55,8 @@ lein clean
 lein cljsbuild auto test
 ```
 
+*Note: This requires [phantomjs](https://www.npmjs.com/package/phantomjs).*
+
 ## Production Build
 
 ```

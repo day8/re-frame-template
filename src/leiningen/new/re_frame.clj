@@ -60,7 +60,8 @@
       ["resources/public/assets/fonts/Material-Design-Iconic-Font.eot" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.eot")]
       ["resources/public/assets/fonts/Material-Design-Iconic-Font.svg" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.svg")]
       ["resources/public/assets/fonts/Material-Design-Iconic-Font.ttf" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.ttf")]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff")]])
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff")]
+      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff2" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff2")]])
 
    (if (routes? options)
      [["src/cljs/{{sanitized}}/routes.cljs" (render "src/cljs/routes.cljs" data)]])
