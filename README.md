@@ -19,6 +19,7 @@ lein new re-frame <project-name>
 
 The optional profiles include:
 
+* [garden](https://github.com/noprompt/garden)(`+garden`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 * [cljs.test](https://groups.google.com/forum/#!topic/clojure/gnCl0CySSk8) (`+test`)
@@ -32,10 +33,24 @@ lein new re-frame <project-name> +re-com
 Any combination of profiles can be added at once (let's add all the profiles as an example):
 
 ```
-lein new re-frame <project-name> +re-com +routes +test
+lein new re-frame <project-name> +garden +re-com +routes +test
 ```
 
 ## Development Mode
+
+### Compile css (if using +garden):
+
+Compile css file once.
+
+```
+lein garden once
+```
+
+Automatically recompile css file on change.
+
+```
+lein garden auto
+```
 
 ### Run application:
 
@@ -48,7 +63,7 @@ Figwheel will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
-### Run tests:
+### Run tests (if using +test):
 
 ```
 lein clean

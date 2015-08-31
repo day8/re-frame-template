@@ -4,6 +4,21 @@ A [re-frame](https://github.com/Day8/re-frame) application designed to ... well,
 
 ## Development Mode
 
+{{#garden?}}### Compile css:
+
+Compile css file once.
+
+```
+lein garden once
+```
+
+Automatically recompile css file on change.
+
+```
+lein garden auto
+```
+
+{{/garden?}}
 ### Run application:
 
 ```

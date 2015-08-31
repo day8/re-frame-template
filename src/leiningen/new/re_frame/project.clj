@@ -4,15 +4,27 @@
                  [reagent "0.5.0"]
                  [re-frame "0.4.1"]{{#re-com?}}
                  [re-com "0.6.1"]{{/re-com?}}{{#routes?}}
-                 [secretary "1.2.3"]{{/routes?}}]
+                 [secretary "1.2.3"]{{/routes?}}{{#garden?}}
+                 [garden "1.2.5"]{{/garden?}}]
 
   :source-paths ["src/clj"]
 
   :plugins [[lein-cljsbuild "1.0.6"]
-            [lein-figwheel "0.3.3" :exclusions [cider/cider-nrepl]]]
+            [lein-figwheel "0.3.3" :exclusions [cider/cider-nrepl]] {{#garden?}}
+            [lein-garden "0.2.6"]{{/garden?}} ]
 
-  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" {{#test?}}"test/js"{{/test?}}]
+  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" {{#test?}}
+                                    "test/js"{{/test?}} {{#garden?}}
+                                    "resources/public/css/compiled"{{/garden?}}]
+  
+  {{#garden?}}
+  :garden {:builds [{:id "screen"
+                     :source-paths ["src/clj"]
+                     :stylesheet {{name}}.css/screen
+                     :compiler {:output-to "resources/public/css/compiled/screen.css"
+                                :pretty-print? true}}]}
 
+  {{/garden?}}
   :cljsbuild {:builds [{:id "dev"
                         :source-paths ["src/cljs"]
 
