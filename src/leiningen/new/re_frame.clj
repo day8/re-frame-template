@@ -1,99 +1,28 @@
-(ns leiningen.new.re-frame
-  (:use [leiningen.new.templates :only [renderer name-to-path sanitize sanitize-ns ->files]]
-        [clojure.java.io :as io]))
+(ns leiningen.new.re-frame  
+  (:require [leiningen.new.options.base :as base]
+            [leiningen.new.options.re-com :as re-com]
+            [leiningen.new.options.routes :as routes]
+            [leiningen.new.options.test :as test]
+            [leiningen.new.options.views :as views]
+            [leiningen.new.options.helpers :as helpers])
+  (:use [leiningen.new.templates :only [name-to-path sanitize-ns ->files]]))
 
-(def template-name "re-frame")
-
-(def render-text (renderer template-name))
-
-(defn resource-input
-  "Get resource input stream. Useful for binary resources like images."
-  [resource-path]
-  (-> (str "leiningen/new/" (sanitize template-name) "/" resource-path)
-      io/resource
-      io/input-stream))
-
-(defn render
-  "Render the content of a resource"
-  ([resource-path]
-   (resource-input resource-path))
-  ([resource-path data]
-   (render-text resource-path data)))
-
-;; --------------------
-(defn create-option [name]
-  (let [option-name (str "+" name)]
-    (partial some #{option-name})))
-
-(defn invoke-option [option? options]
-  (fn [block] 
-    (if (option? options) (str block) "")))
-
-;; available options
-(defn re-com? [options]
-  ((create-option "re-com") options))
-
-(defn routes? [options]
-  ((create-option "routes") options))
-
-(defn test? [options]
-  ((create-option "test") options))
-
-;; --------------------
 (defn app-files [data options]
   (concat
-   [["README.md" (render "README.md" data)]
-    ["project.clj" (render "project.clj" data)]
-    ["resources/public/index.html" (render "resources/public/index.html" data)]
-    ["src/clj/{{sanitized}}/core.clj" (render "src/clj/core.clj" data)]
-    ["src/cljs/{{sanitized}}/core.cljs" (render "src/cljs/core.cljs" data)]
-    ["src/cljs/{{sanitized}}/db.cljs" (render "src/cljs/db.cljs" data)]
-    ["src/cljs/{{sanitized}}/subs.cljs" (render "src/cljs/subs.cljs" data)]
-    ["src/cljs/{{sanitized}}/handlers.cljs" (render "src/cljs/handlers.cljs" data)]]
-   
-   (if (re-com? options)
-     [["resources/public/assets/css/re-com.css" (render "resources/public/vendor/css/re-com.css" data)]
-      ["resources/public/assets/css/chosen-sprite@2x.png" (render "resources/public/vendor/css/chosen-sprite@2x.png")]
-      ["resources/public/assets/css/chosen-sprite.png" (render "resources/public/vendor/css/chosen-sprite.png")]
-      ["resources/public/assets/css/material-design-iconic-font.min.css" (render "resources/public/vendor/css/material-design-iconic-font.min.css" data)]
+   (base/files data)
 
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.eot" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.eot")]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.svg" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.svg")]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.ttf" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.ttf")]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff")]
-      ["resources/public/assets/fonts/Material-Design-Iconic-Font.woff2" (render "resources/public/vendor/fonts/Material-Design-Iconic-Font.woff2")]])
+   (when (helpers/option? re-com/option options) (re-com/assets data))
+   (when (helpers/option? routes/option options) (routes/routes-cljs data))
+   (when (helpers/option? test/option options) (test/files data))
+   (views/view-cljs options data) ))
 
-   (if (routes? options)
-     [["src/cljs/{{sanitized}}/routes.cljs" (render "src/cljs/routes.cljs" data)]])
-
-   (if (test? options)
-     [["test/phantomjs-shims.js" (render "test/phantomjs-shims.js")]
-      ["test/unit-test.js" (render "test/unit-test.js")]
-      ["test/unit-test.html" (render "test/unit-test.html")]
-
-      ["test/cljs/test_runner.cljs" (render "test/cljs/test_runner.cljs" data)]
-      ["test/cljs/{{sanitized}}/core_test.cljs" (render "test/cljs/core_test.cljs" data)]])
-   
-   (cond (and (re-com? options) (routes? options))
-         [["src/cljs/{{sanitized}}/views.cljs" (render "src/cljs/views_recom_routes.cljs" data)]]
-
-         (re-com? options)
-         [["src/cljs/{{sanitized}}/views.cljs" (render "src/cljs/views_recom.cljs" data)]]
-
-         (routes? options)
-         [["src/cljs/{{sanitized}}/views.cljs" (render "src/cljs/views_routes.cljs" data)]]
-
-         :else
-         [["src/cljs/{{sanitized}}/views.cljs" (render "src/cljs/views.cljs" data)]]) ))
-
-;; --------------------
 (defn template-data [name options]
   {:name name
    :ns-name (sanitize-ns name)
    :sanitized (name-to-path name)
-   :re-com? (invoke-option re-com? options)
-   :routes? (invoke-option routes? options)
-   :test? (invoke-option test? options)})
+   :re-com? (helpers/invoke-option re-com/option options)
+   :routes? (helpers/invoke-option routes/option options)
+   :test? (helpers/invoke-option test/option options)})
 
 (defn re-frame [name & options]
   (let [data (template-data name options)]
