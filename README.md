@@ -19,7 +19,7 @@ lein new re-frame <project-name>
 
 The optional profiles include:
 
-* [garden](https://github.com/noprompt/garden)(`+garden`)
+* [garden](https://github.com/noprompt/garden) (`+garden`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 * [cljs.test](https://groups.google.com/forum/#!topic/clojure/gnCl0CySSk8) (`+test`)
@@ -78,6 +78,23 @@ lein cljsbuild auto test
 lein clean
 lein cljsbuild once min
 ```
+
+## Contributing
+
+Contributions are welcomed!  To add a new profile, this is what I'd recommend:
+
+1. Add a file with the name of the profile [here](https://github.com/Day8/re-frame-template/tree/master/src/leiningen/new/options)
+2. Look at the existing options in that folder for inspiration for what to include in that file
+3. Update [project.clj](https://github.com/Day8/re-frame-template/blob/master/src/leiningen/new/re_frame.clj) with the profile
+4. Add any new files [here](https://github.com/Day8/re-frame-template/tree/master/src/leiningen/new/re_frame) and use the {{ var-name }} syntax as needed
+5. Update the [README](https://github.com/Day8/re-frame-template/tree/master/src/leiningen/new/re_frame) that will result when the template is used, as well as the top-level [README](https://github.com/Day8/re-frame-template/blob/master/README.md) for re-frame-template itself
+6. In a terminal, at the root of re-frame-template, run `lein install`
+7. Locally test that your profile works, `lein new re-frame <app-name> +<profile-name>`
+8. Add your profile to [create-templates](https://github.com/Day8/re-frame-template/blob/master/create-templates.sh) and run the script to make sure the other profiles didn't break.
+
+Desired profiles:
+
+* `+heroku`
 
 ## License
 
