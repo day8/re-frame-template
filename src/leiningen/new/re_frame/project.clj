@@ -1,9 +1,9 @@
 (defproject {{ns-name}} "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-3211"]
-                 [reagent "0.5.0"]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "1.7.145"]
+                 [reagent "0.5.1"]
                  [re-frame "0.4.1"]{{#re-com?}}
-                 [re-com "0.6.1"]{{/re-com?}}{{#routes?}}
+                 [re-com "0.6.2"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.2.5"]{{/garden?}}]
 
@@ -16,7 +16,7 @@
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" {{#test?}}
                                     "test/js"{{/test?}} {{#garden?}}
                                     "resources/public/css/compiled"{{/garden?}}]
-  
+
   {{#garden?}}
   :garden {:builds [{:id "screen"
                      :source-paths ["src/clj"]
