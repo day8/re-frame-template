@@ -1,4 +1,4 @@
-(ns leiningen.new.re-frame  
+(ns leiningen.new.re-frame
   (:require [leiningen.new.options.base :as base]
             [leiningen.new.options.garden :as garden]
             [leiningen.new.options.re-com :as re-com]

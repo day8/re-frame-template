@@ -2,15 +2,15 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.145"]
                  [reagent "0.5.1"]
-                 [re-frame "0.4.1"]{{#re-com?}}
+                 [re-frame "0.5.0"]{{#re-com?}}
                  [re-com "0.6.2"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.2.5"]{{/garden?}}]
 
   :source-paths ["src/clj"]
 
-  :plugins [[lein-cljsbuild "1.0.6"]
-            [lein-figwheel "0.3.3" :exclusions [cider/cider-nrepl]] {{#garden?}}
+  :plugins [[lein-cljsbuild "1.1.1"]
+            [lein-figwheel "0.4.1" :exclusions [cider/cider-nrepl]] {{#garden?}}
             [lein-garden "0.2.6"]{{/garden?}} ]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" {{#test?}}

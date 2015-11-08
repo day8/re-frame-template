@@ -4,8 +4,8 @@
             [leiningen.new.options.routes :as routes] ))
 
 (defn file [name data]
-  [ ["src/cljs/{{sanitized}}/views.cljs" 
-     (helpers/render (str "src/cljs/" name ".cljs") 
+  [ ["src/cljs/{{sanitized}}/views.cljs"
+     (helpers/render (str "src/cljs/" name ".cljs")
                      data)] ])
 
 

@@ -10,5 +10,4 @@
    ["src/cljs/{{sanitized}}/core.cljs" (helpers/render "src/cljs/core.cljs" data)]
    ["src/cljs/{{sanitized}}/db.cljs" (helpers/render "src/cljs/db.cljs" data)]
    ["src/cljs/{{sanitized}}/subs.cljs" (helpers/render "src/cljs/subs.cljs" data)]
-   ["src/cljs/{{sanitized}}/handlers.cljs" (helpers/render "src/cljs/handlers.cljs" data)]] )
-
+   ["src/cljs/{{sanitized}}/handlers.cljs" (helpers/render "src/cljs/handlers.cljs" data)]])
