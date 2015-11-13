@@ -57,8 +57,8 @@ google-chrome index.html
 cd ../../..
 
 
-echo creating base +routes +re-com +test +garden
-lein new re-frame everything +routes +re-com +test +garden
+echo creating base +routes +re-com +test +garden +handler
+lein new re-frame everything +routes +re-com +test +garden +handler
 cd everything
 lein garden once
 lein cljsbuild once min

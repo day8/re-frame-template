@@ -5,7 +5,9 @@
                  [re-frame "0.5.0"]{{#re-com?}}
                  [re-com "0.6.2"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
-                 [garden "1.2.5"]{{/garden?}}]
+                 [garden "1.2.5"]{{/garden?}}
+                 [compojure "1.4.0"]{{#handler?}}
+                 [ring "1.4.0"]{{/handler?}}]
 
   :source-paths ["src/clj"]
 
@@ -17,14 +19,17 @@
                                     "test/js"{{/test?}} {{#garden?}}
                                     "resources/public/css/compiled"{{/garden?}}]
 
+  :figwheel {:css-dirs ["resources/public/css"]{{#handler?}}
+             :ring-handler {{name}}.handler/handler{{/handler?}}}
+
   {{#garden?}}
   :garden {:builds [{:id "screen"
                      :source-paths ["src/clj"]
                      :stylesheet {{name}}.css/screen
                      :compiler {:output-to "resources/public/css/compiled/screen.css"
                                 :pretty-print? true}}]}
-
   {{/garden?}}
+
   :cljsbuild {:builds [{:id "dev"
                         :source-paths ["src/cljs"]
 
