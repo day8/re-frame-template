@@ -5,18 +5,18 @@
                  [re-frame "0.5.0"]{{#re-com?}}
                  [re-com "0.6.2"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
-                 [garden "1.2.5"]{{/garden?}}
-                 [compojure "1.4.0"]{{#handler?}}
+                 [garden "1.2.5"]{{/garden?}}{{#handler?}}
+                 [compojure "1.4.0"]
                  [ring "1.4.0"]{{/handler?}}]
 
   :source-paths ["src/clj"]
 
   :plugins [[lein-cljsbuild "1.1.1"]
-            [lein-figwheel "0.4.1" :exclusions [cider/cider-nrepl]] {{#garden?}}
+            [lein-figwheel "0.4.1" :exclusions [cider/cider-nrepl]]{{#garden?}}
             [lein-garden "0.2.6"]{{/garden?}} ]
 
-  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" {{#test?}}
-                                    "test/js"{{/test?}} {{#garden?}}
+  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"{{#test?}}
+                                    "test/js"{{/test?}}{{#garden?}}
                                     "resources/public/css/compiled"{{/garden?}}]
 
   :figwheel {:css-dirs ["resources/public/css"]{{#handler?}}
@@ -28,8 +28,8 @@
                      :stylesheet {{name}}.css/screen
                      :compiler {:output-to "resources/public/css/compiled/screen.css"
                                 :pretty-print? true}}]}
-  {{/garden?}}
 
+  {{/garden?}}
   :cljsbuild {:builds [{:id "dev"
                         :source-paths ["src/cljs"]
 

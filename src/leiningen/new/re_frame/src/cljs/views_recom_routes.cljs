@@ -2,7 +2,9 @@
     (:require [re-frame.core :as re-frame]
               [re-com.core :as re-com]))
 
-;; --------------------
+
+;; home
+
 (defn home-title []
   (let [name (re-frame/subscribe [:name])]
     (fn []
@@ -20,7 +22,9 @@
    :gap "1em"
    :children [[home-title] [link-to-about-page]]])
 
-;; --------------------
+
+;; about
+
 (defn about-title []
   [re-com/title
    :label "This is the About Page."
@@ -29,14 +33,16 @@
 (defn link-to-home-page []
   [re-com/hyperlink-href
    :label "go to Home Page"
-   :href "#/"])  
+   :href "#/"])
 
 (defn about-panel []
   [re-com/v-box
    :gap "1em"
    :children [[about-title] [link-to-home-page]]])
 
-;; --------------------
+
+;; main
+
 (defmulti panels identity)
 (defmethod panels :home-panel [] [home-panel])
 (defmethod panels :about-panel [] [about-panel])
