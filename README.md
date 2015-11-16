@@ -23,6 +23,7 @@ The optional profiles include:
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 * [cljs.test](https://groups.google.com/forum/#!topic/clojure/gnCl0CySSk8) (`+test`)
+* [compojure](https://github.com/weavejester/compojure) (`+handler`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
 
@@ -104,6 +105,7 @@ The MIT License (MIT)
 Copyright © 2015 Matthew Jaoudi
 Copyright © 2015 Dylan Paris
 Copyright © 2015 Michael Thompson
+Copyright © 2015 Markku Rontu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
