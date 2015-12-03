@@ -3,9 +3,9 @@
                  [org.clojure/clojurescript "1.7.170"]
                  [reagent "0.5.1"]
                  [re-frame "0.5.0"]{{#re-com?}}
-                 [re-com "0.6.2"]{{/re-com?}}{{#routes?}}
+                 [re-com "0.7.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
-                 [garden "1.2.5"]{{/garden?}}{{#handler?}}
+                 [garden "1.3.0"]{{/garden?}}{{#handler?}}
                  [compojure "1.4.0"]
                  [ring "1.4.0"]{{/handler?}}]
 
