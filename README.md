@@ -22,7 +22,7 @@ The optional profiles include:
 * [garden](https://github.com/noprompt/garden) (`+garden`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
-* [cljs.test](https://groups.google.com/forum/#!topic/clojure/gnCl0CySSk8) (`+test`)
+* [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
 * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
@@ -63,6 +63,19 @@ lein figwheel dev
 Figwheel will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
+### Logging:
+
+In _project-name.config_, there is a variable called `debug?`, which
+defaults to _true_. However, for the `min` build, this variable is
+re-defined to _false_.
+
+When `debug?` is true, we include `(enable-console-print!)`. If you wrap all of your `println`s with a `when` block as show below, then you will get logs printed to the browser's console for the `dev` build and not the `min` build.
+
+```clojure
+(when config/debug?
+  (println "dev mode"))
+```
 
 ### Run tests (if using +test):
 

@@ -4,7 +4,11 @@
               [{{ns-name}}.handlers]
               [{{ns-name}}.subs]{{#routes?}}
               [{{ns-name}}.routes :as routes]{{/routes?}}
-              [{{ns-name}}.views :as views]))
+              [{{ns-name}}.views :as views]
+              [{{ns-name}}.config :as config]))
+
+(when config/debug?
+  (println "dev mode"))
 
 (defn mount-root []
   (reagent/render [views/main-panel]
