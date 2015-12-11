@@ -2,7 +2,7 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.170"]
                  [reagent "0.5.1"]
-                 [re-frame "0.5.0"]{{#re-com?}}
+                 [re-frame "0.6.0"]{{#re-com?}}
                  [re-com "0.7.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.0"]{{/garden?}}{{#handler?}}

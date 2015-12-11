@@ -31,7 +31,7 @@ To add a profile to the base template, just append the profile name (let's use `
 lein new re-frame <project-name> +re-com
 ```
 
-Any combination of profiles can be added at once (let's add all the profiles as an example):
+Any combination of profiles can be added at once (let's add many profiles as an example):
 
 ```
 lein new re-frame <project-name> +garden +re-com +routes +test
