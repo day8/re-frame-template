@@ -9,6 +9,8 @@
                  [compojure "1.4.0"]
                  [ring "1.4.0"]{{/handler?}}]
 
+  :min-lein-version "2.5.3"
+
   :source-paths ["src/clj"]
 
   :plugins [[lein-cljsbuild "1.1.1"]
