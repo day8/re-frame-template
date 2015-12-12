@@ -22,7 +22,7 @@ The optional profiles include:
 * [garden](https://github.com/noprompt/garden) (`+garden`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
-* [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
+* [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
 * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
@@ -81,10 +81,10 @@ When `debug?` is true, we include `(enable-console-print!)`. If you wrap all of 
 
 ```
 lein clean
-lein cljsbuild auto test
+lein doo phantom test once
 ```
 
-*Note: This requires [phantomjs](https://www.npmjs.com/package/phantomjs).*
+The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed. However, please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many other JS environments (chrome, ie, safari, opera, slimer, node, rhino, or nashorn). 
 
 ## Production Build
 

@@ -33,7 +33,7 @@ echo creating base +test
 lein new re-frame base-test +test
 cd base-test
 lein cljsbuild once min
-lein cljsbuild once test
+lein doo phantom test once
 cd resources/public
 google-chrome index.html
 cd ../../..
@@ -62,7 +62,7 @@ lein new re-frame everything +routes +re-com +test +garden +handler
 cd everything
 lein garden once
 lein cljsbuild once min
-lein cljsbuild once test
+lein doo phantom test once
 cd resources/public
 google-chrome index.html
 cd ../../..

@@ -15,7 +15,8 @@
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-figwheel "0.5.0-2"]{{#garden?}}
-            [lein-garden "0.2.6"]{{/garden?}} ]
+            [lein-garden "0.2.6"]{{/garden?}}{{#test?}}
+            [lein-doo "0.1.6"]{{/test?}}]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"{{#test?}}
                                     "test/js"{{/test?}}{{#garden?}}
@@ -34,9 +35,7 @@
   {{/garden?}}
   :cljsbuild {:builds [{:id "dev"
                         :source-paths ["src/cljs"]
-
                         :figwheel {:on-jsload "{{name}}.core/mount-root"}
-
                         :compiler {:main {{name}}.core
                                    :output-to "resources/public/js/compiled/app.js"
                                    :output-dir "resources/public/js/compiled/out"
@@ -46,11 +45,9 @@
                        {{#test?}}
                        {:id "test"
                         :source-paths ["src/cljs" "test/cljs"]
-                        :notify-command ["phantomjs" "test/unit-test.js" "test/unit-test.html"]
-                        :compiler {:optimizations :whitespace
-                                   :pretty-print true
-                                   :output-to "test/js/app_test.js"
-                                   :warnings {:single-segment-namespace false}}}
+                        :compiler {:output-to "resources/public/js/compiled/test.js"
+                                   :main {{name}}.runner
+                                   :optimizations :none}}
 
                        {{/test?}}
                        {:id "min"
