@@ -93,6 +93,10 @@ lein clean
 lein cljsbuild once min
 ```
 
+## Misc.
+
+Looking for some re-frame scaffolding? Check out [slush-reframe](https://github.com/kristianmandrup/slush-reframe).
+
 ## Contributing
 
 Contributions are welcomed!  To add a new profile, this is what I'd recommend:
