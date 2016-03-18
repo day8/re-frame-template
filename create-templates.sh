@@ -47,6 +47,15 @@ cd resources/public
 google-chrome index.html
 cd ../../..
 
+printf "\ncreating base +less\n"
+lein new re-frame base-less +less
+cd base-less
+lein less once
+lein cljsbuild once min
+cd resources/public
+google-chrome index.html
+cd ../../..
+
 
 printf "\ncreating base +routes +re-com\n"
 lein new re-frame base-routes-recom +routes +re-com
@@ -57,10 +66,11 @@ google-chrome index.html
 cd ../../..
 
 
-echo creating base +routes +re-com +test +garden +handler
-lein new re-frame everything +routes +re-com +test +garden +handler
+echo creating base +routes +re-com +test +garden +handler +less
+lein new re-frame everything +routes +re-com +test +garden +handler +less
 cd everything
 lein garden once
+lein less once
 lein cljsbuild once min
 lein doo phantom test once
 cd resources/public

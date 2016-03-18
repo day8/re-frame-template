@@ -20,6 +20,7 @@ lein new re-frame <project-name>
 The optional profiles include:
 
 * [garden](https://github.com/noprompt/garden) (`+garden`)
+* [less](https://github.com/montoux/lein-less) (`+less`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
@@ -31,15 +32,15 @@ To add a profile to the base template, just append the profile name (let's use `
 lein new re-frame <project-name> +re-com
 ```
 
-Any combination of profiles can be added at once (let's add many profiles as an example):
+Any combination of profiles can be added at once:
 
 ```
-lein new re-frame <project-name> +garden +re-com +routes +test
+lein new re-frame <project-name> +garden +re-com +routes +test +less
 ```
 
 ## Development Mode
 
-### Compile css (if using +garden):
+### Compile css (if using +garden or +less):
 
 Compile css file once.
 
@@ -47,10 +48,22 @@ Compile css file once.
 lein garden once
 ```
 
+or
+
+```
+lein less once
+```
+
 Automatically recompile css file on change.
 
 ```
 lein garden auto
+```
+
+or
+
+```
+lein less auto
 ```
 
 ### Run application:

@@ -18,7 +18,21 @@ Automatically recompile css file on change.
 lein garden auto
 ```
 
-{{/garden?}}
+{{/garden?}}{{#less?}}### Compile css:
+
+Compile css file once.
+
+```
+lein less once
+```
+
+Automatically recompile css file on change.
+
+```
+lein less auto
+```
+
+{{/less?}}
 ### Run application:
 
 ```
