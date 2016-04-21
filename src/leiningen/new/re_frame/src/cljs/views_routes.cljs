@@ -29,4 +29,4 @@
 (defn main-panel []
   (let [active-panel (re-frame/subscribe [:active-panel])]
     (fn []
-      (panels @active-panel))))
+      [panels @active-panel])))
