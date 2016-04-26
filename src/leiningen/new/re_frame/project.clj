@@ -13,52 +13,58 @@
 
   :source-paths ["src/clj"]
 
-  :plugins [[lein-cljsbuild "1.1.3"]
-            [lein-figwheel "0.5.2"]{{#garden?}}
-            [lein-garden "0.2.6"]{{/garden?}}{{#test?}}
-            [lein-doo "0.1.6"]{{/test?}}{{#less?}}
+  :plugins [[lein-cljsbuild "1.1.3"]{{#garden?}}
+            [lein-garden "0.2.6"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"{{#test?}}
                                     "test/js"{{/test?}}{{#garden?}}
                                     "resources/public/css/compiled"{{/garden?}}]
 
-  :figwheel {:css-dirs ["resources/public/css"]{{#handler?}}
+  :figwheel {:css-dirs     ["resources/public/css/compiled"]{{#handler?}}
              :ring-handler {{name}}.handler/handler{{/handler?}}}
 
   {{#garden?}}
-  :garden {:builds [{:id "screen"
+  :garden {:builds [{:id           "screen"
                      :source-paths ["src/clj"]
-                     :stylesheet {{name}}.css/screen
-                     :compiler {:output-to "resources/public/css/compiled/screen.css"
-                                :pretty-print? true}}]}
+                     :stylesheet   {{name}}.css/screen
+                     :compiler     {:output-to     "resources/public/css/compiled/screen.css"
+                                    :pretty-print? true}}]}
 
   {{/garden?}}{{#less?}}
   :less {:source-paths ["less"]
          :target-path  "resources/public/css/compiled"}
 
   {{/less?}}
-  :cljsbuild {:builds [{:id "dev"
-                        :source-paths ["src/cljs"]
-                        :figwheel {:on-jsload "{{name}}.core/mount-root"}
-                        :compiler {:main {{name}}.core
-                                   :output-to "resources/public/js/compiled/app.js"
-                                   :output-dir "resources/public/js/compiled/out"
-                                   :asset-path "js/compiled/out"
-                                   :source-map-timestamp true}}
+  :profiles
+  {:dev
+   {:plugins [[lein-figwheel "0.5.2"]{{#test?}}
+              [lein-doo "0.1.6"]{{/test?}}]
+    :cljsbuild
+    {:builds
+     [{:id           "dev"
+       :source-paths ["src/cljs"]
+       :figwheel     {:on-jsload "{{name}}.core/mount-root"}
+       :compiler     {:main                 {{name}}.core
+                      :output-to            "resources/public/js/compiled/app.js"
+                      :output-dir           "resources/public/js/compiled/out"
+                      :asset-path           "js/compiled/out"
+                      :source-map-timestamp true}}
 
-                       {{#test?}}
-                       {:id "test"
-                        :source-paths ["src/cljs" "test/cljs"]
-                        :compiler {:output-to "resources/public/js/compiled/test.js"
-                                   :main {{name}}.runner
-                                   :optimizations :none}}
+      {{#test?}}
+      {:id           "test"
+       :source-paths ["src/cljs" "test/cljs"]
+       :compiler     {:output-to     "resources/public/js/compiled/test.js"
+                      :main          {{name}}.runner
+                      :optimizations :none}}{{/test?}}]}}
 
-                       {{/test?}}
-                       {:id "min"
-                        :source-paths ["src/cljs"]
-                        :compiler {:main {{name}}.core
-                                   :output-to "resources/public/js/compiled/app.js"
-                                   :optimizations :advanced
-                                   :closure-defines {goog.DEBUG false}
-                                   :pretty-print false}}]})
+   :prod
+   {:cljsbuild
+    {:builds
+     [{:id           "min"
+       :source-paths ["src/cljs"]
+       :compiler     {:main            {{name}}.core
+                      :output-to       "resources/public/js/compiled/app.js"
+                      :optimizations   :advanced
+                      :closure-defines {goog.DEBUG false}
+                      :pretty-print    false}}]}}})
