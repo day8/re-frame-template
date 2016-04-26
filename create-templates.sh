@@ -66,7 +66,7 @@ google-chrome index.html
 cd ../../..
 
 
-echo creating base +routes +re-com +test +garden +handler +less
+printf "\ncreating base +routes +re-com +test +garden +handler +less\n"
 lein new re-frame everything +routes +re-com +test +garden +handler +less
 cd everything
 lein garden once
