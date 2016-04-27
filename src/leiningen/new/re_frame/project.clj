@@ -19,21 +19,21 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"{{#test?}}
                                     "test/js"{{/test?}}{{#garden?}}
-                                    "resources/public/css/compiled"{{/garden?}}]
+                                    "resources/public/css"{{/garden?}}]
 
-  :figwheel {:css-dirs     ["resources/public/css/compiled"]{{#handler?}}
+  :figwheel {:css-dirs ["resources/public/css"]{{#handler?}}
              :ring-handler {{name}}.handler/handler{{/handler?}}}
 
   {{#garden?}}
   :garden {:builds [{:id           "screen"
                      :source-paths ["src/clj"]
                      :stylesheet   {{name}}.css/screen
-                     :compiler     {:output-to     "resources/public/css/compiled/screen.css"
+                     :compiler     {:output-to     "resources/public/css/screen.css"
                                     :pretty-print? true}}]}
 
   {{/garden?}}{{#less?}}
   :less {:source-paths ["less"]
-         :target-path  "resources/public/css/compiled"}
+         :target-path  "resources/public/css"}
 
   {{/less?}}
   :profiles
