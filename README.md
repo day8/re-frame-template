@@ -19,12 +19,13 @@ lein new re-frame <project-name>
 
 The optional profiles include:
 
+* [cider](https://github.com/clojure-emacs/cider) (`+cider`)
+* [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
+* [compojure](https://github.com/weavejester/compojure) (`+handler`)
 * [garden](https://github.com/noprompt/garden) (`+garden`)
 * [less](https://github.com/montoux/lein-less) (`+less`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
-* [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
-* [compojure](https://github.com/weavejester/compojure) (`+handler`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
 
@@ -39,6 +40,17 @@ lein new re-frame <project-name> +garden +re-com +routes +test +less
 ```
 
 ## Development Mode
+
+### Start Cider from Emacs (if using +cider):
+
+Put this in your Emacs config file:
+
+```
+(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+```
+
+Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
+
 
 ### Compile css (if using +garden or +less):
 
@@ -103,7 +115,7 @@ The above command assumes that you have [phantomjs](https://www.npmjs.com/packag
 
 ```
 lein clean
-lein with-profile prod cljsbuild once min
+lein cljsbuild once min
 ```
 
 ## Misc.

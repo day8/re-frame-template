@@ -3,7 +3,7 @@
                  [org.clojure/clojurescript "1.7.228"]
                  [reagent "0.5.1"]
                  [re-frame "0.7.0"]{{#re-com?}}
-                 [re-com "0.8.0"]{{/re-com?}}{{#routes?}}
+                 [re-com "0.8.3"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.2"]{{/garden?}}{{#handler?}}
                  [compojure "1.5.0"]
@@ -21,8 +21,8 @@
                                     "test/js"{{/test?}}{{#garden?}}
                                     "resources/public/css"{{/garden?}}]
 
-  :figwheel {:css-dirs ["resources/public/css"]{{#handler?}}
-             :ring-handler {{name}}.handler/handler{{/handler?}}}
+  :figwheel {:css-dirs     ["resources/public/css"] {{#handler?}}
+             :ring-handler {{name}}.handler/handler {{/handler?}}}
 
   {{#garden?}}
   :garden {:builds [{:id           "screen"
@@ -30,41 +30,47 @@
                      :stylesheet   {{name}}.css/screen
                      :compiler     {:output-to     "resources/public/css/screen.css"
                                     :pretty-print? true}}]}
-
   {{/garden?}}{{#less?}}
   :less {:source-paths ["less"]
          :target-path  "resources/public/css"}
 
   {{/less?}}
+  :cljsbuild
+  {:builds
+   [{:id           "dev"
+     :source-paths ["src/cljs"]
+     :figwheel     {:on-jsload "{{name}}.core/mount-root"}
+     :compiler     {:main                 {{name}}.core
+                    :output-to            "resources/public/js/compiled/app.js"
+                    :output-dir           "resources/public/js/compiled/out"
+                    :asset-path           "js/compiled/out"
+                    :source-map-timestamp true}}
+
+    {:id           "min"
+     :source-paths ["src/cljs"]
+     :compiler     {:main            {{name}}.core
+                    :output-to       "resources/public/js/compiled/app.js"
+                    :optimizations   :advanced
+                    :closure-defines {goog.DEBUG false}
+                    :pretty-print    false}}
+    {{#test?}}
+    {:id           "test"
+     :source-paths ["src/cljs" "test/cljs"]
+     :compiler     {:output-to     "resources/public/js/compiled/test.js"
+                    :main          {{name}}.runner
+                    :optimizations :none}}{{/test?}}
+    ]}
+
+  {{#cider?}}
+  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+
+  {{/cider?}}
   :profiles
   {:dev
-   {:plugins [[lein-figwheel "0.5.2"]{{#test?}}
-              [lein-doo "0.1.6"]{{/test?}}]
-    :cljsbuild
-    {:builds
-     [{:id           "dev"
-       :source-paths ["src/cljs"]
-       :figwheel     {:on-jsload "{{name}}.core/mount-root"}
-       :compiler     {:main                 {{name}}.core
-                      :output-to            "resources/public/js/compiled/app.js"
-                      :output-dir           "resources/public/js/compiled/out"
-                      :asset-path           "js/compiled/out"
-                      :source-map-timestamp true}}
-
-      {{#test?}}
-      {:id           "test"
-       :source-paths ["src/cljs" "test/cljs"]
-       :compiler     {:output-to     "resources/public/js/compiled/test.js"
-                      :main          {{name}}.runner
-                      :optimizations :none}}{{/test?}}]}}
-
-   :prod
-   {:cljsbuild
-    {:builds
-     [{:id           "min"
-       :source-paths ["src/cljs"]
-       :compiler     {:main            {{name}}.core
-                      :output-to       "resources/public/js/compiled/app.js"
-                      :optimizations   :advanced
-                      :closure-defines {goog.DEBUG false}
-                      :pretty-print    false}}]}}})
+   {:plugins [[lein-figwheel "0.5.3"]{{#test?}}
+              [lein-doo "0.1.6"]{{/test?}}{{#cider?}}
+              [cider/cider-nrepl "0.13.0-SNAPSHOT"]{{/cider?}}
+              ]{{#cider?}}
+    :dependencies [[figwheel-sidecar "0.5.3"]
+                   [com.cemerick/piggieback "0.2.1"]]{{/cider?}}
+    }})

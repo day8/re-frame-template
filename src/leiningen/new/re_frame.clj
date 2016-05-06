@@ -28,6 +28,7 @@
   {:name      name
    :ns-name   (sanitize-ns name)
    :sanitized (name-to-path name)
+   :cider?    (helpers/invoke-option "cider" options)
    :garden?   (helpers/invoke-option garden/option options)
    :less?     (helpers/invoke-option less/option options)
    :handler?  (helpers/invoke-option handler/option options)
