@@ -7,7 +7,14 @@
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.2"]{{/garden?}}{{#handler?}}
                  [compojure "1.5.0"]
+                 [yogthos/config "0.8"]
                  [ring "1.4.0"]{{/handler?}}]
+
+ {{#handler?}}
+  :main {{ns-name}}.server
+
+  :aot [{{ns-name}}.server]
+ {{/handler?}}
 
   :min-lein-version "2.5.3"
 
@@ -22,7 +29,7 @@
                                     "resources/public/css"{{/garden?}}]
 
   :figwheel {:css-dirs     ["resources/public/css"] {{#handler?}}
-             :ring-handler {{name}}.handler/handler {{/handler?}}}
+             :ring-handler {{name}}.handler/dev-handler {{/handler?}}}
 
   {{#garden?}}
   :garden {:builds [{:id           "screen"
@@ -35,6 +42,11 @@
          :target-path  "resources/public/css"}
 
   {{/less?}}
+
+  {{#handler?}}
+  :prep-tasks [["cljsbuild" "once" "min"] "compile"]
+  {{/handler?}}
+
   :cljsbuild
   {:builds
    [{:id           "dev"
@@ -47,7 +59,8 @@
                     :source-map-timestamp true}}
 
     {:id           "min"
-     :source-paths ["src/cljs"]
+     :source-paths ["src/cljs"] {{#handler?}}
+     :jar true {{/handler?}}
      :compiler     {:main            {{name}}.core
                     :output-to       "resources/public/js/compiled/app.js"
                     :optimizations   :advanced

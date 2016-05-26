@@ -62,11 +62,25 @@ lein clean
 lein doo phantom test once
 ```
 
-The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed. However, please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many other JS environments (chrome, ie, safari, opera, slimer, node, rhino, or nashorn). 
+The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed. However, please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many other JS environments (chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
 
 {{/test?}}
 ## Production Build
 
+{{#handler?}}
+```
+lein clean
+lein uberjar
+```
+
+That should compile the clojurescript code first, and then create the standalone jar.
+
+When you run the jar you can set the port the ring server will use by setting the environment variable PORT.
+If it's not set, it will run on port 3000 by default.
+
+If you only want to compile the clojurescript code:
+
+{{/handler?}}
 ```
 lein clean
 lein cljsbuild once min
