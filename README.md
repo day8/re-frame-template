@@ -10,6 +10,8 @@ The base template includes:
 
 * [re-frame](https://github.com/Day8/re-frame)
 * [figwheel](https://github.com/bhauman/lein-figwheel)
+* [cljs-devtools](https://github.com/binaryage/cljs-devtools)
+    * To enable: 1) Open Chrome's DevTools,`Ctrl-Shift-i`; 2) open "Settings", `F1`; 3) Check "Enable custom formatters" under the "Console" section; 4) close and re-open DevTools
 
 To create an application with the base template:
 
