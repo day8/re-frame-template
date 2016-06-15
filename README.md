@@ -127,6 +127,11 @@ lein clean
 lein uberjar
 ```
 
+## Other Templates
+
+* [reagent-figwheel](https://github.com/gadfly361/reagent-figwheel)
+* [reagent-seed](https://github.com/gadfly361/reagent-seed)
+
 ## Misc.
 
 Looking for some re-frame scaffolding? Check out [slush-reframe](https://github.com/kristianmandrup/slush-reframe).
