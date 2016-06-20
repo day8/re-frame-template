@@ -42,7 +42,7 @@
   :profiles
   {:dev
    {:dependencies [{{#cider?}}
-                   [lein-figwheel "0.5.4-3"]
+                   [figwheel-sidecar "0.5.4-3"]
                    [com.cemerick/piggieback "0.2.1"]{{/cider?}}]
 
     :plugins      [[lein-figwheel "0.5.4-3"]{{#test?}}
