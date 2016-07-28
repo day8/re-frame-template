@@ -47,7 +47,7 @@
 
     :plugins      [[lein-figwheel "0.5.4-3"]{{#test?}}
                    [lein-doo "0.1.6"]{{/test?}}{{#cider?}}
-                   [cider/cider-nrepl "0.13.0-SNAPSHOT"]{{/cider?}}]
+                   [cider/cider-nrepl "0.13.0"]{{/cider?}}]
     }}
 
   :cljsbuild
