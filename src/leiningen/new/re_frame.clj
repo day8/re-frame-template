@@ -34,7 +34,14 @@
    :handler?  (helpers/invoke-option handler/option options)
    :re-com?   (helpers/invoke-option re-com/option options)
    :routes?   (helpers/invoke-option routes/option options)
-   :test?     (helpers/invoke-option test/option options)})
+   :test?     (helpers/invoke-option test/option options)
+
+   ;;prep-tasks
+   :prep-garden (when (helpers/option? garden/option options)
+                  ["garden" "once"])
+   :prep-less (when (helpers/option? less/option options)
+                ["less" "once"])
+   })
 
 (defn re-frame [name & options]
   (let [data (template-data name options)]

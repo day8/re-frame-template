@@ -6,13 +6,14 @@
                  [re-frame "0.7.0"]{{#re-com?}}
                  [re-com "0.8.3"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
-                 [garden "1.3.2"]{{/garden?}}{{#handler?}}
+                 [garden "1.3.2"]
+                 [ns-tracker "0.3.0"]{{/garden?}}{{#handler?}}
                  [compojure "1.5.0"]
                  [yogthos/config "0.8"]
                  [ring "1.4.0"]{{/handler?}}]
 
   :plugins [[lein-cljsbuild "1.1.3"]{{#garden?}}
-            [lein-garden "0.2.6"]{{/garden?}}{{#less?}}
+            [lein-garden "0.2.8"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}]
 
   :min-lein-version "2.5.3"
@@ -82,5 +83,7 @@
 
   :aot [{{ns-name}}.server]
 
-  :prep-tasks [["cljsbuild" "once" "min"] "compile"]{{/handler?}}
+  :uberjar-name "{{name}}.jar"
+
+  :prep-tasks [["cljsbuild" "once" "min"]{{{prep-garden}}}{{{prep-less}}} "compile"]{{/handler?}}
   )

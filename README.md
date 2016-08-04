@@ -115,6 +115,8 @@ The above command assumes that you have [phantomjs](https://www.npmjs.com/packag
 
 ## Production Build
 
+To compile clojurescript to javascript:
+
 ```
 lein clean
 lein cljsbuild once min
@@ -125,6 +127,18 @@ If you're using +handler
 ```
 lein clean
 lein uberjar
+```
+
+To deploy to heroku, first create your app:
+
+```
+heroku create
+```
+
+Then deploy the application:
+
+```
+git push heroku master
 ```
 
 ## Other Templates
@@ -148,10 +162,6 @@ Contributions are welcomed!  To add a new profile, this is what I'd recommend:
 6. In a terminal, at the root of re-frame-template, run `lein install`
 7. Locally test that your profile works, `lein new re-frame <app-name> +<profile-name>`
 8. Add your profile to [create-templates](https://github.com/Day8/re-frame-template/blob/master/create-templates.sh) and run the script to make sure the other profiles didn't break.
-
-Desired profiles:
-
-* `+heroku`
 
 ## License
 

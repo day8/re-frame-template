@@ -4,5 +4,6 @@
 (def option "handler")
 
 (defn files [data]
-  [["src/clj/{{sanitized}}/handler.clj" (helpers/render "src/clj/handler.clj" data)]
+  [["Procfile" (helpers/render "Procfile" data)]
+   ["src/clj/{{sanitized}}/handler.clj" (helpers/render "src/clj/handler.clj" data)]
    ["src/clj/{{sanitized}}/server.clj" (helpers/render "src/clj/server.clj" data)]])
