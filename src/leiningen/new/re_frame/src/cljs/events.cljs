@@ -1,4 +1,4 @@
-(ns {{ns-name}}.handlers
+(ns {{ns-name}}.events
     (:require [re-frame.core :as re-frame]
               [{{ns-name}}.db :as db]))
 
