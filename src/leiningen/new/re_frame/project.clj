@@ -74,8 +74,9 @@
     {{#test?}}
     {:id           "test"
      :source-paths ["src/cljs" "test/cljs"]
-     :compiler     {:output-to     "resources/public/js/compiled/test.js"
-                    :main          {{name}}.runner
+     :compiler     {:main          {{name}}.runner
+                    :output-to     "resources/public/js/compiled/test.js"
+                    :output-dir    "resources/public/js/compiled/test/out"
                     :optimizations :none}}{{/test?}}
     ]}
 {{#handler?}}
