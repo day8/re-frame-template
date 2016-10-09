@@ -2,7 +2,6 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.229"]
                  [reagent "0.6.0"]
-                 [binaryage/devtools "0.8.2"]
                  [re-frame "0.8.0"]{{#re-com?}}
                  [org.clojure/core.async "0.2.391"]
                  [re-com "0.8.3"]{{/re-com?}}{{#routes?}}
@@ -43,7 +42,7 @@
 
   :profiles
   {:dev
-   {:dependencies [{{#cider?}}
+   {:dependencies [[binaryage/devtools "0.8.2"]{{#cider?}}
                    [figwheel-sidecar "0.5.7"]
                    [com.cemerick/piggieback "0.2.1"]{{/cider?}}]
 
@@ -61,7 +60,10 @@
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"
                     :asset-path           "js/compiled/out"
-                    :source-map-timestamp true}}
+                    :source-map-timestamp true
+                    :preloads             [devtools.preload]
+                    :external-config      {:devtools/config {:features-to-install :all}}
+                    }}
 
     {:id           "min"
      :source-paths ["src/cljs"]{{#handler?}}
@@ -71,6 +73,7 @@
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}
                     :pretty-print    false}}
+
     {{#test?}}
     {:id           "test"
      :source-paths ["src/cljs" "test/cljs"]
