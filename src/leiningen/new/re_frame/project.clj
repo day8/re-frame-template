@@ -47,8 +47,7 @@
                    [com.cemerick/piggieback "0.2.1"]{{/cider?}}]
 
     :plugins      [[lein-figwheel "0.5.7"]{{#test?}}
-                   [lein-doo "0.1.7"]{{/test?}}{{#cider?}}
-                   [cider/cider-nrepl "0.13.0"]{{/cider?}}]
+                   [lein-doo "0.1.7"]{{/test?}}]
     }}
 
   :cljsbuild
