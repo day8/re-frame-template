@@ -33,14 +33,15 @@
    :less?     (helpers/invoke-option less/option options)
    :handler?  (helpers/invoke-option handler/option options)
    :re-com?   (helpers/invoke-option re-com/option options)
+   :re-frisk? (helpers/invoke-option "re-frisk" options)
    :routes?   (helpers/invoke-option routes/option options)
    :test?     (helpers/invoke-option test/option options)
 
    ;;prep-tasks
    :prep-garden (when (helpers/option? garden/option options)
                   ["garden" "once"])
-   :prep-less (when (helpers/option? less/option options)
-                ["less" "once"])
+   :prep-less   (when (helpers/option? less/option options)
+                  ["less" "once"])
    })
 
 (defn re-frame [name & options]
