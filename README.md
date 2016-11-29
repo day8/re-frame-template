@@ -28,6 +28,7 @@ The optional profiles include:
 * [less](https://github.com/montoux/lein-less) (`+less`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
+* [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
 
@@ -38,7 +39,7 @@ lein new re-frame <project-name> +re-com
 Any combination of profiles can be added at once:
 
 ```
-lein new re-frame <project-name> +garden +re-com +routes +test +less
+lein new re-frame <project-name> +garden +re-com +routes +test +less +re-frisk
 ```
 
 ## Development Mode
