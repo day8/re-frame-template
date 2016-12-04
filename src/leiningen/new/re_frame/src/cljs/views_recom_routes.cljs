@@ -48,8 +48,7 @@
 (defmethod panels :about-panel [] [about-panel])
 (defmethod panels :default [] [:div])
 
-(defn show-panel
-  [panel-name]
+(defn show-panel [panel-name]
   [panels panel-name])
 
 (defn main-panel []
