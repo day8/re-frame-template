@@ -2,7 +2,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.229"]
                  [reagent "0.6.0"]
-                 [re-frame "0.8.0"]{{#re-frisk?}}
+                 [re-frame "0.9.0"]{{#re-frisk?}}
                  [re-frisk "0.3.0"]{{/re-frisk?}}{{#re-com?}}
                  [org.clojure/core.async "0.2.391"]
                  [re-com "0.8.3"]{{/re-com?}}{{#routes?}}
