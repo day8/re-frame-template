@@ -49,8 +49,7 @@
     :about-panel [about-panel]
     [:div]))
 
-(defn show-panel
-  [panel-name]
+(defn show-panel [panel-name]
   [panels panel-name])
 
 (defn main-panel []
