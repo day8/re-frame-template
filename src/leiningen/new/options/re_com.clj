@@ -1,7 +1,7 @@
 (ns leiningen.new.options.re-com
   (:require [leiningen.new.options.helpers :as helpers]))
 
-(def option "re-com")
+(def option "+re-com")
 
 (defn assets [data]
   [["resources/public/vendor/css/re-com.css" (helpers/render "resources/public/vendor/css/re-com.css" data)]

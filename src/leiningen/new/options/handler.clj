@@ -1,7 +1,7 @@
 (ns leiningen.new.options.handler
   (:require [leiningen.new.options.helpers :as helpers]))
 
-(def option "handler")
+(def option "+handler")
 
 (defn files [data]
   [["Procfile" (helpers/render "Procfile" data)]

@@ -20,9 +20,8 @@
   ([resource-path data]
    (render-text resource-path data)))
 
-(defn option? [name options]
-  (let [option-name (str "+" name)]
-    (some #{option-name} options)))
+(defn option? [option-name options]
+    (some #{option-name} options))
 
 (defn invoke-option [option options]
   (fn [block]
