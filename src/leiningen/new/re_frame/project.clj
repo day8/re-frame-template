@@ -5,7 +5,7 @@
                  [re-frame "0.9.1"]{{#re-frisk?}}
                  [re-frisk "0.3.2"]{{/re-frisk?}}{{#re-com?}}
                  [org.clojure/core.async "0.2.391"]
-                 [re-com "0.8.3"]{{/re-com?}}{{#routes?}}
+                 [re-com "1.3.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.2"]
                  [ns-tracker "0.3.0"]{{/garden?}}{{#handler?}}
