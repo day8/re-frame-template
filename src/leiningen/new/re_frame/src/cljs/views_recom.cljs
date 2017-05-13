@@ -1,6 +1,6 @@
 (ns {{ns-name}}.views
-    (:require [re-frame.core :as re-frame]
-              [re-com.core :as re-com]))
+  (:require [re-frame.core :as re-frame]
+            [re-com.core :as re-com]))
 
 (defn title []
   (let [name (re-frame/subscribe [:name])]
