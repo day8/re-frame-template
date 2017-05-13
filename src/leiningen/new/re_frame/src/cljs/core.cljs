@@ -1,12 +1,12 @@
 (ns {{ns-name}}.core
-    (:require [reagent.core :as reagent]
-              [re-frame.core :as re-frame]{{#re-frisk?}}
-              [re-frisk.core :refer [enable-re-frisk!]]{{/re-frisk?}}
-              [{{ns-name}}.events]
-              [{{ns-name}}.subs]{{#routes?}}
-              [{{ns-name}}.routes :as routes]{{/routes?}}
-              [{{ns-name}}.views :as views]
-              [{{ns-name}}.config :as config]))
+  (:require [reagent.core :as reagent]
+            [re-frame.core :as re-frame]{{#re-frisk?}}
+            [re-frisk.core :refer [enable-re-frisk!]]{{/re-frisk?}}
+            [{{ns-name}}.events]
+            [{{ns-name}}.subs]{{#routes?}}
+            [{{ns-name}}.routes :as routes]{{/routes?}}
+            [{{ns-name}}.views :as views]
+            [{{ns-name}}.config :as config]))
 
 
 (defn dev-setup []
