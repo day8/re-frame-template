@@ -15,8 +15,7 @@
 
   :plugins [[lein-cljsbuild "1.1.4"]{{#garden?}}
             [lein-garden "0.2.8"]{{/garden?}}{{#less?}}
-            [lein-less "1.7.5"]{{/less?}}{{#sass?}}
-            [lein-sassc "0.10.4"]{{/sass?}}]
+            [lein-less "1.7.5"]{{/less?}}]
 
   :min-lein-version "2.5.3"
 
@@ -38,11 +37,7 @@
 {{/garden?}}{{#less?}}
   :less {:source-paths ["less"]
          :target-path  "resources/public/css"}
-{{/less?}}{{#sass?}}
-  :sassc [{:src         "resources/sass/screen.sass"
-           :output-to   "resources/public/css/screen.css"
-           :style       "compressed"}]
-{{/sass?}}{{#cider?}}
+{{/less?}}{{#cider?}}
   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 {{/cider?}}
 
@@ -95,5 +90,5 @@
 
   :uberjar-name "{{name}}.jar"
 
-  :prep-tasks [["cljsbuild" "once" "min"]{{{prep-garden}}}{{{prep-less}}}{{{prep-sass}}} "compile"]{{/handler?}}
+  :prep-tasks [["cljsbuild" "once" "min"]{{{prep-garden}}}{{{prep-less}}} "compile"]{{/handler?}}
   )
