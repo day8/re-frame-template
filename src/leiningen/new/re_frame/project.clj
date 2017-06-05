@@ -2,8 +2,8 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.229"]
                  [reagent "0.6.0"]
-                 [re-frame "0.9.2"]{{#re-frisk?}}
-                 [re-frisk "0.3.2"]{{/re-frisk?}}{{#re-com?}}
+                 [re-frame "0.9.4"]{{#re-frisk?}}
+                 [re-frisk "0.4.5"]{{/re-frisk?}}{{#re-com?}}
                  [org.clojure/core.async "0.2.391"]
                  [re-com "2.0.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
