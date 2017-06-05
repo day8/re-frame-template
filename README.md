@@ -28,7 +28,7 @@ The optional profiles include:
 * [less](https://github.com/montoux/lein-less) (`+less`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
-* [sass](https://github.com/montoux/lein-sass) (`+sass`)
+* [sass](https://github.com/vladh/lein-sassy) (`+sass`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
