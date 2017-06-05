@@ -63,6 +63,15 @@ cd resources/public
 google-chrome index.html
 cd ../../..
 
+printf "\ncreating base +sass\n"
+lein new re-frame base-sass +sass
+cd base-sass
+lein sass once
+lein cljsbuild once min
+cd resources/public
+google-chrome index.html
+cd ../../..
+
 
 printf "\ncreating base +routes +re-com\n"
 lein new re-frame base-routes-recom +routes +re-com
@@ -73,8 +82,8 @@ google-chrome index.html
 cd ../../..
 
 
-printf "\ncreating base +cider +routes +re-com +test +garden +handler +less\n"
-lein new re-frame everything +cider +routes +re-com +test +garden +handler +less
+printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +sass\n"
+lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +sass
 cd everything
 lein garden once
 lein less once

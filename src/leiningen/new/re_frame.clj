@@ -4,6 +4,7 @@
    [leiningen.new.options.base :as base]
    [leiningen.new.options.garden :as garden]
    [leiningen.new.options.less :as less]
+   [leiningen.new.options.sass :as sass]
    [leiningen.new.options.handler :as handler]
    [leiningen.new.options.re-com :as re-com]
    [leiningen.new.options.routes :as routes]
@@ -24,6 +25,7 @@
 
    (when (helpers/option? garden/option options) (garden/files data))
    (when (helpers/option? less/option options) (less/files data))
+   (when (helpers/option? sass/option options) (sass/files data))
    (when (helpers/option? handler/option options) (handler/files data))
    (when (helpers/option? re-com/option options) (re-com/assets data))
    (when (helpers/option? routes/option options) (routes/routes-cljs data))
@@ -37,6 +39,7 @@
    :garden?   (helpers/invoke-option garden/option options)
    :handler?  (helpers/invoke-option handler/option options)
    :less?     (helpers/invoke-option less/option options)
+   :sass?     (helpers/invoke-option sass/option options)
    :re-com?   (helpers/invoke-option re-com/option options)
    :re-frisk? (helpers/invoke-option "+re-frisk" options)
    :routes?   (helpers/invoke-option routes/option options)
@@ -47,6 +50,8 @@
                   ["garden" "once"])
    :prep-less   (when (helpers/option? less/option options)
                   ["less" "once"])
+   :prep-sass   (when (helpers/option? sass/option options)
+                  ["sass" "once"])
    })
 
 
@@ -59,6 +64,7 @@
     garden/option
     handler/option
     less/option
+    sass/option
     re-com/option
     "+re-frisk"
     routes/option

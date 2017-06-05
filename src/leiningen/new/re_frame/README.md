@@ -43,7 +43,21 @@ Automatically recompile css file on change.
 lein less auto
 ```
 
-{{/less?}}
+{{/less?}}{{#sass?}}### Compile css:
+
+Compile css file once.
+
+```
+lein sass once
+```
+
+Automatically recompile css file on change.
+
+```
+lein sass auto
+```
+
+{{/sass?}}
 ### Run application:
 
 ```
