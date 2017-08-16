@@ -142,8 +142,13 @@ git push heroku master
 
 ## Other Templates
 
+* [luminus](https://github.com/luminus-framework/luminus-template)
+* [pedestal](https://github.com/pedestal/pedestal)
 * [reagent-figwheel](https://github.com/gadfly361/reagent-figwheel)
 * [reagent-seed](https://github.com/gadfly361/reagent-seed)
+* [vase](https://github.com/cognitect-labs/vase)
+
+There is also a public [comparison chart](https://goo.gl/ZZH8fm) of the common templates.
 
 ## Misc.
 
