@@ -142,6 +142,7 @@ git push heroku master
 
 ## Other Templates
 
+* [chestnut](https://github.com/plexus/chestnut)
 * [luminus](https://github.com/luminus-framework/luminus-template)
 * [pedestal](https://github.com/pedestal/pedestal)
 * [reagent-figwheel](https://github.com/gadfly361/reagent-figwheel)
