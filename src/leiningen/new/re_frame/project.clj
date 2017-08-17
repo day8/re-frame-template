@@ -45,7 +45,7 @@
   {:dev
    {:dependencies [[binaryage/devtools "0.9.4"]{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
-                   [com.cemerick/piggieback "0.2.1"]{{/cider?}}]
+                   [com.cemerick/piggieback "0.2.2"]{{/cider?}}]
 
     :plugins      [[lein-figwheel "0.5.13"]{{#test?}}
                    [lein-doo "0.1.7"]{{/test?}}]
