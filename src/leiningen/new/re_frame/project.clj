@@ -1,11 +1,11 @@
 (defproject {{ns-name}} "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.229"]
-                 [reagent "0.6.0"]
-                 [re-frame "0.9.4"]{{#re-frisk?}}
+                 [org.clojure/clojurescript "1.9.908"]
+                 [reagent "0.7.0"]
+                 [re-frame "0.10.1"]{{#re-frisk?}}
                  [re-frisk "0.4.5"]{{/re-frisk?}}{{#re-com?}}
                  [org.clojure/core.async "0.2.391"]
-                 [re-com "2.0.0"]{{/re-com?}}{{#routes?}}
+                 [re-com "2.1.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.2"]
                  [ns-tracker "0.3.0"]{{/garden?}}{{#handler?}}
@@ -13,7 +13,7 @@
                  [yogthos/config "0.8"]
                  [ring "1.4.0"]{{/handler?}}]
 
-  :plugins [[lein-cljsbuild "1.1.4"]{{#garden?}}
+  :plugins [[lein-cljsbuild "1.1.5"]{{#garden?}}
             [lein-garden "0.2.8"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}{{#sass?}}
             [lein-sassy "1.0.8"]{{/sass?}}]
@@ -47,11 +47,11 @@
 
   :profiles
   {:dev
-   {:dependencies [[binaryage/devtools "0.8.2"]{{#cider?}}
+   {:dependencies [[binaryage/devtools "0.9.4"]{{#cider?}}
                    [figwheel-sidecar "0.5.9"]
                    [com.cemerick/piggieback "0.2.1"]{{/cider?}}]
 
-    :plugins      [[lein-figwheel "0.5.9"]{{#test?}}
+    :plugins      [[lein-figwheel "0.5.13"]{{#test?}}
                    [lein-doo "0.1.7"]{{/test?}}]
     }}
 
