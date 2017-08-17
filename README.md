@@ -28,7 +28,6 @@ The optional profiles include:
 * [less](https://github.com/montoux/lein-less) (`+less`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
-* [sass](https://github.com/vladh/lein-sassy) (`+sass`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
@@ -56,7 +55,7 @@ Put this in your Emacs config file:
 Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
 
 
-### Compile css (if using +garden, +less, or +sass):
+### Compile css (if using +garden or +less):
 
 Compile css file once.
 
@@ -64,8 +63,6 @@ Compile css file once.
 lein garden once
 
 lein less once
-
-lein sass once
 ```
 
 
@@ -75,8 +72,6 @@ Automatically recompile css file on change.
 lein garden auto
 
 lein less auto
-
-lein sass auto
 ```
 
 ### Run application:
