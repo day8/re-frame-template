@@ -107,6 +107,30 @@ lein doo phantom test once
 
 The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed. However, please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many other JS environments (chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
 
+NOTE: as a result of the recent update of clojurescript, will receive this error when running doo ([issue 142](https://github.com/bensu/doo/issues/142)):
+
+```
+;; ======================================================================
+;; Testing with Phantom:
+
+
+Testing everything.core-test
+
+FAIL in (fake-test) (:)
+fake description
+expected: (= 1 2)
+  actual: (not (= 1 2))
+
+Ran 1 tests containing 1 assertions.
+1 failures, 0 errors.
+WARNING: doo's init function was not set
+#object[TypeError TypeError: undefined is not an object (evaluating 'process_exit.call')]
+TypeError: undefined is not an object (evaluating 'process_exit.call')
+
+  phantomjs://code/phantom1945436062118516770.js:81 in onError
+Watching paths: /home/matthew/gadfly/projects/re-frame-template/temp/everything/src/cljs, /home/matthew/gadfly/projects/re-frame-template/temp/everything/test/cljs
+```
+
 ## Production Build
 
 To compile clojurescript to javascript:
