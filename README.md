@@ -29,6 +29,7 @@ The optional profiles include:
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
 * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
+* Helper aliases `lein build` and `lein dev` (`+aliases`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
 
@@ -77,11 +78,18 @@ lein garden auto
 lein less auto
 ```
 
+When using +aliases css also gets automatically built when running `lein build` and recompiled on change with `lein dev`.
+
 ### Run application:
 
 ```
 lein clean
 lein figwheel dev
+```
+
+When using +aliases you can just run:
+```
+lein dev
 ```
 
 Figwheel will automatically push cljs changes to the browser.
@@ -141,6 +149,10 @@ To compile clojurescript to javascript:
 ```
 lein clean
 lein cljsbuild once min
+```
+When using +aliases you can just run:
+```
+lein build
 ```
 
 If you're using +handler
