@@ -34,6 +34,7 @@
    :ns-name   (sanitize-ns name)
    :sanitized (name-to-path name)
    :cider?    (helpers/invoke-option "+cider" options)
+   :aliases?  (helpers/option? "+aliases" options)
    :garden?   (helpers/invoke-option garden/option options)
    :handler?  (helpers/invoke-option handler/option options)
    :less?     (helpers/invoke-option less/option options)
@@ -56,6 +57,7 @@
 
 (def available-set
   #{"+cider"
+    "+aliases"
     garden/option
     handler/option
     less/option
