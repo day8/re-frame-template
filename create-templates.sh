@@ -73,7 +73,7 @@ cd ../../..
 
 
 printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk\n"
-lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk
+lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +aliases
 cd everything
 lein garden once
 lein less once

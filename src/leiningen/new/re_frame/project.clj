@@ -59,7 +59,7 @@
                    [re-frisk "0.5.0"]{{/re-frisk?}}]
 
     :plugins      [[lein-figwheel "0.5.13"]{{#test?}}
-                   [lein-doo "0.1.7"]{{/test?}}{{#aliases?}}
+                   [lein-doo "0.1.8"]{{/test?}}{{#aliases?}}
                    [lein-pdo "0.1.1"]{{/aliases?}}]}}
 
   :cljsbuild
