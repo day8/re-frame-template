@@ -65,7 +65,7 @@ lein dev
 {{^aliases?}}
 ```
 lein clean
-lein figwheel dev
+lein with-profile dev figwheel dev
 ```
 {{/aliases?}}
 
