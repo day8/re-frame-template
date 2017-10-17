@@ -52,7 +52,9 @@
 {{/aliases?}}
 
   :profiles
-  {:dev
+  {:default []
+
+   :dev
    {:dependencies [[binaryage/devtools "0.9.4"]{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
