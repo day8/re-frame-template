@@ -1,22 +1,22 @@
 (ns {{ns-name}}.views
-  (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as re-frame]
+            [{{ns-name}}.subs :as subs]
+            ))
 
 
 ;; home
 
 (defn home-panel []
-  (let [name (re-frame/subscribe [:name])]
-    (fn []
-      [:div (str "Hello from " @name ". This is the Home Page.")
-       [:div [:a {:href "#/about"} "go to About Page"]]])))
+  (let [name (re-frame/subscribe [::subs/name])]
+    [:div (str "Hello from " @name ". This is the Home Page.")
+     [:div [:a {:href "#/about"} "go to About Page"]]]))
 
 
 ;; about
 
 (defn about-panel []
-  (fn []
-    [:div "This is the About Page."
-     [:div [:a {:href "#/"} "go to Home Page"]]]))
+  [:div "This is the About Page."
+   [:div [:a {:href "#/"} "go to Home Page"]]])
 
 
 ;; main
@@ -31,6 +31,5 @@
   [panels panel-name])
 
 (defn main-panel []
-  (let [active-panel (re-frame/subscribe [:active-panel])]
-    (fn []
-      [show-panel @active-panel])))
+  (let [active-panel (re-frame/subscribe [::subs/active-panel])]
+    [show-panel @active-panel]))

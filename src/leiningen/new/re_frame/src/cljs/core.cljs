@@ -1,8 +1,7 @@
 (ns {{ns-name}}.core
   (:require [reagent.core :as reagent]
             [re-frame.core :as re-frame]
-            [{{ns-name}}.events]
-            [{{ns-name}}.subs]{{#routes?}}
+            [{{ns-name}}.events :as events]{{#routes?}}
             [{{ns-name}}.routes :as routes]{{/routes?}}
             [{{ns-name}}.views :as views]
             [{{ns-name}}.config :as config]))
@@ -20,6 +19,6 @@
 
 (defn ^:export init []{{#routes?}}
   (routes/app-routes){{/routes?}}
-  (re-frame/dispatch-sync [:initialize-db])
+  (re-frame/dispatch-sync [::events/initialize-db])
   (dev-setup)
   (mount-root))

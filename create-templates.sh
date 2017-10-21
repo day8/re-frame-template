@@ -12,14 +12,6 @@ cd resources/public
 google-chrome index.html
 cd ../../..
 
-printf "\ncreating base +cider\n"
-lein new re-frame base-cider +cider
-cd base-cider
-lein cljsbuild once min
-cd resources/public
-google-chrome index.html
-cd ../../..
-
 printf "\ncreating base +routes\n"
 lein new re-frame base-routes +routes
 cd base-routes
@@ -36,33 +28,6 @@ cd resources/public
 google-chrome index.html
 cd ../../..
 
-printf "\ncreating base +test\n"
-lein new re-frame base-test +test
-cd base-test
-lein cljsbuild once min
-lein doo phantom test once
-cd resources/public
-google-chrome index.html
-cd ../../..
-
-printf "\ncreating base +garden\n"
-lein new re-frame base-garden +garden
-cd base-garden
-lein garden once
-lein cljsbuild once min
-cd resources/public
-google-chrome index.html
-cd ../../..
-
-printf "\ncreating base +less\n"
-lein new re-frame base-less +less
-cd base-less
-lein less once
-lein cljsbuild once min
-cd resources/public
-google-chrome index.html
-cd ../../..
-
 printf "\ncreating base +routes +re-com\n"
 lein new re-frame base-routes-recom +routes +re-com
 cd base-routes-recom
@@ -71,8 +36,7 @@ cd resources/public
 google-chrome index.html
 cd ../../..
 
-
-printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk\n"
+printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk +aliases\n"
 lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +aliases
 cd everything
 lein garden once

@@ -1,16 +1,17 @@
 (ns {{ns-name}}.views
   (:require [re-frame.core :as re-frame]
-            [re-com.core :as re-com]))
+            [re-com.core :as re-com]
+            [{{ns-name}}.subs :as subs]
+            ))
 
 
 ;; home
 
 (defn home-title []
-  (let [name (re-frame/subscribe [:name])]
-    (fn []
-      [re-com/title
-       :label (str "Hello from " @name ". This is the Home Page.")
-       :level :level1])))
+  (let [name (re-frame/subscribe [::subs/name])]
+    [re-com/title
+     :label (str "Hello from " @name ". This is the Home Page.")
+     :level :level1]))
 
 (defn link-to-about-page []
   [re-com/hyperlink-href
@@ -53,8 +54,7 @@
   [panels panel-name])
 
 (defn main-panel []
-  (let [active-panel (re-frame/subscribe [:active-panel])]
-    (fn []
-      [re-com/v-box
-       :height "100%"
-       :children [[panels @active-panel]]])))
+  (let [active-panel (re-frame/subscribe [::subs/active-panel])]
+    [re-com/v-box
+     :height "100%"
+     :children [[panels @active-panel]]]))

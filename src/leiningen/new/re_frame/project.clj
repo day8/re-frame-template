@@ -3,6 +3,7 @@
                  [org.clojure/clojurescript "1.9.908"]
                  [reagent "0.7.0"]
                  [re-frame "0.10.1"]{{#re-com?}}
+                 [com.andrewmcveigh/cljs-time "0.5.0"]
                  [org.clojure/core.async "0.2.391"]
                  [re-com "2.1.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}

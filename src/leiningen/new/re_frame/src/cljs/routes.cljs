@@ -2,13 +2,15 @@
   (:require-macros [secretary.core :refer [defroute]])
   (:import goog.History)
   (:require [secretary.core :as secretary]
-            [goog.events :as events]
+            [goog.events :as gevents]
             [goog.history.EventType :as EventType]
-            [re-frame.core :as re-frame]))
+            [re-frame.core :as re-frame]
+            [{{ns-name}}.events :as events]
+            ))
 
 (defn hook-browser-navigation! []
   (doto (History.)
-    (events/listen
+    (gevents/listen
      EventType/NAVIGATE
      (fn [event]
        (secretary/dispatch! (.-token event))))
@@ -19,10 +21,10 @@
   ;; --------------------
   ;; define routes here
   (defroute "/" []
-    (re-frame/dispatch [:set-active-panel :home-panel]))
+    (re-frame/dispatch [::events/set-active-panel :home-panel]))
 
   (defroute "/about" []
-    (re-frame/dispatch [:set-active-panel :about-panel]))
+    (re-frame/dispatch [::events/set-active-panel :about-panel]))
 
 
   ;; --------------------
