@@ -27,6 +27,7 @@ The optional profiles include:
 * [garden](https://github.com/noprompt/garden) (`+garden`)
 * [less](https://github.com/montoux/lein-less) (`+less`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
+* [re-frame-trace](https://github.com/Day8/re-frame-trace) (`+trace`)
 * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 * Helper aliases `lein build` and `lein dev` (`+aliases`)

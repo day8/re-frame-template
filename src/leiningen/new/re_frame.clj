@@ -42,6 +42,7 @@
    :re-frisk? (helpers/invoke-option "+re-frisk" options)
    :routes?   (helpers/invoke-option routes/option options)
    :test?     (helpers/invoke-option test/option options)
+   :trace?    (helpers/invoke-option "+trace" options)
 
    ;;prep-tasks
    :prep-garden (when (helpers/option? garden/option options)
@@ -64,7 +65,8 @@
     re-com/option
     "+re-frisk"
     routes/option
-    test/option})
+    test/option
+    "+trace"})
 
 (defn check-available [options]
   (let [options-set (into #{} options)
@@ -78,7 +80,6 @@
   [options]
   (doto options
     check-available))
-
 
 
 
