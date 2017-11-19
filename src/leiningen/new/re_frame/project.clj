@@ -55,9 +55,7 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.4"]{{#trace?}}
-                   [cljsjs/d3 "4.3.0-5"]
-                   [day8.re-frame/trace "0.1.7"]
-                   {{/trace?}}{{#cider?}}
+                   [day8.re-frame/trace "0.1.12"]{{/trace?}}{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
                    [re-frisk "0.5.0"]{{/re-frisk?}}]
