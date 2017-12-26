@@ -58,7 +58,7 @@
                    [day8.re-frame/trace "0.1.12"]{{/trace?}}{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
-                   [re-frisk "0.5.0"]{{/re-frisk?}}]
+                   [re-frisk "0.5.3"]{{/re-frisk?}}]
 
     :plugins      [[lein-figwheel "0.5.13"]{{#test?}}
                    [lein-doo "0.1.8"]{{/test?}}{{#aliases?}}
