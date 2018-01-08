@@ -93,11 +93,9 @@ When using +aliases you can just run:
 lein dev
 ```
 
-Figwheel will automatically push cljs changes to the browser.
-
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
-## Setting Up Your Browser
+### Setting Up Your Browser
 
 So, you now have the application running.
 
@@ -105,8 +103,8 @@ Before you start developing, you should tweak two settings within your
 browser's `devtools`. These are one-time actions (for each browser and laptop you use). 
 I'll assume Chrome for the purposes of further explanation: 
 
-1. Open devtools - press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
-1. Now press F1 to open up the devtools "Settings" panel. (Not the Setting panel for Chrome itself! The Settings panel for devtools)
+1. Open devtools. Press press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
+1. Open devtool's "Setting" Panel. Press F1. (Careful. Not the Setting panel for Chrome itself!! The Settings panel for devtools)
 1. Under the "Network" heading, tick the option "Disable cache (while DevTools is open)". You don't want figwheel's attempts at reloading to be defeated by caching. 
 1. Under the "Console" heading, tick the option "Enable custom formatters". This allows [cljs-devtools](https://github.com/binaryage/cljs-devtools) to perform its magic.
 1. Close Settings. Close Devtools. 
@@ -114,21 +112,23 @@ I'll assume Chrome for the purposes of further explanation:
 
 ![settings](docs/images/devtools-settings.png)
 
-### Open Debug Window (if using +trace):
+### Open Trace Window (if using +trace):
 
 To use `re-frame-trace` for debugging your app: 
   1. click on the application, minimal through it is, to give it "input focus" (you want to be sure that any key presses are going to your new app)
   2. press `Ctrl-H` and you should see `re-frame-trace` appear on the right side of the window
 
-Sometimes achieving Step 1 on a really simple app - one without widgets - can be a bit fiddly, 
+Sometimes achieving Step 1 on a really simple app - one without widgets - can be fiddly, 
 because the browser itself hogs "input focus" and grabs all the keystrokes (like `Ctrl-H`) which don't
-then make it through to the app. You may need to be determined and creative with Step 1.
+then make it through to your app. You may need to be determined and creative with Step 1. 
+I have every confidence in you.
 
 ### Hot Reloading Is Now Go
 
 If you now edit files in `/src`, like perhaps `views.cljs`, Figwheel will automatically 
-recompile your changes and "hot load" them into the running app, without the app needing 
-to be re-started.
+recompile your changes and "hot load" them into your running app, without your app needing 
+to be re-started. The resulting fast, iterative workflow tends to make you very productive, and 
+is cherished by those lucky enough to experience it.
 
 ### debug?:
 
