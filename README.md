@@ -99,8 +99,10 @@ Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
 ## Setting Up Your Browser
 
+So, you now have the application running.  
 Before you start developing, you should tweak two settings within your 
-browser's `devtools`. These are one-time actions (for each browser and laptop you use). I'll assume Chrome for the purposes of explanation: 
+browser's `devtools`. These are one-time actions (for each browser and laptop you use). 
+I'll assume Chrome for the purposes of further explanation: 
 
 1. Open devtools - press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
 1. Now press F1 to open up the devtools "Settings" panel. (Not the Setting panel for Chrome itself! The Settings panel for devtools)
@@ -111,9 +113,15 @@ browser's `devtools`. These are one-time actions (for each browser and laptop yo
 
 ![settings](docs/images/devtools-settings.png)
 
-If you are using `re-frame-trace` for debugging (you used `+trace` earlier when doing the `lein new` step):
-  - click on the application, minimal through it is, to give it focus  (you want to be sure that key presses are going to your new app)
-  - press `Ctrl-H` and you should see `re-frame-trace` appear on the right side of the window
+### Open Debug Window (if using +trace):
+
+To use `re-frame-trace` for debugging: 
+  1. click on the application, minimal through it is, to give it "focus" (you want to be sure that any key presses are going to your new app)
+  2. press `Ctrl-H` and you should see `re-frame-trace` appear on the right side of the window
+
+Sometimes achieving Step 1 on a really simple app - one without widgets - can be a bit fiddly, 
+because the browser itself hogs "focus" and grabs all the keystrokes (like `Ctrl-H`) which don't
+then make it through to the app. You might need to be determined and creative with Step 1.
 
 ### debug?:
 
