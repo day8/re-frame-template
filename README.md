@@ -99,7 +99,8 @@ Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
 ## Setting Up Your Browser
 
-So, you now have the application running.  
+So, you now have the application running.
+
 Before you start developing, you should tweak two settings within your 
 browser's `devtools`. These are one-time actions (for each browser and laptop you use). 
 I'll assume Chrome for the purposes of further explanation: 
@@ -115,21 +116,29 @@ I'll assume Chrome for the purposes of further explanation:
 
 ### Open Debug Window (if using +trace):
 
-To use `re-frame-trace` for debugging: 
-  1. click on the application, minimal through it is, to give it "focus" (you want to be sure that any key presses are going to your new app)
+To use `re-frame-trace` for debugging your app: 
+  1. click on the application, minimal through it is, to give it "input focus" (you want to be sure that any key presses are going to your new app)
   2. press `Ctrl-H` and you should see `re-frame-trace` appear on the right side of the window
 
 Sometimes achieving Step 1 on a really simple app - one without widgets - can be a bit fiddly, 
-because the browser itself hogs "focus" and grabs all the keystrokes (like `Ctrl-H`) which don't
-then make it through to the app. You might need to be determined and creative with Step 1.
+because the browser itself hogs "input focus" and grabs all the keystrokes (like `Ctrl-H`) which don't
+then make it through to the app. You may need to be determined and creative with Step 1.
+
+### Hot Reloading Is Now Go
+
+If you now edit files in `/src`, like perhaps `views.cljs`, Figwheel will automatically 
+recompile your changes and "hot load" them into the running app, without the app needing 
+to be re-started.
 
 ### debug?:
 
 In _project-name.config_, there is a variable called `debug?`, which
-defaults to _true_. However, for the `min` build, this variable is
+defaults to _true_. However, for the `min` build (look inside of `project.clj`), this variable is
 re-defined to _false_.
 
-When `debug?` is true, we include `(enable-console-print!)`. If you, for example, you wrap your `println`s with a `when` block as show below, then you will get logs printed to the browser's console for the `dev` build and not the `min` build.
+When `debug?` is true, we include `(enable-console-print!)`. If you, for example, 
+you wrap your `println`s with a `when` block as show below, then you will get logs 
+printed to the browser's console for the `dev` build and not the `min` build.
 
 ```clojure
 (when config/debug?
