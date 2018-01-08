@@ -11,7 +11,6 @@ The base template includes:
 * [re-frame](https://github.com/Day8/re-frame)
 * [figwheel](https://github.com/bhauman/lein-figwheel)
 * [cljs-devtools](https://github.com/binaryage/cljs-devtools)
-    * To enable: 1) Open Chrome's DevTools,`Ctrl-Shift-i`; 2) open "Settings", `F1`; 3) Check "Enable custom formatters" under the "Console" section; 4) close and re-open DevTools
 
 To create an application with the base template:
 
@@ -44,7 +43,8 @@ Any combination of profiles can be added at once:
 lein new re-frame <project-name> +garden +re-com +routes +test +less +re-frisk
 ```
 
-## Development Mode
+>  Note: to assist debugging, you'll probably want to include either `+re-frisk` or `+trace`. 
+
 
 ### Start Cider from Emacs (if using +cider):
 
@@ -96,6 +96,24 @@ lein dev
 Figwheel will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
+## Setting Up Your Browser
+
+Before you start developing, you should tweak two settings within your 
+browser's `devtools`. These are one-time actions. We'll assume Chrome for the purposes of explanation: 
+
+1. Open devtools - press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
+1. Now press F1 to open up the devtools "Settings" panel. (Not the Setting panel for Chrome itself! The Settings panel for devtools)
+1. Under the "Network" heading, tick the option "Disable cache (while DevTools is open)". You don't want figwheel's attempts at reloading to be defeated by caching. 
+1. Under the "Console" heading, tick the option "Enable custom formatters". This allows [cljs-devtools](https://github.com/binaryage/cljs-devtools) to perform its magic.
+1. Close Settings. Close Devtools. 
+1. Reopen Devtools 
+
+![settings](docs/images/devtools-settings.png)
+
+If you are using `re-frame-trace` for debugging (you used `+trace` earlier when doing the `lein new` step):
+  - click on the application, minimal through it is, to give it focus  (you want to be sure that key presses are going to your new app)
+  - press `Ctrl-H` and you should see `re-frame-trace` appear on the right side of the window
 
 ### debug?:
 
@@ -154,17 +172,21 @@ git push heroku master
 ## Other Templates
 
 * [chestnut](https://github.com/plexus/chestnut)
-* [luminus](https://github.com/luminus-framework/luminus-template)
-* [pedestal](https://github.com/pedestal/pedestal)
+* [luminus](https://github.com/luminus-framework/luminus-template)  (full stack)
 * [reagent-figwheel](https://github.com/gadfly361/reagent-figwheel)
 * [reagent-seed](https://github.com/gadfly361/reagent-seed)
-* [vase](https://github.com/cognitect-labs/vase)
 
-There is also a public [comparison chart](https://goo.gl/ZZH8fm) of the common templates.
+## Backend Options
 
-## Misc.
+* [ring](https://github.com/ring-clojure/ring) and [liberator](http://clojure-liberator.github.io/liberator/)
+* [duct]()https://github.com/duct-framework/duct)
+* [yada](https://github.com/juxt/yada)
+* [pedestal](https://github.com/pedestal/pedestal) and [vase](https://github.com/cognitect-labs/vase)
 
-Looking for some re-frame scaffolding? Check out [slush-reframe](https://github.com/kristianmandrup/slush-reframe).
+## More re-frame
+
+Looking for more re-frame inspiration, templates or example applications?
+See the [external resources](https://github.com/Day8/re-frame/blob/master/docs/External-Resources.md) docs page.
 
 ## Contributing
 
