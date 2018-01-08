@@ -100,7 +100,7 @@ Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 ## Setting Up Your Browser
 
 Before you start developing, you should tweak two settings within your 
-browser's `devtools`. These are one-time actions. We'll assume Chrome for the purposes of explanation: 
+browser's `devtools`. These are one-time actions (for each browser and laptop you use). I'll assume Chrome for the purposes of explanation: 
 
 1. Open devtools - press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
 1. Now press F1 to open up the devtools "Settings" panel. (Not the Setting panel for Chrome itself! The Settings panel for devtools)
