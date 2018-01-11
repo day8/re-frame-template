@@ -115,7 +115,7 @@ I'll assume Chrome for the purposes of further explanation:
 ### Open Trace Window (if using +trace):
 
 To use `re-frame-trace` for debugging your app: 
-  1. click on the application, minimal through it is, to give it "input focus" (you want to be sure that any key presses are going to your new app)
+  1. click on the application, minimal through it is, to give it "input<project-name> focus" (you want to be sure that any key presses are going to your new app)
   2. press `Ctrl-H` and you should see `re-frame-trace` appear on the right side of the window
 
 Sometimes achieving Step 1 on a really simple app - one without widgets - can be fiddly, 
@@ -125,7 +125,7 @@ I have every confidence in you.
 
 ### Hot Reloading Is Now Go
 
-If you now edit files in `/src`, like perhaps `views.cljs`, Figwheel will automatically 
+If you now edit files, like perhaps `/src/cljs/<project-name>/views.cljs`, Figwheel will automatically 
 recompile your changes and "hot load" them into your running app, without your app needing 
 to be re-started. The resulting fast, iterative workflow tends to make you very productive, and 
 is cherished by those lucky enough to experience it.
