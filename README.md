@@ -1,10 +1,10 @@
 # re-frame-template
 
-Leiningen template for [reagent](https://github.com/reagent-project/reagent) web apps that implements the [re-frame](https://github.com/Day8/re-frame) pattern.
+Leiningen template for [reagent](https://github.com/reagent-project/reagent) web apps which implement the [re-frame](https://github.com/Day8/re-frame) pattern.
 
-Through the use of profiles, this template lets the developer pick and choose what is included in their application.
+Through the use of profiles, this template lets the developer pick and choose what "extras" are included in their application.
 
-## Usage
+## Basic Usage
 
 The base template includes:
 
@@ -17,6 +17,8 @@ To create an application with the base template:
 ```
 lein new re-frame <project-name>
 ```
+
+## Extras
 
 The optional profiles include:
 
@@ -46,7 +48,7 @@ lein new re-frame <project-name> +garden +re-com +routes +test +less +re-frisk
 >  Note: to assist debugging, you'll probably want to include either `+re-frisk` or `+trace`. 
 
 
-### Start Cider from Emacs (if using +cider):
+## Start Cider from Emacs (if using +cider):
 
 Put this in your Emacs config file:
 
@@ -60,7 +62,7 @@ Put this in your Emacs config file:
 Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
 
 
-### Compile css (if using +garden or +less):
+## Compile css (if using +garden or +less):
 
 Compile css file once.
 
@@ -81,7 +83,7 @@ lein less auto
 
 When using +aliases css also gets automatically built when running `lein build` and recompiled on change with `lein dev`.
 
-### Run application:
+## Run application:
 
 ```
 lein clean
@@ -95,7 +97,7 @@ lein dev
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
-### Setting Up Your Browser
+## Setting Up Your Browser
 
 So, you now have the application running.
 
@@ -112,7 +114,7 @@ I'll assume Chrome for the purposes of further explanation:
 
 ![settings](docs/images/devtools-settings.png)
 
-### Open Trace Window (if using +trace):
+## Open Trace Window (if using +trace):
 
 To use `re-frame-trace` for debugging your app: 
   1. click on the application, minimal through it is, to give it "input<project-name> focus" (you want to be sure that any key presses are going to your new app)
@@ -123,7 +125,7 @@ because the browser itself hogs "input focus" and grabs all the keystrokes (like
 then make it through to your app. You may need to be determined and creative with Step 1. 
 I have every confidence in you.
 
-### Hot Reloading Is Now Go
+## Hot Reloading Is Now Go
 
 If you now edit files, like perhaps `/src/cljs/<project-name>/views.cljs`, Figwheel will automatically 
 recompile your changes and "hot load" them into your running app, without your app needing 
@@ -145,7 +147,7 @@ printed to the browser's console for the `dev` build and not the `min` build.
   (println "dev mode"))
 ```
 
-### Run tests (if using +test):
+## Run tests (if using +test):
 
 ```
 lein clean
