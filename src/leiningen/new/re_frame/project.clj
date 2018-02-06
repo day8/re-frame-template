@@ -2,7 +2,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
                  [reagent "0.7.0"]
-                 [re-frame "0.10.2"]{{#re-com?}}
+                 [re-frame "0.10.4"]{{#re-com?}}
                  [com.andrewmcveigh/cljs-time "0.5.0"]
                  [org.clojure/core.async "0.2.391"]
                  [re-com "2.1.0"]{{/re-com?}}{{#routes?}}
@@ -55,7 +55,7 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.4"]{{#trace?}}
-                   [day8.re-frame/trace "0.1.14"]{{/trace?}}{{#cider?}}
+                   [day8.re-frame/trace "0.1.18"]{{/trace?}}{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
                    [re-frisk "0.5.3"]{{/re-frisk?}}]
