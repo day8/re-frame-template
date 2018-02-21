@@ -42,7 +42,7 @@
    :re-frisk? (helpers/invoke-option "+re-frisk" options)
    :routes?   (helpers/invoke-option routes/option options)
    :test?     (helpers/invoke-option test/option options)
-   :trace?    (helpers/invoke-option "+trace" options)
+   :10x?      (helpers/invoke-option "+10x" options)
 
    ;;prep-tasks
    :prep-garden (when (helpers/option? garden/option options)
@@ -66,7 +66,7 @@
     "+re-frisk"
     routes/option
     test/option
-    "+trace"})
+    "+10x"})
 
 (defn check-available [options]
   (let [options-set (into #{} options)

@@ -2,7 +2,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
                  [reagent "0.7.0"]
-                 [re-frame "0.10.4"]{{#re-com?}}
+                 [re-frame "0.10.5"]{{#re-com?}}
                  [com.andrewmcveigh/cljs-time "0.5.0"]
                  [org.clojure/core.async "0.2.391"]
                  [re-com "2.1.0"]{{/re-com?}}{{#routes?}}
@@ -54,8 +54,8 @@
 
   :profiles
   {:dev
-   {:dependencies [[binaryage/devtools "0.9.4"]{{#trace?}}
-                   [day8.re-frame/trace "0.1.19"]{{/trace?}}{{#cider?}}
+   {:dependencies [[binaryage/devtools "0.9.4"]{{#10x?}}
+                   [day8.re-frame/re-frame-10x "0.2.0"]{/10x?}{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
                    [re-frisk "0.5.3"]{{/re-frisk?}}]
@@ -74,10 +74,10 @@
                     :output-dir           "resources/public/js/compiled/out"
                     :asset-path           "js/compiled/out"
                     :source-map-timestamp true
-                    :preloads             [devtools.preload{{#trace?}}
-                                           day8.re-frame.trace.preload{{/trace?}}{{#re-frisk?}}
-                                           re-frisk.preload{{/re-frisk?}}]{{#trace?}}
-                    :closure-defines      {"re_frame.trace.trace_enabled_QMARK_" true}{{/trace?}}
+                    :preloads             [devtools.preload{{#10x?}}
+                                           day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
+                                           re-frisk.preload{{/re-frisk?}}]{{#10x?}}
+                    :closure-defines      {"re_frame.trace.trace_enabled_QMARK_" true}{{/10x?}}
                     :external-config      {:devtools/config {:features-to-install :all}}
                     }}
 

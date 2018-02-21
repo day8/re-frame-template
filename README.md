@@ -22,13 +22,13 @@ lein new re-frame <project-name>
 
 The optional profiles include:
 
+* [re-frame-10x](https://github.com/Day8/re-frame-10x) (`+10x`)
 * [cider](https://github.com/clojure-emacs/cider) (`+cider`)
 * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
 * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 * [garden](https://github.com/noprompt/garden) (`+garden`)
 * [less](https://github.com/montoux/lein-less) (`+less`)
 * [re-com](https://github.com/Day8/re-com) (`+re-com`)
-* [re-frame-trace](https://github.com/Day8/re-frame-trace) (`+trace`)
 * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
 * [secretary](https://github.com/gf3/secretary) (`+routes`)
 * Helper aliases `lein build` and `lein dev` (`+aliases`)
@@ -42,10 +42,10 @@ lein new re-frame <project-name> +re-com
 Any combination of profiles can be added at once:
 
 ```
-lein new re-frame <project-name> +garden +re-com +routes +test +less +re-frisk
+lein new re-frame <project-name> +garden +re-com +routes +test +less +10x
 ```
 
->  Note: to assist debugging, you'll probably want to include either `+re-frisk` or `+trace`. 
+>  Note: to assist debugging, you'll want to include either `+10x` or `+re-frisk` 
 
 
 ## Start Cider from Emacs (if using +cider):
@@ -114,11 +114,11 @@ I'll assume Chrome for the purposes of further explanation:
 
 ![settings](docs/images/devtools-settings.png)
 
-## Open Trace Window (if using +trace):
+## Open 10x Panel (if using +10x):
 
-To use `re-frame-trace` for debugging your app: 
+To use `re-frame-10x` for debugging your app: 
   1. click on the application, minimal through it is, to give it "input<project-name> focus" (you want to be sure that any key presses are going to your new app)
-  2. press `Ctrl-H` and you should see `re-frame-trace` appear on the right side of the window
+  2. press `Ctrl-H` and you should see the `re-frame-10x` panel appear on the right side of the window
 
 Sometimes achieving Step 1 on a really simple app - one without widgets - can be fiddly, 
 because the browser itself hogs "input focus" and grabs all the keystrokes (like `Ctrl-H`) which don't
