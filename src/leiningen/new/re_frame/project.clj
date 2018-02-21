@@ -55,7 +55,7 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.4"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "0.2.0"]{/10x?}{{#cider?}}
+                   [day8.re-frame/re-frame-10x "0.2.0"]{{/10x?}}{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
                    [re-frisk "0.5.3"]{{/re-frisk?}}]
