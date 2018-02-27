@@ -164,25 +164,29 @@ To compile clojurescript to javascript:
 lein clean
 lein cljsbuild once min
 ```
-When using +aliases you can just run:
+
+Or, when using `+aliases`,
+
 ```
 lein build
 ```
 
-If you're using +handler
+### Deploy to heroku (if using `+handler`)
+
+Create uberjar
 
 ```
 lein clean
 lein uberjar
 ```
 
-To deploy to heroku, first create your app:
+Create app on heroku
 
 ```
 heroku create
 ```
 
-Then deploy the application:
+Then deploy the application
 
 ```
 git push heroku master
