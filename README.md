@@ -198,7 +198,7 @@ git push heroku master
 ## Backend Options
 
 * [ring](https://github.com/ring-clojure/ring) and [liberator](http://clojure-liberator.github.io/liberator/)
-* [duct]()https://github.com/duct-framework/duct)
+* [duct](https://github.com/duct-framework/duct)
 * [yada](https://github.com/juxt/yada)
 * [pedestal](https://github.com/pedestal/pedestal) and [vase](https://github.com/cognitect-labs/vase)
 
