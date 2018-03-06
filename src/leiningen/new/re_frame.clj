@@ -10,6 +10,7 @@
    [leiningen.new.options.test :as test]
    [leiningen.new.options.views :as views]
    [leiningen.new.options.helpers :as helpers]
+   [leiningen.new.options.gadfly :as gadfly] ;; <-- intentionally undocumented
    [clojure.set :as set])
   (:use [leiningen.new.templates :only [name-to-path sanitize-ns ->files]]))
 
@@ -18,16 +19,20 @@
 ;; Files & Data for Template
 
 (defn app-files [data options]
-  (concat
-   (base/files data)
-   (views/view-cljs options data)
+  (if (helpers/option? gadfly/option options)
+    ;; then
+    (gadfly/files data)
+    ;;else
+    (concat
+     (base/files data)
+     (views/view-cljs options data)
 
-   (when (helpers/option? garden/option options) (garden/files data))
-   (when (helpers/option? less/option options) (less/files data))
-   (when (helpers/option? handler/option options) (handler/files data))
-   (when (helpers/option? re-com/option options) (re-com/assets data))
-   (when (helpers/option? routes/option options) (routes/routes-cljs data))
-   (when (helpers/option? test/option options) (test/files data))))
+     (when (helpers/option? garden/option options) (garden/files data))
+     (when (helpers/option? less/option options) (less/files data))
+     (when (helpers/option? handler/option options) (handler/files data))
+     (when (helpers/option? re-com/option options) (re-com/assets data))
+     (when (helpers/option? routes/option options) (routes/routes-cljs data))
+     (when (helpers/option? test/option options) (test/files data)))))
 
 (defn template-data [name options]
   {:name      name
@@ -66,7 +71,10 @@
     "+re-frisk"
     routes/option
     test/option
-    "+10x"})
+    "+10x"
+    ;; Note: this is a standalone, intentionally undocumented, option
+    gadfly/option
+    })
 
 (defn check-available [options]
   (let [options-set (into #{} options)

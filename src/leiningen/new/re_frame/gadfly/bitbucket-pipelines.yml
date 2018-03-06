@@ -1,0 +1,7 @@
+image: clojure:lein-2.7.1
+
+pipelines:
+  default:
+    - step:
+        script:
+          - lein test
