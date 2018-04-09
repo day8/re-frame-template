@@ -47,7 +47,7 @@
    :re-frisk? (helpers/invoke-option "+re-frisk" options)
    :routes?   (helpers/invoke-option routes/option options)
    :test?     (helpers/invoke-option test/option options)
-   :10x?      (helpers/invoke-option "+10x" options)
+   :10x?      (helpers/option? "+10x" options)
 
    ;;prep-tasks
    :prep-garden (when (helpers/option? garden/option options)
