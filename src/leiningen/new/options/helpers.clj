@@ -21,7 +21,8 @@
    (render-text resource-path data)))
 
 (defn option? [option-name options]
-    (some #{option-name} options))
+  (boolean
+   (some #{option-name} options)))
 
 (defn invoke-option [option options]
   (fn [block]

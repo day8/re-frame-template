@@ -46,7 +46,8 @@
                         ["pdo" ["figwheel" "dev"]{{#less?}}
                                ["less" "auto"]{{/less?}}{{#garden?}}
                                ["garden" "auto"]{{/garden?}}]]
-            "build" ["do" "clean"
+            "build" ["with-profile" "+prod,-dev" "do"
+                          ["clean"]
                           ["cljsbuild" "once" "min"]{{#less?}}
                           ["less" "once"]{{/less?}}{{#garden?}}
                           ["garden" "once"]{{/garden?}}]}
@@ -55,14 +56,16 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.4"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "0.2.0"]{{/10x?}}{{#cider?}}
+                   [day8.re-frame/re-frame-10x "0.3.0"]
+                   [day8.re-frame/tracing "0.5.0"]{{/10x?}}{{#cider?}}
                    [figwheel-sidecar "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
                    [re-frisk "0.5.3"]{{/re-frisk?}}]
 
     :plugins      [[lein-figwheel "0.5.13"]{{#test?}}
                    [lein-doo "0.1.8"]{{/test?}}{{#aliases?}}
-                   [lein-pdo "0.1.1"]{{/aliases?}}]}}
+                   [lein-pdo "0.1.1"]{{/aliases?}}]}
+   :prod { {{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.0"]]{{/10x?}}}}
 
   :cljsbuild
   {:builds
@@ -77,7 +80,8 @@
                     :preloads             [devtools.preload{{#10x?}}
                                            day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
                                            re-frisk.preload{{/re-frisk?}}]{{#10x?}}
-                    :closure-defines      {"re_frame.trace.trace_enabled_QMARK_" true}{{/10x?}}
+                    :closure-defines      {"re_frame.trace.trace_enabled_QMARK_" true
+                                           "day8.re_frame.tracing.trace_enabled_QMARK_" true}{{/10x?}}
                     :external-config      {:devtools/config {:features-to-install :all}}
                     }}
 
