@@ -28,7 +28,7 @@
     [:div]))
 
 (defn show-panel [panel-name]
-  [panels panel-name])
+  (panels panel-name))
 
 (defn main-panel []
   (let [active-panel (re-frame/subscribe [::subs/active-panel])]
