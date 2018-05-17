@@ -1,19 +1,19 @@
 (defproject {{ns-name}} "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.908"]
+                 [org.clojure/clojurescript "1.10.238"]
                  [reagent "0.7.0"]
                  [re-frame "0.10.5"]{{#re-com?}}
-                 [com.andrewmcveigh/cljs-time "0.5.0"]
+                 [com.andrewmcveigh/cljs-time "0.5.2"]
                  [org.clojure/core.async "0.2.391"]
                  [re-com "2.1.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
-                 [garden "1.3.2"]
-                 [ns-tracker "0.3.0"]{{/garden?}}{{#handler?}}
+                 [garden "1.3.5"]
+                 [ns-tracker "0.3.1"]{{/garden?}}{{#handler?}}
                  [compojure "1.5.0"]
                  [yogthos/config "0.8"]
                  [ring "1.4.0"]{{/handler?}}]
 
-  :plugins [[lein-cljsbuild "1.1.5"]{{#garden?}}
+  :plugins [[lein-cljsbuild "1.1.7"]{{#garden?}}
             [lein-garden "0.2.8"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}]
 
@@ -55,17 +55,17 @@
 
   :profiles
   {:dev
-   {:dependencies [[binaryage/devtools "0.9.4"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "0.3.0"]
-                   [day8.re-frame/tracing "0.5.0"]{{/10x?}}{{#cider?}}
-                   [figwheel-sidecar "0.5.13"]
-                   [com.cemerick/piggieback "0.2.2"]{{/cider?}}{{#re-frisk?}}
+   {:dependencies [[binaryage/devtools "0.9.10"]{{#10x?}}
+                   [day8.re-frame/re-frame-10x "0.3.3"]
+                   [day8.re-frame/tracing "0.5.1"]{{/10x?}}{{#cider?}}
+                   [figwheel-sidecar "0.5.16"]
+                   [cider/piggieback "0.2.3"]{{/cider?}}{{#re-frisk?}}
                    [re-frisk "0.5.3"]{{/re-frisk?}}]
 
-    :plugins      [[lein-figwheel "0.5.13"]{{#test?}}
+    :plugins      [[lein-figwheel "0.5.16"]{{#test?}}
                    [lein-doo "0.1.8"]{{/test?}}{{#aliases?}}
                    [lein-pdo "0.1.1"]{{/aliases?}}]}
-   :prod { {{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.0"]]{{/10x?}}}}
+   :prod { {{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}}}
 
   :cljsbuild
   {:builds
