@@ -88,7 +88,7 @@ The above command assumes that you have [phantomjs](https://www.npmjs.com/packag
 {{#handler?}}
 ```
 lein clean
-lein uberjar
+lein with-profile prod uberjar
 ```
 
 That should compile the clojurescript code first, and then create the standalone jar.

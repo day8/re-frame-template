@@ -177,7 +177,7 @@ Create uberjar
 
 ```
 lein clean
-lein uberjar
+lein with-profile prod uberjar
 ```
 
 Create app on heroku
