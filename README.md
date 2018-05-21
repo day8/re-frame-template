@@ -25,16 +25,22 @@ lein new re-frame <project-name>
 
 The optional profiles include:
 
-* [re-frame-10x](https://github.com/Day8/re-frame-10x) (`+10x`)
-* [cider](https://github.com/clojure-emacs/cider) (`+cider`)
-* [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
-* [compojure](https://github.com/weavejester/compojure) (`+handler`)
-* [garden](https://github.com/noprompt/garden) (`+garden`)
-* [less](https://github.com/montoux/lein-less) (`+less`)
-* [re-com](https://github.com/Day8/re-com) (`+re-com`)
-* [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
-* [secretary](https://github.com/gf3/secretary) (`+routes`)
-* Helper aliases `lein build` and `lein dev` (`+aliases`)
+* CSS
+  * [garden](https://github.com/noprompt/garden) (`+garden`)
+  * [less](https://github.com/montoux/lein-less) (`+less`)
+* Debug
+  * [re-frame-10x](https://github.com/Day8/re-frame-10x) (`+10x`)
+  * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
+* Development
+  * [cider](https://github.com/clojure-emacs/cider) (`+cider`)
+  * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
+  * Helper aliases `lein build` and `lein dev` (`+aliases`)
+* Full-stack
+  * [compojure](https://github.com/weavejester/compojure) (`+handler`)
+* Misc.
+  * [re-com](https://github.com/Day8/re-com) (`+re-com`)
+* Routing
+  * [secretary](https://github.com/gf3/secretary) (`+routes`)
 
 To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
 
