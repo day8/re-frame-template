@@ -88,6 +88,12 @@ When using +aliases css also gets automatically built when running `lein build` 
 
 ## Run application:
 
+Retreive dependencies:
+```
+lein deps
+```
+
+Then run:
 ```
 lein clean
 lein figwheel dev
