@@ -18,6 +18,8 @@ To create an application with the base template:
 lein new re-frame <project-name>
 ```
 
+> Troubleshooting note: for <project-name> don't use `cljs` or anything containing `cljs', like `name.cljs`. It will confuse the compiler and you will (later) see errors like `cljs.core.init is not a function`
+
 ## Extras
 
 The optional profiles include:
