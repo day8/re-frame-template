@@ -1,12 +1,30 @@
 (ns {{ns-name}}.views
-  (:require [re-frame.core :as re-frame]
-            [re-com.core :as re-com]
-            [{{ns-name}}.subs :as subs]
-            ))
+  (:require
+   [re-frame.core :as re-frame]
+   [re-com.core :as re-com]{{#re-pressed?}}
+   [re-pressed.core :as rp]{{/re-pressed?}}
+   [{{ns-name}}.subs :as subs]
+   ))
 
 
 ;; home
 
+{{#re-pressed?}}
+(defn display-re-pressed-example []
+  (let [re-pressed-example (re-frame/subscribe [::subs/re-pressed-example])]
+    [:div
+
+     [:p
+      [:span "Re-pressed is listening for keydown events. A message will be displayed when you type "]
+      [:strong [:code "hello"]]
+      [:span ". So go ahead, try it out!"]]
+
+     (when-let [rpe @re-pressed-example]
+       [re-com/alert-box
+        :alert-type :info
+        :body rpe])]))
+
+{{/re-pressed?}}
 (defn home-title []
   (let [name (re-frame/subscribe [::subs/name])]
     [re-com/title
@@ -21,7 +39,10 @@
 (defn home-panel []
   [re-com/v-box
    :gap "1em"
-   :children [[home-title] [link-to-about-page]]])
+   :children [[home-title]
+              [link-to-about-page]{{#re-pressed?}}
+              [display-re-pressed-example]{{/re-pressed?}}
+              ]])
 
 
 ;; about
@@ -39,7 +60,8 @@
 (defn about-panel []
   [re-com/v-box
    :gap "1em"
-   :children [[about-title] [link-to-home-page]]])
+   :children [[about-title]
+              [link-to-home-page]]])
 
 
 ;; main

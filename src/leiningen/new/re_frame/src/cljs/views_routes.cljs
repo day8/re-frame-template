@@ -1,22 +1,56 @@
 (ns {{ns-name}}.views
-  (:require [re-frame.core :as re-frame]
-            [{{ns-name}}.subs :as subs]
-            ))
+  (:require
+   [re-frame.core :as re-frame]{{#re-pressed?}}
+   [re-pressed.core :as rp]{{/re-pressed?}}
+   [{{ns-name}}.subs :as subs]
+   ))
 
 
 ;; home
 
+{{#re-pressed?}}
+(defn display-re-pressed-example []
+  (let [re-pressed-example (re-frame/subscribe [::subs/re-pressed-example])]
+    [:div
+
+     [:p
+      [:span "Re-pressed is listening for keydown events. A message will be displayed when you type "]
+      [:strong [:code "hello"]]
+      [:span ". So go ahead, try it out!"]]
+
+     (when-let [rpe @re-pressed-example]
+       [:div
+        {:style {:padding          "16px"
+                 :background-color "lightgrey"
+                 :border           "solid 1px grey"
+                 :border-radius    "4px"
+                 :margin-top       "16px"
+                 }}
+        rpe])]))
+
+{{/re-pressed?}}
 (defn home-panel []
   (let [name (re-frame/subscribe [::subs/name])]
-    [:div (str "Hello from " @name ". This is the Home Page.")
-     [:div [:a {:href "#/about"} "go to About Page"]]]))
+    [:div
+     [:h1 (str "Hello from " @name ". This is the Home Page.")]
+
+     [:div
+      [:a {:href "#/about"}
+       "go to About Page"]]{{#re-pressed?}}
+
+     [display-re-pressed-example]{{/re-pressed?}}
+     ]))
 
 
 ;; about
 
 (defn about-panel []
-  [:div "This is the About Page."
-   [:div [:a {:href "#/"} "go to Home Page"]]])
+  [:div
+   [:h1 "This is the About Page."]
+
+   [:div
+    [:a {:href "#/"}
+     "go to Home Page"]]])
 
 
 ;; main

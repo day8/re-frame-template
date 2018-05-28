@@ -11,7 +11,8 @@
                  [ns-tracker "0.3.1"]{{/garden?}}{{#handler?}}
                  [compojure "1.5.0"]
                  [yogthos/config "0.8"]
-                 [ring "1.4.0"]{{/handler?}}]
+                 [ring "1.4.0"]{{/handler?}}{{#re-pressed?}}
+                 [re-pressed "0.2.1"]{{/re-pressed?}}]
 
   :plugins [[lein-cljsbuild "1.1.7"]{{#garden?}}
             [lein-garden "0.2.8"]{{/garden?}}{{#less?}}

@@ -22,38 +22,64 @@
   (if (helpers/option? gadfly/option options)
     ;; then
     (gadfly/files data)
+
     ;;else
     (concat
      (base/files data)
      (views/view-cljs options data)
 
+     ;; css
      (when (helpers/option? garden/option options) (garden/files data))
      (when (helpers/option? less/option options) (less/files data))
+
+     ;; debug
+     ;;
+
+     ;; development
+     (when (helpers/option? test/option options) (test/files data))
+
+     ;; full-stack
      (when (helpers/option? handler/option options) (handler/files data))
+
+     ;; misc.
      (when (helpers/option? re-com/option options) (re-com/assets data))
+
+     ;; routing
      (when (helpers/option? routes/option options) (routes/routes-cljs data))
-     (when (helpers/option? test/option options) (test/files data)))))
+     )))
+
 
 (defn template-data [name options]
   {:name      name
    :ns-name   (sanitize-ns name)
    :sanitized (name-to-path name)
-   :cider?    (helpers/invoke-option "+cider" options)
-   :aliases?  (helpers/option? "+aliases" options)
-   :garden?   (helpers/invoke-option garden/option options)
-   :handler?  (helpers/invoke-option handler/option options)
-   :less?     (helpers/invoke-option less/option options)
-   :re-com?   (helpers/invoke-option re-com/option options)
+
+   ;; css
+   :garden? (helpers/invoke-option garden/option options)
+   :less?   (helpers/invoke-option less/option options)
+
+   ;; debug
    :re-frisk? (helpers/invoke-option "+re-frisk" options)
-   :routes?   (helpers/invoke-option routes/option options)
-   :test?     (helpers/invoke-option test/option options)
    :10x?      (helpers/option? "+10x" options)
 
-   ;;prep-tasks
+   ;; devlopment
+   :cider?   (helpers/invoke-option "+cider" options)
+   :test?    (helpers/invoke-option test/option options)
+   :aliases? (helpers/option? "+aliases" options)
+
+   ;; full-stack
+   :handler?    (helpers/invoke-option handler/option options)
    :prep-garden (when (helpers/option? garden/option options)
                   ["garden" "once"])
    :prep-less   (when (helpers/option? less/option options)
                   ["less" "once"])
+
+   ;; misc.
+   :re-com?     (helpers/invoke-option re-com/option options)
+   :re-pressed? (helpers/option? "+re-pressed" options)
+
+   ;; routing
+   :routes? (helpers/invoke-option routes/option options)
    })
 
 
@@ -62,19 +88,33 @@
 ;; Check Options
 
 (def available-set
-  #{"+cider"
-    "+aliases"
+  #{;; css
     garden/option
-    handler/option
     less/option
-    re-com/option
+
+    ;; debug
     "+re-frisk"
-    routes/option
-    test/option
     "+10x"
+
+    ;; development
+    "+cider"
+    test/option
+    "+aliases"
+
+    ;; full-stack
+    handler/option
+
+    ;; misc.
+    re-com/option
+    "+re-pressed"
+
+    ;; routing
+    routes/option
+
     ;; Note: this is a standalone, intentionally undocumented, option
     gadfly/option
     })
+
 
 (defn check-available [options]
   (let [options-set (into #{} options)
@@ -82,6 +122,7 @@
                                         options-set))]
     (when abort?
       (main/abort "\nError: invalid profile(s)\n"))))
+
 
 (defn check-options
   "Check the user-provided options"
