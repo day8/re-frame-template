@@ -2,10 +2,8 @@
 /target
 /*-init.clj
 /resources/public/js
-/resources/public/css
+resources/public/css/
 out
 
+.rebel_readline_history
 *.*~
-
-.lein-failures
-.nrepl-port
