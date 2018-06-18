@@ -1,3 +1,1 @@
-(ns {{ns-name}}.cofx
-  (:require
-   [{{ns-name}}.shared.breakpoints.cofx]))
+(ns {{ns-name}}.cofx)

@@ -77,18 +77,6 @@
    ["src/app/{{sanitized}}/shared/bin/subs.cljc"
     (helpers/render "gadfly/src/app/shared/bin/subs.cljc" data)]
 
-   ;; app > shared > breakpoints
-   ["src/app/{{sanitized}}/shared/breakpoints/cofx.cljs"
-    (helpers/render "gadfly/src/app/shared/breakpoints/cofx.cljs" data)]
-   ["src/app/{{sanitized}}/shared/breakpoints/event_handlers.cljc"
-    (helpers/render "gadfly/src/app/shared/breakpoints/event_handlers.cljc" data)]
-   ["src/app/{{sanitized}}/shared/breakpoints/events.cljs"
-    (helpers/render "gadfly/src/app/shared/breakpoints/events.cljs" data)]
-   ["src/app/{{sanitized}}/shared/breakpoints/sub_handlers.cljc"
-    (helpers/render "gadfly/src/app/shared/breakpoints/sub_handlers.cljc" data)]
-   ["src/app/{{sanitized}}/shared/breakpoints/subs.cljc"
-    (helpers/render "gadfly/src/app/shared/breakpoints/subs.cljc" data)]
-
    ;; app > shared > comps
    ["src/app/{{sanitized}}/shared/comps/appbar.cljs"
     (helpers/render "gadfly/src/app/shared/comps/appbar.cljs" data)]

@@ -2,8 +2,8 @@
   (:require
    [clojure.string :as string]
    [re-frame.core :as rf]
+   [breaking-point.core :as bp]
    [soda-ash.core :as sa]
-   [{{ns-name}}.shared.breakpoints.subs :as bps]
    [{{ns-name}}.shared.navigation.subs :as ns]
    [{{ns-name}}.shared.navigation.events :as ne]
    ))
@@ -18,7 +18,7 @@
 
 (defn component []
   (let [active-page @(rf/subscribe [::ns/active-page])
-        mobile? @(rf/subscribe [::bps/mobile?])]
+        mobile? @(rf/subscribe [::bp/mobile?])]
     [sa/Menu
      {:inverted   true
       :color      "teal"

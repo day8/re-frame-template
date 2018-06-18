@@ -77,6 +77,7 @@
    ;; misc.
    :re-com?     (helpers/invoke-option re-com/option options)
    :re-pressed? (helpers/option? "+re-pressed" options)
+   :breaking-point? (helpers/option? "+breaking-point" options)
 
    ;; routing
    :routes? (helpers/invoke-option routes/option options)
@@ -107,6 +108,7 @@
     ;; misc.
     re-com/option
     "+re-pressed"
+    "+breaking-point"
 
     ;; routing
     routes/option

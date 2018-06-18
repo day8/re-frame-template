@@ -9,6 +9,7 @@
                  [guaranteed-rate/re-flow "0.8.0"]
                  [funcool/bide "1.6.0"]
                  [garden "1.3.5"]
+                 [breaking-point "0.1.1"]
                  [re-pressed "0.2.1"]
                  [rid3 "0.2.1"]
                  [soda-ash "0.79.1"]]
@@ -18,7 +19,7 @@
 
   :min-lein-version "2.5.3"
 
-  :source-paths ["src/css"]
+  :source-paths ["src/app" "src/css"]
 
   :clean-targets ^{:protect false} ["resources/public/js"
                                     "target"]

@@ -1,6 +1,7 @@
 (ns {{ns-name}}.views
   (:require
-   [re-frame.core :as re-frame]{{#re-pressed?}}
+   [re-frame.core :as re-frame]{{#breaking-point?}}
+   [breaking-point.core :as bp]{{/breaking-point?}}{{#re-pressed?}}
    [re-pressed.core :as rp]{{/re-pressed?}}
    [{{ns-name}}.subs :as subs]
    ))
@@ -38,7 +39,10 @@
       [:a {:href "#/about"}
        "go to About Page"]]{{#re-pressed?}}
 
-     [display-re-pressed-example]{{/re-pressed?}}
+     [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
+     [:div
+      [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]
+      [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]{{/breaking-point?}}
      ]))
 
 

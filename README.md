@@ -39,6 +39,7 @@ The optional profiles include:
 * Misc.
   * [re-com](https://github.com/Day8/re-com) (`+re-com`)
   * [re-pressed](https://github.com/gadfly361/re-pressed) (`+re-pressed`)
+  * [breaking-point](https://github.com/gadfly361/breaking-point) (`+breaking-point`)
 * Routing
   * [secretary](https://github.com/gf3/secretary) (`+routes`)
 

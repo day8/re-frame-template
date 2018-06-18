@@ -1,7 +1,8 @@
 (ns {{ns-name}}.views
   (:require
    [re-frame.core :as re-frame]
-   [re-com.core :as re-com]{{#re-pressed?}}
+   [re-com.core :as re-com]{{#breaking-point?}}
+   [breaking-point.core :as bp]{{/breaking-point?}}{{#re-pressed?}}
    [re-pressed.core :as rp]
    [{{ns-name}}.events :as events]{{/re-pressed?}}
    [{{ns-name}}.subs :as subs]
@@ -59,5 +60,8 @@
   [re-com/v-box
    :height "100%"
    :children [[title]{{#re-pressed?}}
-              [display-re-pressed-example]{{/re-pressed?}}
+              [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
+              [:div
+               [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]
+               [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]{{/breaking-point?}}
               ]])
