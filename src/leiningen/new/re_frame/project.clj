@@ -13,7 +13,7 @@
                  [yogthos/config "0.8"]
                  [ring "1.4.0"]{{/handler?}}{{#re-pressed?}}
                  [re-pressed "0.2.2"]{{/re-pressed?}}{{#breaking-point?}}
-                 [breaking-point "0.1.1"]{{/breaking-point?}}]
+                 [breaking-point "0.1.2"]{{/breaking-point?}}]
 
   :plugins [[lein-cljsbuild "1.1.7"]{{#garden?}}
             [lein-garden "0.2.8"]{{/garden?}}{{#less?}}

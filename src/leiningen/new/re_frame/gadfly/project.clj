@@ -9,7 +9,7 @@
                  [guaranteed-rate/re-flow "0.8.0"]
                  [funcool/bide "1.6.0"]
                  [garden "1.3.5"]
-                 [breaking-point "0.1.1"]
+                 [breaking-point "0.1.2"]
                  [re-pressed "0.2.1"]
                  [rid3 "0.2.1"]
                  [soda-ash "0.79.1"]]
