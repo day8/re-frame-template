@@ -95,7 +95,7 @@ When using +aliases css also gets automatically built when running `lein build` 
 
 ## Run application:
 
-Retreive dependencies:
+Retrieve dependencies:
 ```
 lein deps
 ```
