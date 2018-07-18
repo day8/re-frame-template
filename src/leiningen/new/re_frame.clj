@@ -8,6 +8,7 @@
    [leiningen.new.options.re-com :as re-com]
    [leiningen.new.options.routes :as routes]
    [leiningen.new.options.test :as test]
+   [leiningen.new.options.cider :as cider]
    [leiningen.new.options.views :as views]
    [leiningen.new.options.helpers :as helpers]
    [leiningen.new.options.gadfly :as gadfly] ;; <-- intentionally undocumented
@@ -37,6 +38,7 @@
 
      ;; development
      (when (helpers/option? test/option options) (test/files data))
+     (when (helpers/option? cider/option options) (cider/files data))
 
      ;; full-stack
      (when (helpers/option? handler/option options) (handler/files data))
@@ -63,7 +65,7 @@
    :10x?      (helpers/option? "+10x" options)
 
    ;; devlopment
-   :cider?   (helpers/invoke-option "+cider" options)
+   :cider?   (helpers/invoke-option cider/option options)
    :test?    (helpers/invoke-option test/option options)
    :aliases? (helpers/option? "+aliases" options)
 
@@ -98,7 +100,7 @@
     "+10x"
 
     ;; development
-    "+cider"
+    cider/option
     test/option
     "+aliases"
 

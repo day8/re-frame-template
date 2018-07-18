@@ -58,18 +58,13 @@ lein new re-frame <project-name> +garden +re-com +routes +test +less +10x
 >  Note: to assist debugging, you'll want to include either `+10x` or `+re-frisk` 
 
 
-## Start Cider from Emacs (if using +cider):
+## Start CIDER from Emacs (if using +cider):
 
-Put this in your Emacs config file:
+The latest versions of CIDER support various clojurescript REPLs, including
+Figwheel. When using the `+cider` option, a `.dir-locals.el` file is added
+to the root directory which sets `cider-default-cljs-repl` to `figwheel`.
 
-```
-(setq cider-cljs-lein-repl
-	"(do (require 'figwheel-sidecar.repl-api)
-         (figwheel-sidecar.repl-api/start-figwheel!)
-         (figwheel-sidecar.repl-api/cljs-repl))")
-```
-
-Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
+Navigate to a clojurescript file and start a Figwheel REPL with `cider-jack-in-cljs` or (`C-c M-J`).
 
 
 ## Compile css (if using +garden or +less):
