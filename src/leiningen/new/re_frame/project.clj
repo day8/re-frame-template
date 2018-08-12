@@ -42,18 +42,6 @@
 {{/less?}}{{#cider?}}
   :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
 {{/cider?}}
-{{#aliases?}}
-
-  :aliases {"dev" ["do" "clean"
-                        ["pdo" ["figwheel" "dev"]{{#less?}}
-                               ["less" "auto"]{{/less?}}{{#garden?}}
-                               ["garden" "auto"]{{/garden?}}]]
-            "build" ["with-profile" "+prod,-dev" "do"
-                          ["clean"]
-                          ["cljsbuild" "once" "min"]{{#less?}}
-                          ["less" "once"]{{/less?}}{{#garden?}}
-                          ["garden" "once"]{{/garden?}}]}
-{{/aliases?}}
 
   :profiles
   {:dev
@@ -65,8 +53,7 @@
                    [re-frisk "0.5.3"]{{/re-frisk?}}]
 
     :plugins      [[lein-figwheel "0.5.16"]{{#test?}}
-                   [lein-doo "0.1.8"]{{/test?}}{{#aliases?}}
-                   [lein-pdo "0.1.1"]{{/aliases?}}]}
+                   [lein-doo "0.1.8"]{{/test?}}]}
    :prod { {{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}}}
 
   :cljsbuild

@@ -31,10 +31,6 @@ Automatically recompile css file on change.
 ```
 lein garden auto
 ```
-{{#aliases?}}
-
-CSS also gets automatically built when running `lein build` and recompiled on change with `lein dev`.
-{{/aliases?}}
 
 {{/garden?}}{{#less?}}### Compile css:
 
@@ -49,25 +45,14 @@ Automatically recompile css file on change.
 ```
 lein less auto
 ```
-{{#aliases?}}
-
-CSS also gets automatically built when running `lein build` and recompiled on change with `lein dev`.
-{{/aliases?}}
 
 {{/less?}}
 ### Run application:
 
-{{#aliases?}}
-```
-lein dev
-```
-{{/aliases?}}
-{{^aliases?}}
 ```
 lein clean
 lein figwheel dev
 ```
-{{/aliases?}}
 
 Figwheel will automatically push cljs changes to the browser.
 
@@ -120,14 +105,7 @@ git push heroku master
 
 To compile clojurescript to javascript:
 
-{{#aliases?}}
-```
-lein build
-```
-{{/aliases?}}
-{{^aliases?}}
 ```
 lein clean
 lein cljsbuild once min
 ```
-{{/aliases?}}

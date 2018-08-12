@@ -33,7 +33,6 @@ The optional profiles include:
 * Development
   * [cider](https://github.com/clojure-emacs/cider) (`+cider`)
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
-  * Helper aliases `lein build` and `lein dev` (`+aliases`)
 * Full-stack
   * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 * Misc.
@@ -91,8 +90,6 @@ lein garden auto
 lein less auto
 ```
 
-When using +aliases css also gets automatically built when running `lein build` and recompiled on change with `lein dev`.
-
 ## Run application:
 
 Retrieve dependencies:
@@ -104,11 +101,6 @@ Then run:
 ```
 lein clean
 lein figwheel dev
-```
-
-When using +aliases you can just run:
-```
-lein dev
 ```
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
@@ -188,12 +180,6 @@ To compile clojurescript to javascript:
 ```
 lein clean
 lein cljsbuild once min
-```
-
-Or, when using `+aliases`,
-
-```
-lein build
 ```
 
 ### Deploy to heroku (if using `+handler`)

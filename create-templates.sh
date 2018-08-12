@@ -36,10 +36,10 @@ cd resources/public
 google-chrome index.html
 cd ../../..
 
-printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk +aliases +10x +re-pressed +breaking-point\n"
-lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +aliases +10x +re-pressed +breaking-point
+printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point\n"
+lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point
 cd everything
-lein build 			#  from +aliases
+lein cljsbuild once min
 lein doo phantom test once
 cd resources/public
 google-chrome index.html

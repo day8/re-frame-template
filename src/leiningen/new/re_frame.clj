@@ -65,7 +65,6 @@
    ;; devlopment
    :cider?   (helpers/invoke-option "+cider" options)
    :test?    (helpers/invoke-option test/option options)
-   :aliases? (helpers/option? "+aliases" options)
 
    ;; full-stack
    :handler?    (helpers/invoke-option handler/option options)
@@ -100,7 +99,6 @@
     ;; development
     "+cider"
     test/option
-    "+aliases"
 
     ;; full-stack
     handler/option
