@@ -75,12 +75,21 @@ Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
 {{#test?}}### Run tests:
 
+Install karma and headless chrome
+
 ```
-lein clean
-lein doo phantom test once
+npm install -g karma-cli
+npm install karma karma-cljs-test karma-chrome-launcher --save-dev
 ```
 
-The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed. However, please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many other JS environments (chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
+And then run your tests
+
+```
+lein clean
+lein doo chrome-headless test once
+```
+
+Please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many JS environments (phantom, chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
 
 {{/test?}}
 ## Production Build

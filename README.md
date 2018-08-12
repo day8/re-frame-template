@@ -165,12 +165,21 @@ printed to the browser's console for the `dev` build and not the `min` build.
 
 ## Run tests (if using +test):
 
+Install karma and headless chrome
+
 ```
-lein clean
-lein doo phantom test once
+npm install -g karma-cli
+npm install karma karma-cljs-test karma-chrome-launcher --save-dev
 ```
 
-The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed. However, please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many other JS environments (chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
+And then run your tests
+
+```
+lein clean
+lein doo chrome-headless test once
+```
+
+Please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many JS environments (phantom, chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
 
 ## Production Build
 
