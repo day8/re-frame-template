@@ -40,7 +40,9 @@ printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-
 lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point
 cd everything
 lein cljsbuild once min
-lein doo phantom test once
+npm install -g karma-cli
+npm install karma karma-cljs-test karma-chrome-launcher --save-dev
+lein doo chrome-headless test once
 cd resources/public
 google-chrome index.html
 cd ../../..
