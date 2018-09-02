@@ -54,7 +54,7 @@
 
     :plugins      [[lein-figwheel "0.5.16"]{{#test?}}
                    [lein-doo "0.1.8"]{{/test?}}]}
-   :prod {{{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}}{{#handler?}}
+   :prod { {{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}}{{#handler?}}
    :uberjar {:source-paths ["env/prod/clj"]{{#10x?}}
              :dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}
              :omit-source  true
