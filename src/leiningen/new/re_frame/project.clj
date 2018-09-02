@@ -54,7 +54,15 @@
 
     :plugins      [[lein-figwheel "0.5.16"]{{#test?}}
                    [lein-doo "0.1.8"]{{/test?}}]}
-   :prod { {{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}}}
+   :prod {{{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}}{{#handler?}}
+   :uberjar {:source-paths ["env/prod/clj"]{{#10x?}}
+             :dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}
+             :omit-source  true
+             :main         {{ns-name}}.server
+             :aot          [{{ns-name}}.server]
+             :uberjar-name "{{name}}.jar"
+             :prep-tasks   ["compile" ["cljsbuild" "once" "min"]{{{prep-garden}}}{{{prep-less}}}]}{{/handler?}}
+   }
 
   :cljsbuild
   {:builds
@@ -91,13 +99,4 @@
                     :output-dir    "resources/public/js/compiled/test/out"
                     :optimizations :none}}{{/test?}}
     ]}
-{{#handler?}}
-
-  :main {{ns-name}}.server
-
-  :aot [{{ns-name}}.server]
-
-  :uberjar-name "{{name}}.jar"
-
-  :prep-tasks [["cljsbuild" "once" "min"]{{{prep-garden}}}{{{prep-less}}} "compile"]{{/handler?}}
   )
