@@ -1,8 +1,8 @@
 (defproject {{ns-name}} "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.10.238"]
-                 [reagent "0.7.0"]
-                 [re-frame "0.10.5"]{{#re-com?}}
+  :dependencies [[org.clojure/clojure "1.10.0"]
+                 [org.clojure/clojurescript "1.10.520"]
+                 [reagent "0.8.1"]
+                 [re-frame "0.10.6"]{{#re-com?}}
                  [com.andrewmcveigh/cljs-time "0.5.2"]
                  [org.clojure/core.async "0.2.391"]
                  [re-com "2.1.0"]{{/re-com?}}{{#routes?}}
@@ -46,13 +46,13 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.10"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "0.3.3"]
+                   [day8.re-frame/re-frame-10x "0.3.7-react16"]
                    [day8.re-frame/tracing "0.5.1"]{{/10x?}}{{#cider?}}
                    [figwheel-sidecar "0.5.16"]
                    [cider/piggieback "0.3.5"]{{/cider?}}{{#re-frisk?}}
-                   [re-frisk "0.5.3"]{{/re-frisk?}}]
+                   [re-frisk "0.5.4"]{{/re-frisk?}}]
 
-    :plugins      [[lein-figwheel "0.5.16"]{{#test?}}
+    :plugins      [[lein-figwheel "0.5.18"]{{#test?}}
                    [lein-doo "0.1.8"]{{/test?}}]}
    :prod { {{#10x?}}:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]{{/10x?}}}{{#handler?}}
    :uberjar {:source-paths ["env/prod/clj"]{{#10x?}}
