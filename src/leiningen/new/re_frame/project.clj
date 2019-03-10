@@ -3,9 +3,7 @@
                  [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.8.1"]
                  [re-frame "0.10.6"]{{#re-com?}}
-                 [com.andrewmcveigh/cljs-time "0.5.2"]
-                 [org.clojure/core.async "0.2.391"]
-                 [re-com "2.1.0"]{{/re-com?}}{{#routes?}}
+                 [re-com "2.4.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.5"]
                  [ns-tracker "0.3.1"]{{/garden?}}{{#handler?}}
