@@ -5,7 +5,7 @@
 
 (defn files [data]
   [;; top-level
-   [".gitignore" (helpers/render "gadfly/.gitignore" data)]
+   [".gitignore" (helpers/render "gadfly/gitignore" data)]
    ["project.clj" (helpers/render "gadfly/project.clj" data)]
    ["README.md" (helpers/render "gadfly/README.md" data)]
 
