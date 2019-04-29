@@ -7,7 +7,7 @@
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.5"]
                  [ns-tracker "0.3.1"]{{/garden?}}{{#handler?}}
-                 [compojure "1.5.0"]
+                 [compojure "1.6.1"]
                  [yogthos/config "0.8"]
                  [ring "1.4.0"]{{/handler?}}{{#re-pressed?}}
                  [re-pressed "0.2.2"]{{/re-pressed?}}{{#breaking-point?}}
