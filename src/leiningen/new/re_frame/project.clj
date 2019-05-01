@@ -1,6 +1,9 @@
 (defproject {{ns-name}} "0.1.0-SNAPSHOT"
+[
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [org.clojure/clojurescript "1.10.520"]
+                 [org.clojure/clojurescript "1.10.520"]{{#shadow-cljs?}}
+                 [com.google.javascript/closure-compiler-unshaded "v20190325"]
+                 [org.clojure/google-closure-library "0.0-20190213-2033d5d9"]{{/shadow-cljs?}}
                  [reagent "0.8.1"]
                  [re-frame "0.10.8"]{{#re-com?}}
                  [re-com "2.5.0"]{{/re-com?}}{{#routes?}}
@@ -48,7 +51,8 @@
                    [day8.re-frame/tracing "0.5.1"]{{/10x?}}{{#cider?}}
                    [figwheel-sidecar "0.5.18"]
                    [cider/piggieback "0.4.1"]{{/cider?}}{{#re-frisk?}}
-                   [re-frisk "0.5.4.1"]{{/re-frisk?}}]
+                   [re-frisk "0.5.4.1"]{{/re-frisk?}}{{#shadow-cljs?}}
+                   [thheller/shadow-cljs "2.8.36"]{{/shadow-cljs?}}]
 
     :plugins      [[lein-figwheel "0.5.18"]{{#test?}}
                    [lein-doo "0.1.8"]{{/test?}}]}

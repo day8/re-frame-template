@@ -11,6 +11,7 @@
    [leiningen.new.options.views :as views]
    [leiningen.new.options.helpers :as helpers]
    [leiningen.new.options.gadfly :as gadfly] ;; <-- intentionally undocumented
+   [leiningen.new.options.shadow-cljs :as shadow-cljs]
    [clojure.set :as set])
   (:use [leiningen.new.templates :only [name-to-path sanitize-ns ->files]]))
 
@@ -40,6 +41,7 @@
 
      ;; full-stack
      (when (helpers/option? handler/option options) (handler/files data))
+     (when (helpers/option? shadow-cljs/option options) (shadow-cljs/files data))
 
      ;; misc.
      (when (helpers/option? re-com/option options) (re-com/assets data))
@@ -65,6 +67,7 @@
    ;; devlopment
    :cider?   (helpers/invoke-option "+cider" options)
    :test?    (helpers/invoke-option test/option options)
+   :shadow-cljs? (helpers/option? shadow-cljs/option options)
 
    ;; full-stack
    :handler?    (helpers/invoke-option handler/option options)
@@ -99,6 +102,7 @@
     ;; development
     "+cider"
     test/option
+    shadow-cljs/option
 
     ;; full-stack
     handler/option

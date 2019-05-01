@@ -33,6 +33,7 @@ The optional profiles include:
 * Development
   * [cider](https://github.com/clojure-emacs/cider) (`+cider`)
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
+  * [shadow-cljs](https://github.com/thheller/shadow-cljs) (`+shadow-cljs`)
 * Full-stack
   * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 * Misc.
@@ -101,6 +102,21 @@ Then run:
 ```
 lein clean
 lein figwheel dev
+```
+
+Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
+## Run application with shadow-cljs
+Retrieve dependencies:
+```
+lein deps
+npm install
+```
+
+Then run:
+```
+lein clean
+shadow-cljs watch app
 ```
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
@@ -180,6 +196,15 @@ To compile clojurescript to javascript:
 ```
 lein clean
 lein cljsbuild once min
+```
+
+### Production Build (shadow-cljs)
+
+To compile clojurescript to javascript:
+
+```
+lein clean
+shadow-cljs release app
 ```
 
 ### Deploy to heroku (if using `+handler`)
