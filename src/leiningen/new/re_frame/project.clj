@@ -12,7 +12,7 @@
                  [compojure "1.6.1"]
                  [yogthos/config "0.8"]
                  [ring "1.4.0"]{{/handler?}}{{#re-pressed?}}
-                 [re-pressed "0.2.2"]{{/re-pressed?}}{{#breaking-point?}}
+                 [re-pressed "0.3.0"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
   :plugins [[lein-cljsbuild "1.1.7"]{{#garden?}}
@@ -46,7 +46,7 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.10"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "0.3.7-react16"]
+                   [day8.re-frame/re-frame-10x "0.4.0"]
                    [day8.re-frame/tracing "0.5.1"]{{/10x?}}{{#cider?}}
                    [figwheel-sidecar "0.5.16"]
                    [cider/piggieback "0.3.5"]{{/cider?}}{{#re-frisk?}}
