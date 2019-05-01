@@ -1,0 +1,11 @@
+{:lein   true
+ :builds {:app {:target          :browser
+                :output-dir      "resources/public/js/compiled"
+                :asset-path      "/js/compiled"
+                :modules         {:app {:entries [{{name}}.core]}}{{#10x?}}
+                :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}{{/10x?}}
+                :devtools        {:http-root  "resources/public"
+                                  :http-port  3449
+                                  :preloads   [{{#10x?}}day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
+                                               re-frisk.preload{{/re-frisk?}}]
+                                  :after-load {{name}}.core/mount-root}}}}

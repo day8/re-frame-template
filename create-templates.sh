@@ -36,13 +36,27 @@ cd resources/public
 google-chrome index.html
 cd ../../..
 
-printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point\n"
-lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point
+printf "\ncreating base +shadow-cljs\n"
+lein new re-frame base-shadow-cljs +shadow-cljs
+cd base-shadow-cljs
+npm install
+shadow-cljs release app
+cd resources/public
+google-chrome index.html
+cd ../../..
+
+printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point +shadow-cljs\n"
+lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point +shadow-cljs
 cd everything
 lein cljsbuild once min
 npm install -g karma-cli
 npm install karma karma-cljs-test karma-chrome-launcher --save-dev
 lein doo chrome-headless test once
+cd resources/public
+google-chrome index.html
+cd ../../
+npm install
+shadow-cljs release app
 cd resources/public
 google-chrome index.html
 cd ../../..
