@@ -3,7 +3,7 @@
                  [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.8.1"]
                  [re-frame "0.10.6"]{{#re-com?}}
-                 [re-com "2.4.0"]{{/re-com?}}{{#routes?}}
+                 [re-com "2.5.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.9"]
                  [ns-tracker "0.3.1"]{{/garden?}}{{#handler?}}
