@@ -10,7 +10,7 @@
                  [funcool/bide "1.6.0"]
                  [garden "1.3.9"]
                  [breaking-point "0.1.2"]
-                 [re-pressed "0.2.1"]
+                 [re-pressed "0.3.0"]
                  [rid3 "0.2.1"]
                  [soda-ash "0.79.1"]]
 

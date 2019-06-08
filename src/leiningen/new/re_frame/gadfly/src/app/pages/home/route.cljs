@@ -17,13 +17,13 @@
   (rf/dispatch [::be/reset-bin id])
   (rf/dispatch [::rp/set-keydown-rules
                 {:event-keys [[[::e/set-re-pressed-example id "Hello, world!"]
-                               [{:which 72} ;; h
-                                {:which 69} ;; e
-                                {:which 76} ;; l
-                                {:which 76} ;; l
-                                {:which 79} ;; o
+                               [{:keyCode 72} ;; h
+                                {:keyCode 69} ;; e
+                                {:keyCode 76} ;; l
+                                {:keyCode 76} ;; l
+                                {:keyCode 79} ;; o
                                 ]]]
                  :clear-keys
-                 [[{:which 27} ;; escape
+                 [[{:keyCode 27} ;; escape
                    ]]}]
                ))
