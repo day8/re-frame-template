@@ -46,7 +46,7 @@
    {:dependencies [[binaryage/devtools "0.9.10"]{{#10x?}}
                    [day8.re-frame/re-frame-10x "0.4.0"]
                    [day8.re-frame/tracing "0.5.1"]{{/10x?}}{{#cider?}}
-                   [figwheel-sidecar "0.5.16"]
+                   [figwheel-sidecar "0.5.18"]
                    [cider/piggieback "0.3.5"]{{/cider?}}{{#re-frisk?}}
                    [re-frisk "0.5.4.1"]{{/re-frisk?}}]
 
