@@ -9,7 +9,7 @@
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
                  [compojure "1.6.1"]
                  [yogthos/config "0.8"]
-                 [ring "1.4.0"]{{/handler?}}{{#re-pressed?}}
+                 [ring "1.7.1"]{{/handler?}}{{#re-pressed?}}
                  [re-pressed "0.3.0"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
