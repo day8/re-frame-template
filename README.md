@@ -35,6 +35,8 @@ The optional profiles include:
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
 * Full-stack
   * [compojure](https://github.com/weavejester/compojure) (`+handler`)
+* Effect Handlers
+  * [`:http`](https://github.com/day8/re-frame-http-fx-2) (`+http-fx`)
 * Misc.
   * [re-com](https://github.com/Day8/re-com) (`+re-com`)
   * [re-pressed](https://github.com/gadfly361/re-pressed) (`+re-pressed`)

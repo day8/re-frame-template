@@ -73,6 +73,9 @@
    :prep-less   (when (helpers/option? less/option options)
                   ["less" "once"])
 
+   ;; effect handlers
+   :http-fx? (helpers/option? "+http-fx" options)
+
    ;; misc.
    :re-com?     (helpers/invoke-option re-com/option options)
    :re-pressed? (helpers/option? "+re-pressed" options)
@@ -102,6 +105,9 @@
 
     ;; full-stack
     handler/option
+
+    ;; effect handlers
+    "+http-fx"
 
     ;; misc.
     re-com/option

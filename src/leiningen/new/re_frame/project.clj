@@ -9,7 +9,8 @@
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
                  [compojure "1.6.1"]
                  [yogthos/config "1.1.2"]
-                 [ring "1.7.1"]{{/handler?}}{{#re-pressed?}}
+                 [ring "1.7.1"]{{/handler?}}{{#http-fx?}}
+                 [day8.re-frame/http-fx-2 "2.0.0-SNAPSHOT"]{{/http-fx?}}{{#re-pressed?}}
                  [re-pressed "0.3.0"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 

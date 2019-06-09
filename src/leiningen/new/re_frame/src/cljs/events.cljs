@@ -23,3 +23,35 @@
  (fn [db [_ value]]
    (assoc db :re-pressed-example value)))
 {{/re-pressed?}}
+{{#http-fx?}}
+
+(re-frame/reg-event-db
+  ::generic-http-in-wait
+  (fn [_ [_ req]]
+    (let [{:http/keys [request-id]} req]
+      (assoc db :request-id request-id))))
+
+(re-frame/reg-event-fx
+  ::generic-http-in-problem
+  (fn [_ [_ {:http/keys [context] :as req} {:http/keys [status] :as res} {:http/keys [failure] :as err}]]
+   (let [temporary? (or (= :timeout failure)
+                        (= 503 status))
+         max-retries (get context :max-retries 0)
+         retry-count (get context :retry-count 0)
+         path        (get context :path)
+         try-again? (and (< retry-count max-retries) temporary?)]
+     (if try-again?
+       (let [re-request (-> request
+                            (assoc-in [:http/context :retry-count] (inc retry-count))
+                            (assoc :http/with-profile :none))]
+         {:http re-request
+          :db (assoc-in db (conj path :message) "Taking a bit longer than expected...")})
+       {:http {:http/transition :failed
+               :http/request    request}}))))
+
+(re-frame/reg-event-fx
+  ::generic-http-in-wait
+  (fn [_ [_ {:http/keys [context] :as req}]]
+
+    ))
+{{/http-fx?}}
