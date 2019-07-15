@@ -3,7 +3,7 @@
                  [org.clojure/clojurescript "1.10.238"]
                  [ns-tracker "0.3.1"]
                  [reagent "0.7.0"]
-                 [re-frame "0.10.7"]
+                 [re-frame "0.10.8"]
                  [re-frame-utils "0.1.0"]
                  [day8.re-frame/async-flow-fx "0.0.10"]
                  [guaranteed-rate/re-flow "0.8.0"]
