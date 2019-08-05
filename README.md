@@ -242,6 +242,8 @@ Copyright © 2015 Matthew Jaoudi
 Copyright © 2015 Dylan Paris
 Copyright © 2015 Michael Thompson
 Copyright © 2015 Markku Rontu
+Copyright © 2016 Daniel Compton
+Copyright © 2019 Isaac Johnston
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
