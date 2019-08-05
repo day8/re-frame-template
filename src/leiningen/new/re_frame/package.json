@@ -1,10 +1,15 @@
 {
   "devDependencies": {
-    "shadow-cljs": "^2.8.36"
+    "shadow-cljs": "^2.8.42"{{#test?}},
+    "karma": "^4.2.0",
+    "karma-chrome-launcher": "^3.0.0",
+    "karma-cljs-test": "^0.1.0"{{/test?}}
   },
   "dependencies":{
     "create-react-class": "^15.6.3",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"{{#10x?}},
+    "react-flip-move": "^3.0.1",
+    "react-highlight.js": "^1.0.7"{{/10x?}}
   }
 }

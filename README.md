@@ -1,15 +1,17 @@
 # re-frame-template
 
-Leiningen template for [reagent](https://github.com/reagent-project/reagent) web apps which implement the [re-frame](https://github.com/Day8/re-frame) pattern.
+Leiningen template for [reagent](https://github.com/reagent-project/reagent) web
+apps which implement the [re-frame](https://github.com/Day8/re-frame) pattern.
 
-Through the use of profiles, this template lets the developer pick and choose what "extras" are included in their application.
+Through the use of profiles, this template lets the developer pick and choose 
+what "extras" are included in their application.
 
 ## Basic Usage
 
 The base template includes:
 
 * [re-frame](https://github.com/Day8/re-frame)
-* [figwheel](https://github.com/bhauman/lein-figwheel)
+* [shadow-cljs](https://shadow-cljs.github.io/docs/UsersGuide.html)
 * [cljs-devtools](https://github.com/binaryage/cljs-devtools)
 
 To create an application with the base template:
@@ -32,8 +34,7 @@ The optional profiles include:
   * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
 * Development
   * [cider](https://github.com/clojure-emacs/cider) (`+cider`)
-  * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) and [doo](https://github.com/bensu/doo) (`+test`)
-  * [shadow-cljs](https://github.com/thheller/shadow-cljs) (`+shadow-cljs`)
+  * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
 * Full-stack
   * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 * Misc.
@@ -60,17 +61,9 @@ lein new re-frame <project-name> +garden +re-com +routes +test +less +10x
 
 ## Start Cider from Emacs (if using +cider):
 
-Put this in your Emacs config file:
+Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#cider).
 
-```
-(setq cider-cljs-lein-repl
-	"(do (require 'figwheel-sidecar.repl-api)
-         (figwheel-sidecar.repl-api/start-figwheel!)
-         (figwheel-sidecar.repl-api/cljs-repl))")
-```
-
-Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
-
+The mentioned `dir-local.el` file is created by this template.
 
 ## Compile css (if using +garden or +less):
 
@@ -96,30 +89,21 @@ lein less auto
 Retrieve dependencies:
 ```
 lein deps
+yarn install  # or npm install
 ```
 
 Then run:
 ```
 lein clean
-lein figwheel dev
+lein dev
 ```
 
-Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+Wait a bit, then browse to [http://localhost:8280](http://localhost:8280).
 
-## Run application with shadow-cljs
-Retrieve dependencies:
+To see other available shadow-cljs commands run:
 ```
-lein deps
-npm install
+lein run -m shadow.cljs.devtools.cli --help
 ```
-
-Then run:
-```
-lein clean
-shadow-cljs watch app
-```
-
-Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
 ## Setting Up Your Browser
 
@@ -177,17 +161,15 @@ Install karma and headless chrome
 
 ```
 npm install -g karma-cli
-npm install karma karma-cljs-test karma-chrome-launcher --save-dev
 ```
 
 And then run your tests
 
 ```
 lein clean
-lein doo chrome-headless test once
+lein run -m shadow.cljs.devtools.cli compile karma-test
+karma start --single-run --reporters junit,dots
 ```
-
-Please note that [doo](https://github.com/bensu/doo) can be configured to run cljs.test in many JS environments (phantom, chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
 
 ## Production Build
 
@@ -195,16 +177,7 @@ To compile clojurescript to javascript:
 
 ```
 lein clean
-lein cljsbuild once min
-```
-
-### Production Build (shadow-cljs)
-
-To compile clojurescript to javascript:
-
-```
-lein clean
-shadow-cljs release app
+lein prod
 ```
 
 ### Deploy to heroku (if using `+handler`)

@@ -11,7 +11,7 @@
    [leiningen.new.options.views :as views]
    [leiningen.new.options.helpers :as helpers]
    [leiningen.new.options.gadfly :as gadfly] ;; <-- intentionally undocumented
-   [leiningen.new.options.shadow-cljs :as shadow-cljs]
+   [leiningen.new.options.cider :as cider]
    [clojure.set :as set])
   (:use [leiningen.new.templates :only [name-to-path sanitize-ns ->files]]))
 
@@ -41,14 +41,14 @@
 
      ;; full-stack
      (when (helpers/option? handler/option options) (handler/files data))
-     (when (helpers/option? shadow-cljs/option options) (shadow-cljs/files data))
+     (when (helpers/option? cider/option options) (cider/files data))
 
      ;; misc.
      (when (helpers/option? re-com/option options) (re-com/assets data))
 
      ;; routing
-     (when (helpers/option? routes/option options) (routes/routes-cljs data))
-     )))
+     (when (helpers/option? routes/option options) (routes/routes-cljs data)))))
+
 
 
 (defn template-data [name options]
@@ -65,9 +65,8 @@
    :10x?      (helpers/option? "+10x" options)
 
    ;; devlopment
-   :cider?   (helpers/invoke-option "+cider" options)
+   :cider?   (helpers/invoke-option cider/option options)
    :test?    (helpers/invoke-option test/option options)
-   :shadow-cljs? (helpers/option? shadow-cljs/option options)
 
    ;; full-stack
    :handler?    (helpers/invoke-option handler/option options)
@@ -82,8 +81,8 @@
    :breaking-point? (helpers/option? "+breaking-point" options)
 
    ;; routing
-   :routes? (helpers/invoke-option routes/option options)
-   })
+   :routes? (helpers/invoke-option routes/option options)})
+
 
 
 
@@ -100,9 +99,8 @@
     "+10x"
 
     ;; development
-    "+cider"
+    cider/option
     test/option
-    shadow-cljs/option
 
     ;; full-stack
     handler/option
@@ -116,8 +114,8 @@
     routes/option
 
     ;; Note: this is a standalone, intentionally undocumented, option
-    gadfly/option
-    })
+    gadfly/option})
+
 
 
 (defn check-available [options]

@@ -1,11 +1,39 @@
 {:lein   true
+
+ :nrepl {:port 8777}
+
  :builds {:app {:target          :browser
                 :output-dir      "resources/public/js/compiled"
                 :asset-path      "/js/compiled"
-                :modules         {:app {:entries [{{name}}.core]}}{{#10x?}}
-                :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}{{/10x?}}
-                :devtools        {:http-root  "resources/public"
-                                  :http-port  3449
-                                  :preloads   [{{#10x?}}day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
-                                               re-frisk.preload{{/re-frisk?}}]
-                                  :after-load {{name}}.core/mount-root}}}}
+                :dev             {:modules          {:app {:entries [devtools.preload{{#10x?}}
+                                                                     day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
+                                                                     re-frisk.preload{{/re-frisk?}}
+                                                                     {{name}}.core]}}{{#10x?}}
+                                  :compiler-options {:closure-defines {re-frame.trace.trace-enabled?        true
+                                                                       day8.re-frame.tracing.trace-enabled? true}}{{/10x?}}}
+                :release         {:modules          {:app {:entries [{{name}}.core]}}
+                                  :compiler-options {:optimizations :advanced
+                                                     :pretty-print  false
+                                                     :closure-defines {goog.DEBUG                           false{{#10x?}}
+                                                                       re-frame.trace.trace-enabled?        false
+                                                                       day8.re-frame.tracing.trace-enabled? false{{/10x?}}}}}
+                :devtools        {:http-root    "resources/public"
+                                  :http-port    8280{{#handler?}}
+                                  :http-handler {{name}}.handler/dev-handler{{/handler?}}
+                                  :preloads     [devtools.preload{{#10x?}}
+                                                 day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
+                                                 re-frisk.preload{{/re-frisk?}}]
+                                  :after-load   {{name}}.core/mount-root}}{{#test?}}
+
+          :browser-test
+          {:target :browser-test
+           :ns-regexp "-test$"
+           :runner-ns shadow.test.browser
+           :test-dir "target/browser-test"
+           :devtools {:http-root "target/browser-test"
+                      :http-port 8290}}
+
+          :karma-test
+          {:target :karma
+           :ns-regexp "-test$"
+           :output-to "target/karma-test.js"}{{/test?}}}}
