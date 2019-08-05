@@ -4,4 +4,4 @@
 (def option "+cider")
 
 (defn files [data]
-  [["dir-local.el" (helpers/render "dir-local.el" data)]])
+  [[".dir-locals.el" (helpers/render "dir-locals.el" data)]])
