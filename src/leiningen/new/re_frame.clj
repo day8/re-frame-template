@@ -10,7 +10,6 @@
    [leiningen.new.options.test :as test]
    [leiningen.new.options.views :as views]
    [leiningen.new.options.helpers :as helpers]
-   [leiningen.new.options.gadfly :as gadfly] ;; <-- intentionally undocumented
    [leiningen.new.options.cider :as cider]
    [clojure.set :as set])
   (:use [leiningen.new.templates :only [name-to-path sanitize-ns ->files]]))
@@ -20,34 +19,29 @@
 ;; Files & Data for Template
 
 (defn app-files [data options]
-  (if (helpers/option? gadfly/option options)
-    ;; then
-    (gadfly/files data)
+  (concat
+   (base/files data)
+   (views/view-cljs options data)
 
-    ;;else
-    (concat
-     (base/files data)
-     (views/view-cljs options data)
+   ;; css
+   (when (helpers/option? garden/option options) (garden/files data))
+   (when (helpers/option? less/option options) (less/files data))
 
-     ;; css
-     (when (helpers/option? garden/option options) (garden/files data))
-     (when (helpers/option? less/option options) (less/files data))
+   ;; debug
+   ;;
 
-     ;; debug
-     ;;
+   ;; development
+   (when (helpers/option? test/option options) (test/files data))
 
-     ;; development
-     (when (helpers/option? test/option options) (test/files data))
+   ;; full-stack
+   (when (helpers/option? handler/option options) (handler/files data))
+   (when (helpers/option? cider/option options) (cider/files data))
 
-     ;; full-stack
-     (when (helpers/option? handler/option options) (handler/files data))
-     (when (helpers/option? cider/option options) (cider/files data))
+   ;; misc.
+   (when (helpers/option? re-com/option options) (re-com/assets data))
 
-     ;; misc.
-     (when (helpers/option? re-com/option options) (re-com/assets data))
-
-     ;; routing
-     (when (helpers/option? routes/option options) (routes/routes-cljs data)))))
+   ;; routing
+   (when (helpers/option? routes/option options) (routes/routes-cljs data))))
 
 
 
@@ -111,10 +105,7 @@
     "+breaking-point"
 
     ;; routing
-    routes/option
-
-    ;; Note: this is a standalone, intentionally undocumented, option
-    gadfly/option})
+    routes/option})
 
 
 

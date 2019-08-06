@@ -1,1 +1,0 @@
-(ns {{ns-name}}.cofx)

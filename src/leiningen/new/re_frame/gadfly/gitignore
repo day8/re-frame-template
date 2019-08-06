@@ -1,9 +1,0 @@
-/*.log
-/target
-/*-init.clj
-/resources/public/js
-resources/public/css/
-out
-
-.rebel_readline_history
-*.*~
