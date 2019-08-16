@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "shadow-cljs": "^2.8.45"{{#test?}},
+    "shadow-cljs": "^2.8.48"{{#test?}},
     "karma": "^4.2.0",
     "karma-chrome-launcher": "^3.0.0",
     "karma-cljs-test": "^0.1.0"{{/test?}}
