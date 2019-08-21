@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.4 (2019-08-21)
+
 #### Changed
 
 - Greatly simplified shadow-cljs config thanks to @thheller
