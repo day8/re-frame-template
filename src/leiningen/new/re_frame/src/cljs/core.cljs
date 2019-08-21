@@ -13,15 +13,14 @@
 
 (defn dev-setup []
   (when config/debug?
-    (enable-console-print!)
     (println "dev mode")))
 
-(defn mount-root []
+(defn ^:dev/after-load mount-root []
   (re-frame/clear-subscription-cache!)
   (reagent/render [views/main-panel]
                   (.getElementById js/document "app")))
 
-(defn ^:export init []{{#routes?}}
+(defn init []{{#routes?}}
   (routes/app-routes){{/routes?}}
   (re-frame/dispatch-sync [::events/initialize-db]){{#re-pressed?}}
   (re-frame/dispatch-sync [::rp/add-keyboard-event-listener "keydown"]){{/re-pressed?}}{{#breaking-point?}}
