@@ -1,0 +1,89 @@
+## Unreleased
+
+#### Changed
+
+- Greatly simplified shadow-cljs config thanks to @thheller
+- Upgrade react-flip-move to 3.0.3. Fixes warning of depedency conflict with re-frame-10x.
+- Upgrade karma-chrome-launcher to 3.1.0
+- Upgrade to shadow-cljs 2.8.51
+
+#### Fixed
+
+- +cider profile adds -Xmx1G :jvm-opts as a workaround for Emacs cider-jack-in-cljs failure
+  thanks to investigation and report by @Quezion
+
+## 1.0.3 (2019-08-18)
+
+#### Fixed
+
+- Don't use unsafe version ranges in package.json
+
+## 1.0.2 (2019-08-16)
+
+#### Changed
+
+- Upgrade shadow-cljs to 2.8.48
+
+## 1.0.1 (2019-08-12)
+
+#### Changed
+
+- Upgrade shadow-cljs to 2.8.45
+
+#### Removed
+
+- Remove +gadfly profile
+
+## 1.0.0 (2019-08-06)
+
+#### Changed
+
+- Migrate to shadow-cljs
+
+## 0.3.23 (2019-07-15)
+
+#### Changed
+
+- Upgrade re-frame to 0.10.8
+
+## 0.3.22 (2019-06-08)
+
+#### Changed
+
+- Upgrade compojure to 1.6.1
+- Upgrade garden to 1.3.9
+- Upgrade Clojure to 1.10.1
+- Upgrade re-com to 2.5.0
+- Upgrade re-pressed to 0.3.0
+- Upgrade re-frame-10x to 0.4.0
+- Upgrade ns-tracker to 0.4.0
+- Upgrade re-frisk to 0.5.4.1
+- Upgrade ring to 1.7.1
+- Upgrade yogthos/config 1.1.2
+- Upgrade figwheel-sidecar to 0.5.18
+- Upgrade cider/piggieback to 0.4.1
+
+## 0.3.20 (2019-03-12)
+
+#### Fixed
+
+- Ensure that .gitignore is created
+
+## 0.3.19 (2019-03-11)
+
+#### Changed
+
+- Upgrade re-com to 2.4.0
+
+#### Removed
+
+- Transitive dependencies on cljs-time and core.async
+
+## 0.3.18 (2019-03-11)
+
+#### Changed
+
+- Upgrade Clojure to 1.10.0
+- Upgrade ClojureScript to 1.10.520
+- Upgrade reagent to 0.8.1
+- Upgrade re-frame to 0.10.6
