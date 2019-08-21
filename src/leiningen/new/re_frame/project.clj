@@ -19,7 +19,9 @@
   :plugins [{{#garden?}}[lein-garden "0.2.8"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}]
 
-  :min-lein-version "2.5.3"
+  :min-lein-version "2.5.3"{{#cider?}}
+
+  :jvm-opts ["-Xmx1G"]{{/cider?}}
 
   :source-paths ["src/clj" "src/cljs"]{{#test?}}
 
