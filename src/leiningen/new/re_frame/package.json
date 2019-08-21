@@ -9,7 +9,7 @@
     "create-react-class": "15.6.3",
     "react": "16.8.6",
     "react-dom": "16.8.6"{{#10x?}},
-    "react-flip-move": "3.0.1",
+    "react-flip-move": "3.0.3",
     "react-highlight.js": "1.0.7"{{/10x?}}
   }
 }
