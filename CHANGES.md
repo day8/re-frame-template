@@ -1,5 +1,13 @@
 ## Unreleased
 
+## 1.0.5 (2019-08-24)
+
+#### Fixed
+
+- 1.0.4 introduced a regression whereby if the +10x profile was not used an
+  extra bracket in `shadow-cljs.edn` would cause the build to fail. This is
+  fixed in 1.0.5. See [#92](https://github.com/Day8/re-frame-template/issues/92).
+
 ## 1.0.4 (2019-08-21)
 
 #### Changed
