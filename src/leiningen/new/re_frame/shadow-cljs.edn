@@ -10,7 +10,7 @@
                                                    day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
                                                    re-frisk.preload{{/re-frisk?}}]}}{{#10x?}}
                 :dev             {:compiler-options {:closure-defines {re-frame.trace.trace-enabled?        true
-                                                                       day8.re-frame.tracing.trace-enabled? true}}{{/10x?}}}
+                                                                       day8.re-frame.tracing.trace-enabled? true}}}{{/10x?}}
                 :devtools        {:http-root    "resources/public"
                                   :http-port    8280{{#handler?}}
                                   :http-handler {{name}}.handler/dev-handler{{/handler?}}
