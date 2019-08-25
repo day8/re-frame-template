@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Fixed
+
+- Add `.shadow-cljs` cache to `:clean-targets`
+
 ## 1.0.5 (2019-08-24)
 
 #### Fixed
