@@ -27,7 +27,9 @@
 
   :test-paths   ["test/cljs"]{{/test?}}
 
-  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"{{#test?}}
+  :clean-targets ^{:protect false} [:target-path
+                                    ".shadow-cljs"
+                                    "resources/public/js/compiled"{{#test?}}
                                     "test/js"{{/test?}}{{#garden?}}
                                     "resources/public/css"{{/garden?}}]
 
