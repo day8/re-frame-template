@@ -9,7 +9,6 @@
    ["package.json" (helpers/render "package.json" data)]
    ["karma.conf.js" (helpers/render "karma.conf.js" data)]
    ["resources/public/index.html" (helpers/render "resources/public/index.html" data)]
-   ["src/clj/{{sanitized}}/core.clj" (helpers/render "src/clj/core.clj" data)]
    ["src/cljs/{{sanitized}}/core.cljs" (helpers/render "src/cljs/core.cljs" data)]
    ["src/cljs/{{sanitized}}/config.cljs" (helpers/render "src/cljs/config.cljs" data)]
    ["src/cljs/{{sanitized}}/db.cljs" (helpers/render "src/cljs/db.cljs" data)]
