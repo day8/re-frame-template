@@ -3,6 +3,7 @@
 #### Changed
 
 - Upgrade re-frame-10x to 0.4.3
+- Upgrade lein-garden to 0.3.0
 
 #### Removed
 
