@@ -4,6 +4,11 @@
 
 - Upgrade re-frame-10x to 0.4.3
 
+#### Removed
+
+- Empty generated `core.clj` [#93](https://github.com/Day8/re-frame-template/pull/93) 
+  thanks to @thheller
+
 ## 1.0.6 (2019-08-28)
 
 #### Changed
