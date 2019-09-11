@@ -16,7 +16,7 @@
                  [re-pressed "0.3.0"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
-  :plugins [{{#garden?}}[lein-garden "0.2.8"]{{/garden?}}{{#less?}}
+  :plugins [{{#garden?}}[lein-garden "0.3.0"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}]
 
   :min-lein-version "2.5.3"{{#cider?}}
