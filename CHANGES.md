@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.7 (2019-09-11)
+
 #### Changed
 
 - Upgrade re-frame-10x to 0.4.3
