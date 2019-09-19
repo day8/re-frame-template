@@ -13,7 +13,7 @@
                  [compojure "1.6.1"]
                  [yogthos/config "1.1.5"]
                  [ring "1.7.1"]{{/handler?}}{{#re-pressed?}}
-                 [re-pressed "0.3.0"]{{/re-pressed?}}{{#breaking-point?}}
+                 [re-pressed "0.3.1"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
   :plugins [{{#garden?}}[lein-garden "0.3.0"]{{/garden?}}{{#less?}}
