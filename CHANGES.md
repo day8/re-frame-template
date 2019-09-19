@@ -3,6 +3,7 @@
 #### Changed
 
 - Upgrade shadow-cljs to 2.8.53
+- Upgrade re-com to 2.6.0
 
 ## 1.0.7 (2019-09-11)
 
