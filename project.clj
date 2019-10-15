@@ -1,6 +1,6 @@
 (defproject re-frame/lein-template "1.0.17-SNAPSHOT"
   :description "Leiningen template for a Reagent web app that implements the re-frame pattern."
-  :url "https://github.com/Day8/re-frame-template"
+  :url "https://github.com/day8/re-frame-template"
   :license {:name "MIT"}
   
   :deploy-repositories [["clojars" {:sign-releases false
@@ -18,6 +18,6 @@
                   ["vcs" "push"]]
 
   :scm {:name "git"
-        :url "https://github.com/Day8/re-frame-template"}
+        :url "https://github.com/day8/re-frame-template"}
   
   :eval-in-leiningen true)
