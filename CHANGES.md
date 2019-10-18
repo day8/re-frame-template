@@ -4,6 +4,7 @@
 
 - Upgrade shadow-cljs to 2.8.64
 - Upgrade yogthos/config to 1.1.6
+- Upgrade karma to 4.4.0
 
 ## 1.0.16 (2019-10-15)
 
