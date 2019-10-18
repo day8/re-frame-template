@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Added
+
+- Added lein karma-once alias
+
 #### Changed
 
 - Upgrade shadow-cljs to 2.8.64
