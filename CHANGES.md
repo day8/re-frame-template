@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.17 (2019-10-18)
+
 #### Fixed
 
 - Import goog.history.EventType properly.
