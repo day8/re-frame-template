@@ -1,5 +1,11 @@
 ## Unreleased
 
+#### Fixed
+
+- Import goog.history.EventType properly.
+  See [#94](https://github.com/day8/re-frame-template/pull/94).
+  Thanks to [@Wegi](https://github.com/Wegi).
+
 #### Added
 
 - Added lein karma-once alias
