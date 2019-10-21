@@ -3,6 +3,7 @@
 #### Changed
 
 - Upgrade shadow-cljs to 2.8.65
+- Upgrade karma to 4.4.1
 
 ## 1.0.17 (2019-10-18)
 
