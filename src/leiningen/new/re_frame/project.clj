@@ -17,8 +17,8 @@
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
   :plugins [{{#garden?}}[lein-garden "0.3.0"]{{/garden?}}{{#less?}}
-            [lein-less "1.7.5"]{{/less?}}{{#test?}}
-            [lein-shell "0.5.0"]{{/test?}}]
+            [lein-less "1.7.5"]{{/less?}}
+            [lein-shell "0.5.0"]]
 
   :min-lein-version "2.5.3"{{#cider?}}
 
@@ -44,8 +44,16 @@
          :target-path  "resources/public/css"}
 {{/less?}}
 
+  :shell {:commands {"open" {:windows ["cmd" "/c" "start"]
+                             :macosx  "open"
+                             :linux   "xdg-open"}}}
+
   :aliases {"dev"        ["with-profile" "dev" "run" "-m" "shadow.cljs.devtools.cli" "watch" "app"]
             "prod"       ["with-profile" "prod" "run" "-m" "shadow.cljs.devtools.cli" "release" "app"]
+            "build-report" ["with-profile" "prod" "do"
+                            ["clean"]
+                            ["run" "-m" "shadow.cljs.devtools.cli" "run" "shadow.cljs.build-report" "app" "target/build-report.html"]
+                            ["shell" "open" "target/build-report.html"]]
             "karma-once" ["with-profile" "prod" "do"
                           ["clean"]
                           ["run" "-m" "shadow.cljs.devtools.cli" "compile" "karma-test"]
