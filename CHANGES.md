@@ -3,6 +3,7 @@
 #### Added
 
 - Add lein build-report alias
+- Add clean to all lein aliases
 
 #### Changed
 

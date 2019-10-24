@@ -48,8 +48,12 @@
                              :macosx  "open"
                              :linux   "xdg-open"}}}
 
-  :aliases {"dev"          ["with-profile" "dev" "run" "-m" "shadow.cljs.devtools.cli" "watch" "app"]
-            "prod"         ["with-profile" "prod" "run" "-m" "shadow.cljs.devtools.cli" "release" "app"]
+  :aliases {"dev"          ["with-profile" "dev" "do"
+                            ["clean"]
+                            ["run" "-m" "shadow.cljs.devtools.cli" "watch" "app"]]
+            "prod"         ["with-profile" "prod" "do"
+                            ["clean"]
+                            ["run" "-m" "shadow.cljs.devtools.cli" "release" "app"]]
             "build-report" ["with-profile" "prod" "do"
                             ["clean"]
                             ["run" "-m" "shadow.cljs.devtools.cli" "run" "shadow.cljs.build-report" "app" "target/build-report.html"]
