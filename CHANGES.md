@@ -9,6 +9,10 @@
 
 - Rename lein karma-once alias to karma
 
+#### Fixed
+
+- Fix missing karma-junit-reporter dependency
+
 ## 1.0.19 (2019-10-24)
 
 #### Changed
