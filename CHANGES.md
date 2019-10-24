@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.20 (2019-10-24)
+
 #### Added
 
 - Add lein build-report alias
