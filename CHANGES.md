@@ -1,8 +1,12 @@
 ## Unreleased
 
-## Added
+#### Added
 
-- Added lein build-report alias
+- Add lein build-report alias
+
+#### Changed
+
+- Rename lein karma-once alias to karma
 
 ## 1.0.19 (2019-10-24)
 
