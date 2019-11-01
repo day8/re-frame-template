@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade shadow-cljs to 2.8.69
+
 ## 1.0.21 (2019-10-30)
 
 #### Changed
