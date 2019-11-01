@@ -1,3 +1,10 @@
+[![ci](https://github.com/day8/re-frame-template/workflows/ci/badge.svg)](https://github.com/day8/re-frame-template/actions?workflow=ci)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/day8/re-frame-template?style=flat)](https://github.com/day8/re-frame-template/tags)
+[![Clojars Project](https://img.shields.io/clojars/v/re-frame/lein-template.svg)](https://clojars.org/re-frame/lein-template)
+[![GitHub issues](https://img.shields.io/github/issues-raw/day8/re-frame-template?style=flat)](https://github.com/day8/re-frame-template/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/day8/re-frame-template)](https://github.com/day8/re-frame-template/pulls)
+[![GitHub](https://img.shields.io/github/license/day8/re-frame-template?style=flat)](https://github.com/day8/re-frame-template/blob/master/LICENSE)
+
 # re-frame-template
 
 Leiningen template for [reagent](https://github.com/reagent-project/reagent) web
