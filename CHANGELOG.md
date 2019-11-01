@@ -1,9 +1,18 @@
 ## Unreleased
 
+## [1.0.22 (2019-11-02)](https://github.com/day8/re-frame-template/runs/285090579)
+
 #### Changed
 
 - Upgrade shadow-cljs to 2.8.69
 - Upgrade re-frame-10x to 0.4.5
+- Migrate to me.arrdem/lein-git-version 
+- Migrate to GitHub Actions based continuous integration and continuous deployment
+
+#### Added
+
+- Add LICENSE. Maintains the same LICENSE (MIT) that has always been present in the README.md file. Just makes it more
+  accessible and obvious.
 
 ## 1.0.21 (2019-10-30)
 
