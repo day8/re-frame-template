@@ -3,6 +3,7 @@
 #### Changed
 
 - Upgrade shadow-cljs to 2.8.69
+- Upgrade re-frame-10x to 0.4.5
 
 ## 1.0.21 (2019-10-30)
 

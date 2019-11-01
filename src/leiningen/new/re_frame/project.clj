@@ -66,7 +66,7 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.10"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "0.4.4"]
+                   [day8.re-frame/re-frame-10x "0.4.5"]
                    [day8.re-frame/tracing "0.5.3"]{{/10x?}}{{#re-frisk?}}
                    [re-frisk "0.5.4.1"]{{/re-frisk?}}]}
 
