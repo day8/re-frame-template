@@ -2,6 +2,7 @@
 
 #### Changed
 
+- Upgrade [ClojureScript to 1.10.597](https://clojurescript.org/news/2019-11-18-release)
 - Upgrade binaryage/devtools to 0.9.11
 - Upgrade shadow-cljs to 2.8.73
 
