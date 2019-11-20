@@ -1,5 +1,7 @@
 ## Unreleased
 
+## [1.0.23 (2019-11-20)](https://github.com/day8/re-frame-template/runs/311234380)
+
 #### Changed
 
 - Upgrade [ClojureScript to 1.10.597](https://clojurescript.org/news/2019-11-18-release)
