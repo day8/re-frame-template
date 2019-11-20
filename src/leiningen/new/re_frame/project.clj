@@ -3,7 +3,7 @@
                  [org.clojure/clojurescript "1.10.520"
                   :exclusions [com.google.javascript/closure-compiler-unshaded
                                org.clojure/google-closure-library]]
-                 [thheller/shadow-cljs "2.8.69"]
+                 [thheller/shadow-cljs "2.8.73"]
                  [reagent "0.8.1"]
                  [re-frame "0.10.9"]{{#re-com?}}
                  [re-com "2.6.0"]{{/re-com?}}{{#routes?}}

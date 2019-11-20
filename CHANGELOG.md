@@ -3,6 +3,7 @@
 #### Changed
 
 - Upgrade binaryage/devtools to 0.9.11
+- Upgrade shadow-cljs to 2.8.73
 
 ## [1.0.22 (2019-11-02)](https://github.com/day8/re-frame-template/runs/285090579)
 
