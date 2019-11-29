@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Added
+
+- Add org.clojure/google-closure-library-third-party exclusion to ClojureScript dependency
+
 ## [1.0.23 (2019-11-20)](https://github.com/day8/re-frame-template/runs/311234380)
 
 #### Changed

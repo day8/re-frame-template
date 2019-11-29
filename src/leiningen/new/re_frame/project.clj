@@ -2,7 +2,8 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.597"
                   :exclusions [com.google.javascript/closure-compiler-unshaded
-                               org.clojure/google-closure-library]]
+                               org.clojure/google-closure-library
+                               org.clojure/google-closure-library-third-party]]
                  [thheller/shadow-cljs "2.8.73"]
                  [reagent "0.8.1"]
                  [re-frame "0.10.9"]{{#re-com?}}
