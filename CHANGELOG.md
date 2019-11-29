@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade shadow-cljs to 2.8.76
+
 #### Added
 
 - Add org.clojure/google-closure-library-third-party exclusion to ClojureScript dependency
