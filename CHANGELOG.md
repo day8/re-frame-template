@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade shadow-cljs to 2.8.80
+
 ## [1.0.24 (2019-11-30)](https://github.com/day8/re-frame-template/runs/326469035)
 
 #### Changed
