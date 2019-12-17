@@ -43,7 +43,6 @@ lein less auto
 ### Run application:
 
 ```
-lein clean
 lein dev
 ```
 

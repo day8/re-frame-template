@@ -102,7 +102,6 @@ yarn install  # or npm install
 
 Then run:
 ```
-lein clean
 lein dev
 ```
 
@@ -184,7 +183,6 @@ karma start --single-run --reporters junit,dots
 To compile clojurescript to javascript:
 
 ```
-lein clean
 lein prod
 ```
 
