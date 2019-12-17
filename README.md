@@ -24,11 +24,12 @@ The base template includes:
 
 To create an application with the base template:
 
+```sh
+lein new re-frame <project-name> 
 ```
-lein new re-frame <project-name>
-```
+where you might, for example, substitute `my-early-masterpiece` for the `<project-name>` bit or, perhaps, `killer-app` or `yeah`. 
 
-> **Troubleshooting note:** for `<project-name>` don't use `cljs`. That name will confuse the compiler and you will (later) see errors like `cljs.core.init is not a function`
+> **Troubleshooting note:** for `<project-name>` don't use `cljs`. That name will confuse the compiler (long story) and you will later see errors like `cljs.core.init is not a function`. 
 
 ## Extras
 
