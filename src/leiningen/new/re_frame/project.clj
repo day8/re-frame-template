@@ -12,7 +12,7 @@
                  [garden "1.3.9"]
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
                  [compojure "1.6.1"]
-                 [yogthos/config "1.1.6"]
+                 [yogthos/config "1.1.7"]
                  [ring "1.7.1"]{{/handler?}}{{#re-pressed?}}
                  [re-pressed "0.3.1"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
