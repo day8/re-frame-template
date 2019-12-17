@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Fixed
+
+- Fixed docs re lein aliases thanks to [@stevejmp](https://github.com/stevejmp)
+
 #### Changed
 
 - Upgrade shadow-cljs to 2.8.80
