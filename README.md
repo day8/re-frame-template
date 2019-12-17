@@ -22,9 +22,8 @@ The base template includes:
 * [shadow-cljs](https://shadow-cljs.github.io/docs/UsersGuide.html)
 * [cljs-devtools](https://github.com/binaryage/cljs-devtools)
 
-To create an application with the base template:
-
-```sh
+To create an application with the base template, use this commandline:
+```
 lein new re-frame <project-name> 
 ```
 where you might, for example, substitute `my-early-masterpiece` for the `<project-name>` bit or, perhaps, `killer-app` or `yeah`. 
@@ -76,18 +75,18 @@ The mentioned `dir-local.el` file is created by this template.
 
 ## Compile css (if using +garden or +less):
 
-Compile css file once.
+To compile css files once.
 
-```
+```sh
 lein garden once
 
 lein less once
 ```
 
 
-Automatically recompile css file on change.
+When developing, to automatically recompile css files on each file change, use:
 
-```
+```sh
 lein garden auto
 
 lein less auto
@@ -95,20 +94,20 @@ lein less auto
 
 ## Run application:
 
-Retrieve dependencies:
-```
+Retrieve dependencies (can take a while the first time):
+```sh
 lein deps
 yarn install  # or npm install
 ```
 
 Then run:
-```
+```sh
 lein dev
 ```
 
-Wait a bit, then browse to [http://localhost:8280](http://localhost:8280).
+Wait a bit, perhaps 20 seconds, keeping an eye out for a sign the compile has finished, then browse to [http://localhost:8280](http://localhost:8280).
 
-To see other available shadow-cljs commands run:
+To see other available `shadow-cljs` commands run:
 ```
 lein run -m shadow.cljs.devtools.cli --help
 ```
