@@ -1,5 +1,7 @@
 ## Unreleased
 
+## [1.0.26 (2019-12-18)](https://github.com/day8/re-frame-template/runs/352988356)
+
 #### Fixed
 
 - Fixed docs re lein aliases thanks to [@stevejmp](https://github.com/stevejmp)
@@ -8,6 +10,12 @@
 
 - Upgrade shadow-cljs to 2.8.83
 - Upgrade yogthos/config to 1.1.7
+
+## [1.0.25 (2019-12-05)](https://github.com/day8/re-frame-template/runs/333630252)
+
+#### Changed
+
+- Upgrade shadow-cljs to 2.8.80
 
 ## [1.0.24 (2019-11-30)](https://github.com/day8/re-frame-template/runs/326469035)
 
