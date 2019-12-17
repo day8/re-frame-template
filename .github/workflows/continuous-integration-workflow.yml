@@ -33,7 +33,8 @@ jobs:
             ${{ runner.os }}-npm-
       - name: Test Templates
         run: ./create-templates.sh
-      - uses: homoluctus/slatify@v2.0.1
+      - name: Slack notification
+        uses: homoluctus/slatify@v2.0.1
         if: always()
         with:
           type: ${{ job.status  }}
