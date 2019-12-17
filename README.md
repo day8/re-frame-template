@@ -122,7 +122,7 @@ I'll assume Chrome for the purposes of further explanation:
 
 1. Open devtools. Press press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
 1. Open devtool's "Setting" Panel. Press F1. (Careful. Not the Setting panel for Chrome itself!! The Settings panel for devtools)
-1. Under the "Network" heading, tick the option "Disable cache (while DevTools is open)". You don't want figwheel's attempts at reloading to be defeated by caching. 
+1. Under the "Network" heading, tick the option "Disable cache (while DevTools is open)". You don't want shadow-clj's attempts at reloading to be defeated by caching. 
 1. Under the "Console" heading, tick the option "Enable custom formatters". This allows [cljs-devtools](https://github.com/binaryage/cljs-devtools) to perform its magic.
 1. Close Settings. Close Devtools. 
 1. Reopen Devtools 
