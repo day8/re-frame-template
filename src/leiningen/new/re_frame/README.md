@@ -62,7 +62,6 @@ npm install -g karma-cli
 And then run your tests
 
 ```
-lein clean
 lein karma
 ```
 
