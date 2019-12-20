@@ -35,7 +35,7 @@ jobs:
         with:
           type: ${{ job.status  }}
           job_name: re-frame-template Tests
-          channel: '#re-frame'
+          channel: '#oss-robots'
           mention: 'channel'
           mention_if: 'failure'
           url: ${{ secrets.SLACK_WEBHOOK }}
@@ -66,7 +66,7 @@ jobs:
         with:
           type: ${{ job.status  }}
           job_name: re-frame-template Deployment
-          channel: '#re-frame'
+          channel: '#oss-robots'
           mention: 'channel'
           mention_if: 'failure'
           url: ${{ secrets.SLACK_WEBHOOK }}
