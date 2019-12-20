@@ -149,13 +149,12 @@ is cherished by those lucky enough to experience it.
 
 ### debug?:
 
-In _project-name.config_, there is a variable called `debug?`, which
-defaults to _true_. However, for the `min` build (look inside of `project.clj`), this variable is
-re-defined to _false_.
+In _project-name.config_, there is a variable called `debug?`, which defaults to
+_true_ in the `dev` build, and _false_ in the `prod` build.
 
-When `debug?` is true, we include `(enable-console-print!)`. If you, for example, 
-you wrap your `println`s with a `when` block as show below, then you will get logs 
-printed to the browser's console for the `dev` build and not the `min` build.
+If, for example, you wrap your `println`s with a `when` block as shown below,
+then you will get logs printed to the browser's console for the `dev` build and
+not the `prod` build.
 
 ```clojure
 (when config/debug?
