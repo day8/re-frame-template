@@ -51,31 +51,31 @@
    :sanitized (name-to-path name)
 
    ;; css
-   :garden? (helpers/invoke-option garden/option options)
-   :less?   (helpers/invoke-option less/option options)
+   :garden? (helpers/option? garden/option options)
+   :less?   (helpers/option? less/option options)
 
    ;; debug
-   :re-frisk? (helpers/invoke-option "+re-frisk" options)
+   :re-frisk? (helpers/option? "+re-frisk" options)
    :10x?      (helpers/option? "+10x" options)
 
-   ;; devlopment
-   :cider?   (helpers/invoke-option cider/option options)
-   :test?    (helpers/invoke-option test/option options)
+   ;; development
+   :cider?   (helpers/option? cider/option options)
+   :test?    (helpers/option? test/option options)
 
    ;; full-stack
-   :handler?    (helpers/invoke-option handler/option options)
+   :handler?    (helpers/option? handler/option options)
    :prep-garden (when (helpers/option? garden/option options)
                   ["garden" "once"])
    :prep-less   (when (helpers/option? less/option options)
                   ["less" "once"])
 
    ;; misc.
-   :re-com?     (helpers/invoke-option re-com/option options)
+   :re-com?     (helpers/option? re-com/option options)
    :re-pressed? (helpers/option? "+re-pressed" options)
    :breaking-point? (helpers/option? "+breaking-point" options)
 
    ;; routing
-   :routes? (helpers/invoke-option routes/option options)})
+   :routes? (helpers/option? routes/option options)})
 
 
 
