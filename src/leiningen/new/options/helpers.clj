@@ -23,7 +23,3 @@
 (defn option? [option-name options]
   (boolean
    (some #{option-name} options)))
-
-(defn invoke-option [option options]
-  (fn [block]
-    (if (option? option options) (str block) "")))
