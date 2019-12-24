@@ -3,3 +3,13 @@
 /*-init.clj
 /resources/public/js/compiled
 out
+
+# Leiningen
+/.lein-*
+/.nrepl-port
+
+# Node.js dependencies
+/node_modules/
+
+# shadow-cljs cache, port files
+/.shadow-cljs/
