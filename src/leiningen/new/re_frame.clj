@@ -5,6 +5,7 @@
    [leiningen.new.options.garden :as garden]
    [leiningen.new.options.less :as less]
    [leiningen.new.options.handler :as handler]
+   [leiningen.new.options.kondo :as kondo]
    [leiningen.new.options.re-com :as re-com]
    [leiningen.new.options.routes :as routes]
    [leiningen.new.options.test :as test]
@@ -31,6 +32,7 @@
    ;;
 
    ;; development
+   (when (helpers/option? kondo/option options) (kondo/files data))
    (when (helpers/option? test/option options) (test/files data))
 
    ;; full-stack
@@ -60,6 +62,7 @@
 
    ;; development
    :cider?   (helpers/option? cider/option options)
+   :kondo?   (helpers/option? kondo/option options)
    :test?    (helpers/option? test/option options)
 
    ;; full-stack
@@ -94,6 +97,7 @@
 
     ;; development
     cider/option
+    kondo/option
     test/option
 
     ;; full-stack

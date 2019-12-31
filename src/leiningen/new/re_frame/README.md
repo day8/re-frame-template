@@ -40,11 +40,14 @@ you.
   - Debugging: [CLJS DevTools](https://github.com/binaryage/cljs-devtools){{#10x?}},
   [`re-frame-10x`](https://github.com/day8/re-frame-10x){{/10x?}}{{#re-frisk?}},
   [re-frisk](https://github.com/flexsurfer/re-frisk){{/re-frisk?}}{{#cider?}}
-  - Emacs integration: [CIDER](https://github.com/clojure-emacs/cider){{/cider?}}
+  - Emacs integration: [CIDER](https://github.com/clojure-emacs/cider){{/cider?}}{{#kondo?}}
+  - Linter: [clj-kondo](https://github.com/borkdude/clj-kondo){{/kondo?}}
 
 #### Directory structure
 
-* [`/`](/../../): project config files{{#less?}}
+* [`/`](/../../): project config files{{#kondo?}}
+* [`.clj-kondo/`](.clj-kondo/): lint config and cache files (cache files are not tracked; see
+[`.gitignore`](.gitignore)){{/kondo?}}{{#less?}}
 * [`less/`](less/): CSS compilation source files ([Less](http://lesscss.org/features/)){{/less?}}
 * [`resources/public/`](resources/public/): SPA root directory;
 [dev](#running-the-app) / [prod](#production) profile depends on the most recent build{{#re-com?}}
@@ -98,12 +101,17 @@ dependency management)
     launches Chromium. For example, in Ubuntu, add the following line to your `.bashrc`:
         ```bash
         export CHROME_BIN=chromium-browser
-       ```{{/test?}}
-6. Clone this repo and open a terminal in the `{{name}}` project root directory
-7. Download project dependencies:
+       ```{{/test?}}{{#kondo?}}
+6. Install [clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) (linter){{/kondo?}}
+7. Clone this repo and open a terminal in the `{{name}}` project root directory
+8. Download project dependencies:
     ```sh
     lein deps && npm install
-    ```
+    ```{{#kondo?}}
+9. Setup [lint cache](https://github.com/borkdude/clj-kondo#project-setup):
+    ```sh
+    clj-kondo --lint "$(lein classpath)"
+    ```{{/kondo?}}
 
 ### Browser Setup
 

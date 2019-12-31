@@ -1,0 +1,8 @@
+{:lint-as {{=<% %>=}}{<%#10x?%><%={{ }}=%>day8.re-frame.tracing/defn-traced clojure.core/defn
+           day8.re-frame.tracing/fn-traced clojure.core/fn{{/10x?}}{{#garden?}}
+           garden.def/defcssfn clojure.core/def
+           garden.def/defkeyframes clojure.core/def
+           garden.def/defrule clojure.core/def
+           garden.def/defstyles clojure.core/def
+           garden.def/defstylesheet clojure.core/def{{/garden?}}}
+ :linters {:unresolved-symbol {:exclude [goog.DEBUG]}}}

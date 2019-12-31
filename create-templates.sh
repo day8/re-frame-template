@@ -40,8 +40,8 @@ cd resources/public
 google-chrome --headless --disable-gpu index.html
 cd ../../..
 
-printf "\ncreating base +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point +shadow-cljs\n"
-lein new re-frame everything +cider +routes +re-com +test +garden +handler +less +re-frisk +10x +re-pressed +breaking-point
+printf "\ncreating base +10x +breaking-point +cider +garden +handler +kondo +less +re-com +re-frisk +re-pressed +routes +test\n"
+lein new re-frame everything +10x +breaking-point +cider +garden +handler +kondo +less +re-com +re-frisk +re-pressed +routes +test
 cd everything
 npm install
 lein prod
