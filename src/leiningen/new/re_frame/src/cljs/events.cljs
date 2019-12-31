@@ -2,7 +2,7 @@
   (:require
    [re-frame.core :as re-frame]
    [{{ns-name}}.db :as db]{{#10x?}}
-   [day8.re-frame.tracing :refer-macros [fn-traced defn-traced]]{{/10x?}}
+   [day8.re-frame.tracing :refer-macros [fn-traced]]{{/10x?}}
    ))
 
 (re-frame/reg-event-db

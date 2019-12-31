@@ -2,8 +2,7 @@
   (:require
    [re-frame.core :as re-frame]
    [re-com.core :as re-com]{{#breaking-point?}}
-   [breaking-point.core :as bp]{{/breaking-point?}}{{#re-pressed?}}
-   [re-pressed.core :as rp]{{/re-pressed?}}
+   [breaking-point.core :as bp]{{/breaking-point?}}
    [{{ns-name}}.subs :as subs]
    ))
 
