@@ -111,7 +111,9 @@ dependency management)
 9. Setup [lint cache](https://github.com/borkdude/clj-kondo#project-setup):
     ```sh
     clj-kondo --lint "$(lein classpath)"
-    ```{{/kondo?}}
+    ```
+10. Setup
+[linting in your editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md){{/kondo?}}
 
 ### Browser Setup
 
