@@ -3,7 +3,7 @@
   :url "https://github.com/day8/re-frame-template"
   :license {:name "MIT"}
 
-  :plugins      [[day8/lein-git-inject "0.0.4"]
+  :plugins      [[day8/lein-git-inject "0.0.6"]
                  [lein-shadow          "0.1.6"]]
 
   :middleware   [leiningen.git-inject/middleware]
