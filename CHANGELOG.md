@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.27 (2020-01-20)
+
 #### Changed
 
 - Upgrade reagent to 0.9.1
