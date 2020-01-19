@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade re-frame to 0.11.0
+
 ## [1.0.26 (2019-12-18)](https://github.com/day8/re-frame-template/runs/352988356)
 
 #### Fixed
