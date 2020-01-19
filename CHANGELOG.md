@@ -5,6 +5,26 @@
 - Upgrade reagent to 0.9.1
 - Upgrade re-frame to 0.11.0
 
+#### Fixed
+
+- Some of the uberjar issues thanks to [Derek Passen](https://github.com/dpassen).
+  See [#95](https://github.com/day8/re-frame-template/issues/95). 
+- Add Garden/Less CSS compilation to build prep-tasks thanks to
+  [@stevejmp](https://github.com/stevejmp).
+- Add lein, node, shadow-cljs items to .gitignore thanks to
+  [@stevejmp](https://github.com/stevejmp).
+
+#### Added
+
+- +kondo profile thanks to [@stevejmp](https://github.com/stevejmp).
+
+#### Removed
+
+- Remove clean from lein aliases to workaround [#95](https://github.com/day8/re-frame-template/issues/95).
+- Unused test/cljs/runner.cljs thanks to [@stevejmp](https://github.com/stevejmp).
+- Unused leiningen.new.options.helpers/invoke-option fn thanks to
+  [@stevejmp](https://github.com/stevejmp).
+
 ## [1.0.26 (2019-12-18)](https://github.com/day8/re-frame-template/runs/352988356)
 
 #### Fixed
