@@ -5,4 +5,16 @@
            garden.def/defrule clojure.core/def
            garden.def/defstyles clojure.core/def
            garden.def/defstylesheet clojure.core/def{{/garden?}}}
- :linters {:unresolved-symbol {:exclude [goog.DEBUG]}}}
+ :linters {:unresolved-symbol {:exclude [goog.DEBUG]}
+           :unused-namespace {:exclude [cljs.repl]}
+           :unused-referred-var {:exclude {cljs.repl [Error->map
+                                                      apropos
+                                                      dir
+                                                      doc
+                                                      error->str
+                                                      ex-str
+                                                      ex-triage
+                                                      find-doc
+                                                      print-doc
+                                                      pst
+                                                      source]}}}}
