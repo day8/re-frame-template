@@ -47,7 +47,10 @@ you.
 
 * [`/`](/../../): project config files{{#kondo?}}
 * [`.clj-kondo/`](.clj-kondo/): lint config and cache files (cache files are not tracked; see
-[`.gitignore`](.gitignore)){{/kondo?}}{{#less?}}
+[`.gitignore`](.gitignore)){{/kondo?}}
+* [`dev/`](dev/): source files compiled only with the [dev](#running-the-app) profile
+  - [`cljs/user.cljs`](dev/cljs/user.cljs): symbols for use during development in the
+[ClojureScript REPL](#connecting-to-the-browser-repl-from-a-terminal){{#less?}}
 * [`less/`](less/): CSS compilation source files ([Less](http://lesscss.org/features/)){{/less?}}
 * [`resources/public/`](resources/public/): SPA root directory;
 [dev](#running-the-app) / [prod](#production) profile depends on the most recent build{{#re-com?}}
@@ -213,7 +216,9 @@ For example, in Vim / Neovim with `fireplace.vim`
     ```clj
     (shadow.cljs.devtools.api/nrepl-select :app)
     ```
-    The REPL prompt changes to `cljs.user=>`, indicating that this is now a ClojureScript REPL.{{#test?}}
+    The REPL prompt changes to `cljs.user=>`, indicating that this is now a ClojureScript REPL.
+3. See [`user.cljs`](dev/cljs/user.cljs) for symbols that are immediately accessible in the REPL
+without needing to `require`.{{#test?}}
 
 ### Running Tests
 
