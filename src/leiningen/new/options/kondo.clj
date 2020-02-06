@@ -4,4 +4,4 @@
 (def option "+kondo")
 
 (defn files [data]
-  [[".clj-kondo/config.edn" (helpers/render ".clj-kondo/config.edn" data)]])
+  [[".clj-kondo/config.edn" (helpers/render "clj-kondo/config.edn" data)]])
