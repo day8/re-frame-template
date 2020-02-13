@@ -2,8 +2,12 @@
 
 #### Changed
 
-- Upgrade re-frame-10x to 0.5.1
 - Upgrade binaryage/devtools to 1.0.0
+- Upgrade re-frame-10x to 0.5.1
+- Upgrade re-com to 2.7.0
+
+Overall these upgrades result in a consistent React version across all
+dependencies of [16.9.0](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html).
 
 ## 1.0.27 (2020-01-20)
 

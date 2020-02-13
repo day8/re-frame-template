@@ -7,7 +7,7 @@
                  [thheller/shadow-cljs "2.8.83"]
                  [reagent "0.9.1"]
                  [re-frame "0.11.0"]{{#re-com?}}
-                 [re-com "2.6.0"]{{/re-com?}}{{#routes?}}
+                 [re-com "2.7.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.3.9"]
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
