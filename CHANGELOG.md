@@ -2,6 +2,7 @@
 
 #### Changed
 
+- Upgrade re-frame-10x to 0.5.1
 - Upgrade binaryage/devtools to 1.0.0
 
 ## 1.0.27 (2020-01-20)
