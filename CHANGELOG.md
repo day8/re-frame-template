@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Fixed
+
+- Fix missing clj-kondo config. See [#124](https://github.com/day8/re-frame-template/pull/124)
+
 ## 1.0.28 (2020-02-14)
 
 #### Changed
