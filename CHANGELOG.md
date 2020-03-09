@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.28 (2020-02-14)
+
 #### Changed
 
 - Upgrade binaryage/devtools to 1.0.0
