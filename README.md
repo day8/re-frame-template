@@ -8,11 +8,9 @@
 
 # re-frame-template
 
-Leiningen template for [reagent](https://github.com/reagent-project/reagent) web
-apps which implement the [re-frame](https://github.com/day8/re-frame) pattern.
+A Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). 
 
-Through the use of profiles, this template lets the developer pick and choose 
-what "extras" are included in their application.
+Provides a way to pick and choose what "extras" are included into your application. Extras like libraries which do routing, debugging and CSS. 
 
 ## Basic Usage
 
@@ -22,17 +20,17 @@ The base template includes:
 * [shadow-cljs](https://shadow-cljs.github.io/docs/UsersGuide.html)
 * [cljs-devtools](https://github.com/binaryage/cljs-devtools)
 
-To create an application with the base template, use this commandline:
+To create an application with just the base template, use this commandline:
 ```
 lein new re-frame <project-name> 
 ```
-where you might, for example, substitute `my-early-masterpiece` for the `<project-name>` bit or, perhaps, `killer-app` or `yeah`. 
+where you might, for example, substitute `my-killer-app`  for the `<project-name>` bit or, perhaps, `an-early-masterpiece`.
 
 > **Troubleshooting note:** for `<project-name>` don't use `cljs`. That name will confuse the compiler (long story) and you will later see errors like `cljs.core.init is not a function`. 
 
 ## Extras
 
-The optional profiles include:
+The optional extras (aka profiles) include:
 
 * CSS
   * [garden](https://github.com/noprompt/garden) (`+garden`)
@@ -53,13 +51,13 @@ The optional profiles include:
 * Routing
   * [secretary](https://github.com/gf3/secretary) (`+routes`)
 
-To add a profile to the base template, just append the profile name (let's use `+re-com` as an example):
+To add a `profile` to the base template, just append its name (let's use `+re-com` as an example):
 
 ```
 lein new re-frame <project-name> +re-com
 ```
 
-Any combination of profiles can be added at once:
+Any combination of `profiles` can be added at once:
 
 ```
 lein new re-frame <project-name> +garden +re-com +routes +test +less +10x
