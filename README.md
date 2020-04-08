@@ -8,7 +8,7 @@
 
 # re-frame-template
 
-A Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). 
+A Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It only takes you 60 seconds to create your first re-frame app and to start editting it. 
 
 Provides a way to pick and choose what "extras" are included into your application. Extras like libraries which do routing, debugging and CSS. 
 
