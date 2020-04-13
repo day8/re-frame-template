@@ -141,7 +141,7 @@ I have every confidence in you.
 
 ## Hot Reloading Is Now Go
 
-If you now edit files, like perhaps `/src/cljs/<project-name>/views.cljs`, Figwheel will automatically 
+If you now edit files, like perhaps `/src/cljs/<project-name>/views.cljs`, shadow-clj will automatically 
 recompile your changes and "hot load" them into your running app, without your app needing 
 to be re-started. The resulting fast, iterative workflow tends to make you very productive, and 
 is cherished by those lucky enough to experience it.
