@@ -8,6 +8,7 @@
 
 - Upgrade ClojureScript to [1.10.748](https://github.com/clojure/clojurescript/blob/master/changes.md)
 - Upgrade shadow-cljs to 2.8.109
+- Upgrade reagent to [0.10.0](https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#0100-2020-03-06)
 
 ## 1.0.28 (2020-02-14)
 
