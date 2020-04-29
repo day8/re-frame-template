@@ -12,6 +12,7 @@
 - Upgrade re-frame to [0.12.0](https://github.com/day8/re-frame/blob/master/CHANGELOG.md#0120-2020-03-08)
 - Upgrade re-com to [2.8.0](https://github.com/day8/re-com/blob/master/CHANGELOG.md#280-2020-03-08)
 - Upgrade re-frame-10x to [0.6.3](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#063---2020-04-30)
+- Upgrade ring to [1.8.0](https://github.com/ring-clojure/ring/blob/master/CHANGELOG.md#180-2019-11-13)
 
 ## 1.0.28 (2020-02-14)
 
