@@ -6,6 +6,10 @@
 - Upgrade re-frame-10x to [0.6.4](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#064---2020-05-01)
 - Upgrade re-frame-debux to 0.5.5
 
+#### Fixed
+
+- Fix use of deprecated reagent fns
+
 ## 1.0.29 (2020-04-30)
 
 #### Fixed
