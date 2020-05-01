@@ -12,6 +12,7 @@
 /node_modules/
 
 # shadow-cljs cache, port files
+/shadow-cljs.edn
 /.shadow-cljs/{{#kondo?}}
 
 # clj-kondo cache

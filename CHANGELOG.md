@@ -2,6 +2,7 @@
 
 #### Changed
 
+- Use [lein-shadow](https://gitlab.com/nikperic/lein-shadow) and [ns aliases for tracing-stubs](https://github.com/day8/re-frame-debux/issues/30).
 - Upgrade re-frame-10x to [0.6.4](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#064---2020-05-01)
 - Upgrade re-frame-debux to 0.5.5
 
