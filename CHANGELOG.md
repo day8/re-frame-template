@@ -1,5 +1,11 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade re-frame-10x to [0.6.4](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#064---2020-05-01)
+
+## 1.0.29 (2020-04-30)
+
 #### Fixed
 
 - Fix missing clj-kondo config. See [#124](https://github.com/day8/re-frame-template/pull/124)
