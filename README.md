@@ -96,7 +96,6 @@ lein less auto
 Retrieve dependencies (can take a while the first time):
 ```sh
 lein deps
-yarn install  # or npm install
 ```
 
 Then run:
