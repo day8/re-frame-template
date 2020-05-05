@@ -2,6 +2,12 @@
 
 #### Changed
 
+- Upgrade ClojureScript to [1.10.758](https://github.com/clojure/clojurescript/blob/master/changes.md#110758)
+
+## 1.0.31 (2020-05-04)
+
+#### Changed
+
 - Upgrade re-frisk to 1.3.0
 
 ## 1.0.30 (2020-05-01)
