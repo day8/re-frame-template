@@ -10,7 +10,7 @@
                  [day8.re-frame/tracing "0.5.5"]{{/10x?}}{{#re-com?}}
                  [re-com "2.8.0"]{{/re-com?}}{{#routes?}}
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
-                 [garden "1.3.9"]
+                 [garden "1.3.10"]
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
                  [compojure "1.6.1"]
                  [yogthos/config "1.1.7"]
