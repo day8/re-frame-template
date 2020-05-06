@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.32 (2020-05-06)
+
 #### Changed
 
 - Upgrade ClojureScript to [1.10.758](https://github.com/clojure/clojurescript/blob/master/changes.md#110758)
