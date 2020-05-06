@@ -5,6 +5,7 @@
 - Upgrade ClojureScript to [1.10.758](https://github.com/clojure/clojurescript/blob/master/changes.md#110758)
 - Upgrade shadow-cljs to 2.8.110
 - Upgrade garden to 1.3.10
+- Upgrade ring to 1.8.1
 
 ## 1.0.31 (2020-05-04)
 
