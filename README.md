@@ -81,6 +81,7 @@ JavaScript and NPM dependencies go in `src/cljs/deps.cljs` as per the following 
 ```
 
 | Type                      | Field                                                                        | Scope              | Implemented By |
+| ------------------------- | ---------------------------------------------------------------------------- | ------------------ | -------------- |
 | Google Closure Namespaces | [`:libs`](https://cljs.github.io/api/compiler-options/libs)                  | This Project       | [ClojureScript Compiler](https://github.com/clojure/clojurescript/blob/master/src/main/clojure/cljs/js_deps.cljc#L287) |
 | NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | This Project       | [`lein-shadow`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/src/leiningen/shadow.clj#L29) |             
 | NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | Dependent Projects | [`shadow-cljs`](https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249) |
