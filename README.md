@@ -65,40 +65,6 @@ lein new re-frame <project-name> +garden +re-com +routes +test +less +10x
 
 >  Note: to assist debugging, you'll want to include either `+10x` or `+re-frisk` 
 
-## Dependencies
-
-Clojure and ClojureScript dependencies go in `project.clj` as per a normal [Leiningen](https://leiningen.org/) project.
-
-JavaScript and NPM dependencies go in `src/cljs/deps.cljs` as per the following example:
-```clojure
-{:libs         ["some-google-closure-ns-lib.js"]
- :npm-deps     {"pako"                  "1.0.10"}
- :npm-dev-deps {"shadow-cljs"           "2.9.0"
-                "karma"                 "4.4.1"
-                "karma-chrome-launcher" "3.1.0"
-                "karma-cljs-test"       "0.1.0"
-                "karma-junit-reporter"  "2.0.1"}}
-```
-
-| Type                      | Field                                                                        | Scope              | Implemented By |
-| ------------------------- | ---------------------------------------------------------------------------- | ------------------ | -------------- |
-| Google Closure Namespaces | [`:libs`](https://cljs.github.io/api/compiler-options/libs)                  | This Project       | [ClojureScript Compiler](https://github.com/clojure/clojurescript/blob/master/src/main/clojure/cljs/js_deps.cljc#L287) |
-| NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | This Project       | [`lein-shadow`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/src/leiningen/shadow.clj#L29) |             
-| NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | Dependent Projects | [`shadow-cljs`](https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249) |
-| NPM Dev Dependencies      | [`:npm-dev-deps`](https://docs.npmjs.com/files/package.json#devdependencies) | This Project       | [`lein-shadow`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/src/leiningen/shadow.clj#L29) | 
-
-Principals of dependency management:
-- Use `project.clj` (for Clojure/ClojureScript) and `deps.cljs` (for JavaScript/NPM) as the source of truth
-- Therefore, `package.json` can be considered an ephemeral file that is only generated from `deps.cljs` for interfacing with external tools (e.g. `npm`)
-- [Don't use CLJSJS](https://shadow-cljs.github.io/docs/UsersGuide.html#cljsjs)
-
-We're aware there is conflicting advice from upstream shadow-cljs that one should maintain both a `package.json`
- (for this project) and `deps.cljs` (for dependent projects). This situation has, in practice, caused us issues with
-managing dependencies in libraries. Whereas using the above table with `lein-shadow` everything works predictably and
-without duplication or file conflicts. Ultimately we'd like to see `deps.cljs` for this project scoped dependencies
-rolled into official shadow-cljs, or some other consistent approach. Until then we'll continue recommending the above
-pragmatic strategy.
-
 ## Start Cider from Emacs (if using +cider):
 
 Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#cider).
@@ -234,6 +200,40 @@ Then deploy the application
 ```
 git push heroku master
 ```
+
+## How to Add Dependencies
+
+If you want to add Clojure and ClojureScript dependencies edit `project.clj` as per a normal
+[Leiningen](https://leiningen.org/) project.
+
+Do not edit `package.json` because it is a generated file, and your edits will be overridden.
+
+Instead, if you want to add JavaScript and NPM dependencies edit `src/cljs/deps.cljs`.
+ 
+This file has two main sections of interest:
+```clojure
+{:npm-deps     {"pako"                  "1.0.10"}
+ :npm-dev-deps {"shadow-cljs"           "2.9.0"
+                "karma"                 "4.4.1"
+                "karma-chrome-launcher" "3.1.0"
+                "karma-cljs-test"       "0.1.0"
+                "karma-junit-reporter"  "2.0.1"}}
+```
+
+If you want to add a normal dependency for use in your application like a React component or JavaScript libraries like
+P5 then simply add these to `:npm-deps`.
+
+If you want to add a build or test dependency like a Karma runner simply add these to `:npm-dev-deps`.
+
+There are two consumers of this `deps.cljs` file, `lein-shadow` and `shadow-cljs`.
+
+Here is a guide for where to add dependencies in this file:
+
+| Type                      | Field                                                                        | Scope              | Implemented By |
+| ------------------------- | ---------------------------------------------------------------------------- | ------------------ | -------------- |
+| NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | This Project       | [`lein-shadow`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/src/leiningen/shadow.clj#L29) |             
+| NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | Dependent Projects | [`shadow-cljs`](https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249) |
+| NPM Dev Dependencies      | [`:npm-dev-deps`](https://docs.npmjs.com/files/package.json#devdependencies) | This Project       | [`lein-shadow`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/src/leiningen/shadow.clj#L29) | 
 
 ## Other Templates
 
