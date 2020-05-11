@@ -225,16 +225,6 @@ P5 then simply add these to `:npm-deps`.
 
 If you want to add a build or test dependency like a Karma runner simply add these to `:npm-dev-deps`.
 
-There are two consumers of this `deps.cljs` file, `lein-shadow` and `shadow-cljs`.
-
-Here is a guide for where to add dependencies in this file:
-
-| Type                      | Field                                                                        | Scope              | Implemented By |
-| ------------------------- | ---------------------------------------------------------------------------- | ------------------ | -------------- |
-| NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | This Project       | [`lein-shadow`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/src/leiningen/shadow.clj#L29) |             
-| NPM Dependencies          | [`:npm-deps`](https://docs.npmjs.com/files/package.json#dependencies)        | Dependent Projects | [`shadow-cljs`](https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249https://github.com/thheller/shadow-cljs/blob/ff634cb373b50845bdf78a451216c7592efc48fc/src/main/shadow/build/classpath.clj#L249) |
-| NPM Dev Dependencies      | [`:npm-dev-deps`](https://docs.npmjs.com/files/package.json#devdependencies) | This Project       | [`lein-shadow`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/src/leiningen/shadow.clj#L29) | 
-
 ## Other Templates
 
 * [chestnut](https://github.com/plexus/chestnut)
