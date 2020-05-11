@@ -73,7 +73,7 @@ JavaScript and NPM dependencies go in `src/cljs/deps.cljs` as per the following 
 ```clojure
 {:libs         ["some-google-closure-ns-lib.js"]
  :npm-deps     {"pako"                  "1.0.10"}
- :npm-dev-deps {"shadow-cljs"           "2.8.110"
+ :npm-dev-deps {"shadow-cljs"           "2.9.0"
                 "karma"                 "4.4.1"
                 "karma-chrome-launcher" "3.1.0"
                 "karma-cljs-test"       "0.1.0"
