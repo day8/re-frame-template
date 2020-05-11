@@ -203,14 +203,16 @@ git push heroku master
 
 ## How to Add Dependencies
 
-If you want to add Clojure and ClojureScript dependencies edit `project.clj` as per a normal
-[Leiningen](https://leiningen.org/) project.
+Your new application uses a build tool chain which combines  [shadow-cljs](http://shadow-cljs.org/) (a modern CLJS compiler) and [Leiningen](https://leiningen.org/) (a traditional Clojure build tool). The two are bought together via `Lien-shadow`. 
 
-Do not edit `package.json` because it is a generated file, and your edits will be overridden.
+First, if you want to add Clojure and ClojureScript dependencies you should edit `project.clj` as [you would for a normal
+Leiningen](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies) project.
 
 Instead, if you want to add JavaScript and NPM dependencies edit `src/cljs/deps.cljs`.
+
+*Do not edit `package.json` because it is a generated file, and your edits will be overridden.*
  
-This file has two main sections of interest:
+`deps.cljs` has two sections of interest:
 ```clojure
 {:npm-deps     {"pako"                  "1.0.10"}
  :npm-dev-deps {"shadow-cljs"           "2.9.0"
@@ -220,10 +222,10 @@ This file has two main sections of interest:
                 "karma-junit-reporter"  "2.0.1"}}
 ```
 
-If you want to add a normal dependency for use in your application like a React component or JavaScript libraries like
-P5 then simply add these to `:npm-deps`.
+If you want to add a dependency to your application, like a React component, or a JavaScript library like
+P5, then add it to the `:npm-deps` section. 
 
-If you want to add a build or test dependency like a Karma runner simply add these to `:npm-dev-deps`.
+If you want to add a build or test dependency, like a Karma runner, add them to the `:npm-dev-deps` section. 
 
 ## Other Templates
 
