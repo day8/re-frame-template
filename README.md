@@ -203,16 +203,15 @@ git push heroku master
 
 ## How to Add Dependencies
 
-Your new application uses a build tool chain which combines  [shadow-cljs](http://shadow-cljs.org/) (a modern CLJS compiler) and [Leiningen](https://leiningen.org/) (a traditional Clojure build tool). The two are bought together via `Lien-shadow`. 
+Your new application is built by a tool chain which combines  [shadow-cljs](http://shadow-cljs.org/) (a modern CLJS compiler) and [Leiningen](https://leiningen.org/) (a traditional Clojure build tool). The two are stiched together via `Lien-shadow`. 
 
-First, if you want to add Clojure and ClojureScript dependencies you should edit `project.clj` as [you would for a normal
+There are three files of interest: 
+  -  `project.clj` - edit this if you want to add Clojure and ClojureScript dependencies as [you would for a normal
 Leiningen](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies) project.
+  - `package.json` - do not edit. With this tool chain, it is a generated file, and your edits will be lost
+  - `src/cljs/deps.cljs` - edit this file if you want to add a JavaScript and NPM dependency 
 
-Instead, if you want to add JavaScript and NPM dependencies edit `src/cljs/deps.cljs`.
-
-*Do not edit `package.json` because it is a generated file, and your edits will be overridden.*
- 
-`deps.cljs` has two sections of interest:
+Inside of `deps.cljs`, there are two sections of interest:
 ```clojure
 {:npm-deps     {"pako"                  "1.0.10"}
  :npm-dev-deps {"shadow-cljs"           "2.9.0"
