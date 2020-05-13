@@ -18,7 +18,7 @@
                  [re-pressed "0.3.1"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
-  :plugins [[lein-shadow "0.1.7"]
+  :plugins [[lein-shadow "0.2.0"]
             {{#garden?}}[lein-garden "0.3.0"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}
             [lein-shell "0.5.0"]]
