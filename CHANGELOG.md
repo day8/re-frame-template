@@ -11,6 +11,7 @@
   be forthcoming. Thanks to [@thheller](https://github.com/thheller) for his input.
 - Upgrade secretary to 1.2.4. Fixes day8/re-frame#530. Thanks to [@JDurstberger](https://github.com/JDurstberger).
 - Upgrade shadow-cljs to 2.9.2
+- Upgrade re-frisk to 1.3.2
 
 ## 1.0.33 (2020-05-11)
 
