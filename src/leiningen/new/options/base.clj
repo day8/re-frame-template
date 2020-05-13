@@ -4,6 +4,7 @@
 (defn files [data]
   [[".gitignore" (helpers/render "gitignore" data)]
    ["README.md" (helpers/render "README.md" data)]
+   ["package.json" (helpers/render "package.json" data)]
    ["project.clj" (helpers/render "project.clj" data)]
    ["karma.conf.js" (helpers/render "karma.conf.js" data)]
    ["dev/cljs/user.cljs" (helpers/render "dev/cljs/user.cljs" data)]

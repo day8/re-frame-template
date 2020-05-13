@@ -2,6 +2,19 @@
 
 ### Changed
 
+- Upgrade `lein-shadow` to 0.2.0.
+  See the [`lein-shadow` `CHANGELOG.md`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/CHANGELOG.md)
+  and [merge request](https://gitlab.com/nikperic/lein-shadow/-/merge_requests/3) for a full list of changes.
+  See issues [#127](https://github.com/day8/re-frame-template/issues/127) and
+  [#128](https://github.com/day8/re-frame-template/issues/128) for some of the background and ongoing
+  discussion. Further changes to align with `shadow-cljs` and `npm` while maintaining a `lein`-focus may
+  be forthcoming. Thanks to [@thheller](https://github.com/thheller) for his input.
+- Upgrade secretary to 1.2.4. Fixes day8/re-frame#530. Thanks to [@JDurstberger](https://github.com/JDurstberger).
+
+## 1.0.33 (2020-05-11)
+
+### Changed
+
 - Upgrade shadow-cljs to 2.9.0
 
 ## 1.0.32 (2020-05-06)
