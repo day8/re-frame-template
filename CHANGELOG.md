@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.34 (2020-05-14)
+
 ### Changed
 
 - Upgrade `lein-shadow` to 0.2.0.
