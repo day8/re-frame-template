@@ -23,7 +23,7 @@
             [lein-less "1.7.5"]{{/less?}}
             [lein-shell "0.5.0"]]
 
-  :min-lein-version "2.5.3"{{#cider?}}
+  :min-lein-version "2.9.0"{{#cider?}}
 
   :jvm-opts ["-Xmx1G"]{{/cider?}}
 
