@@ -7,6 +7,7 @@
   work, but we don't test them, so we may as well specify a properly tested and supported version. The
   previous required minimum `2.5.3` is also 5 years old, so thats really old. The new minimum `2.9.0` is 
   1.25 years old already, so its reasonable.
+- Upgrade shadow-cljs to 2.9.3
 
 ## 1.0.34 (2020-05-14)
 
