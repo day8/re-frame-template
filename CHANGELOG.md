@@ -1,6 +1,12 @@
 ## Unreleased
 
-## Changed
+### Changed
+
+- Upgrade re-frame-10x to [0.6.5](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#065---2020-05-15)
+
+## 1.1.0 (2020-05-14)
+
+### Changed
 
 - Upgrade ClojureScript to [1.10.764](https://github.com/clojure/clojurescript/blob/master/changes.md#110764)
 - Raise minimum Leiningen version for the generated project to `2.9.0` or later. Older versions *might*
