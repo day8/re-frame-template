@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.1.1 (2020-05-15)
+
 ### Changed
 
 - Upgrade re-frame-10x to [0.6.5](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#065---2020-05-15)
