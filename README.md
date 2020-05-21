@@ -12,6 +12,10 @@ A Leiningen template for quickly creating a [re-frame](https://github.com/day8/r
 
 Provides a way to pick and choose what "extras" are included into your application. Extras like libraries which do routing, debugging and CSS. 
 
+## Before You Start 
+
+You'll need to install Clojure and Leiningen (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/)
+
 ## Basic Usage
 
 The base template includes:
