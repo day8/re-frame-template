@@ -8,13 +8,13 @@
 
 # re-frame-template
 
-A Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It only takes you 60 seconds to create your first re-frame app and to start editting it. 
+This is a Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It will only take you 60 seconds to create your first re-frame app and start editting it. 
 
-Provides a way to pick and choose what "extras" are included into your application. Extras like libraries which do routing, debugging and CSS. 
+When creating your application, you can pick and choose what "extras" you'd like included into the scaffold - "extras" like libraries to do routing, debugging and CSS. 
 
 ## Before You Start 
 
-You'll need to install Clojure and Leiningen (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/)
+You'll need to install Clojure and Leiningen (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/).
 
 ## Basic Usage
 
@@ -25,16 +25,16 @@ The base template includes:
 * [cljs-devtools](https://github.com/binaryage/cljs-devtools)
 
 To create an application with just the base template, use this commandline:
+```sh
+$ lein new re-frame <app-name> 
 ```
-lein new re-frame <project-name> 
-```
-where you might, for example, substitute `my-killer-app`  for the `<project-name>` bit or, perhaps, `an-early-masterpiece`.
+When using this command, you'll need to substitute in your own `<app-name>` - perhaps `my-killer-app` or `an-early-masterpiece`.
 
-> **Troubleshooting note:** for `<project-name>` don't use `cljs`. That name will confuse the compiler (long story) and you will later see errors like `cljs.core.init is not a function`. 
+> **Troubleshooting note:** for `<app-name>` don't use `cljs`. That name will confuse the compiler (long story) and you will later see errors like `cljs.core.init is not a function`. 
 
 ## Extras
 
-The optional extras (aka profiles) include:
+The following extras can be nominated on the commandline when you create the template: 
 
 * CSS
   * [garden](https://github.com/noprompt/garden) (`+garden`)
@@ -55,16 +55,17 @@ The optional extras (aka profiles) include:
 * Routing
   * [secretary](https://github.com/gf3/secretary) (`+routes`)
 
-To add a `profile` to the base template, just append its name (let's use `+re-com` as an example):
+To add a `extra` to the base template, append its name to the commandline, with a leading `+`. Here's an example of adding `re-com`: 
 
 ```
-lein new re-frame <project-name> +re-com
+lein new re-frame <app-name> +re-com
 ```
+Note: it is `+re-com`, not just `re-com`. 
 
-Any combination of `profiles` can be added at once:
+Any combination of `extras` can be added at once:
 
 ```
-lein new re-frame <project-name> +garden +re-com +routes +test +less +10x
+lein new re-frame <app-name> +garden +re-com +routes +test +less +10x
 ```
 
 >  Note: to assist debugging, you'll want to include either `+10x` or `+re-frisk` 
@@ -75,9 +76,9 @@ Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.githu
 
 The mentioned `dir-local.el` file is created by this template.
 
-## Compile css (if using +garden or +less):
+## Compile CSS (if using +garden or +less):
 
-To compile css files once.
+To compile CSS files once.
 
 ```sh
 lein garden once
@@ -86,7 +87,7 @@ lein less once
 ```
 
 
-When developing, to automatically recompile css files on each file change, use:
+When developing, to automatically recompile CSS files on each file change, use:
 
 ```sh
 lein garden auto
@@ -108,7 +109,7 @@ lein dev
 
 Wait a bit, perhaps 20 seconds, keeping an eye out for a sign the compile has finished, then browse to [http://localhost:8280](http://localhost:8280).
 
-To see other available `shadow-cljs` commands run:
+To see the other available `shadow-cljs` commands run:
 ```
 lein run -m shadow.cljs.devtools.cli --help
 ```
@@ -133,7 +134,7 @@ I'll assume Chrome for the purposes of further explanation:
 ## Open 10x Panel (if using +10x):
 
 To use `re-frame-10x` for debugging your app: 
-  1. click on the application, minimal through it is, to give it "input<project-name> focus" (you want to be sure that any key presses are going to your new app)
+  1. click on the application, minimal through it is, to give it "input focus" (you want to be sure that any key presses are going to your new app)
   2. press `Ctrl-H` and you should see the `re-frame-10x` panel appear on the right side of the window
 
 Sometimes achieving Step 1 on a really simple app - one without widgets - can be fiddly, 
@@ -143,14 +144,16 @@ I have every confidence in you.
 
 ## Hot Reloading Is Now Go
 
-If you now edit files, like perhaps `/src/cljs/<project-name>/views.cljs`, shadow-clj will automatically 
+If you now edit files, shadow-clj will automatically 
 recompile your changes and "hot load" them into your running app, without your app needing 
 to be re-started. The resulting fast, iterative workflow tends to make you very productive, and 
 is cherished by those lucky enough to experience it.
 
+Start by editting this file: `/src/cljs/<app-name>/views.cljs`.
+
 ### debug?:
 
-In _project-name.config_, there is a variable called `debug?`, which defaults to
+In the namespace _app-name.config_, there is a var called `debug?`, which defaults to
 _true_ in the `dev` build, and _false_ in the `prod` build.
 
 If, for example, you wrap your `println`s with a `when` block as shown below,
