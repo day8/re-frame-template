@@ -12,6 +12,7 @@
    [leiningen.new.options.views :as views]
    [leiningen.new.options.helpers :as helpers]
    [leiningen.new.options.cider :as cider]
+   [leiningen.new.options.calva :as calva]
    [clojure.set :as set])
   (:use [leiningen.new.templates :only [name-to-path sanitize-ns ->files]]))
 
@@ -34,6 +35,7 @@
    ;; development
    (when (helpers/option? kondo/option options) (kondo/files data))
    (when (helpers/option? test/option options) (test/files data))
+   (when (helpers/option? calva/option options) (calva/files data))
 
    ;; full-stack
    (when (helpers/option? handler/option options) (handler/files data))
@@ -62,6 +64,7 @@
 
    ;; development
    :cider?   (helpers/option? cider/option options)
+   :calva?   (helpers/option? calva/option options)
    :kondo?   (helpers/option? kondo/option options)
    :test?    (helpers/option? test/option options)
 
@@ -97,6 +100,7 @@
 
     ;; development
     cider/option
+    calva/option
     kondo/option
     test/option
 
