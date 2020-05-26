@@ -1,0 +1,19 @@
+{
+    "calva.replConnectSequences": [
+        {
+            "name": "Leiningen -> shadow-cljs",
+            "projectType": "lein-shadow",
+            "cljsType": "shadow-cljs",
+            "menuSelections": {
+                "leinAlias": null,
+                "leinProfiles": [
+                    "dev"
+                ],
+                "cljsLaunchBuilds": [
+                    "app"
+                ],
+                "cljsDefaultBuild": "app"
+            }
+        }
+    ]
+}

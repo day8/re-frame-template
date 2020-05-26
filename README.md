@@ -8,11 +8,11 @@
 
 # re-frame-template
 
-This is a Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It will only take you 60 seconds to create your first re-frame app and start editting it. 
+This is a Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It will only take you 60 seconds to create your first re-frame app and start editting it.
 
-When creating your application, you can pick and choose what "extras" you'd like included into the scaffold - "extras" like libraries to do routing, debugging and CSS. 
+When creating your application, you can pick and choose what "extras" you'd like included into the scaffold - "extras" like libraries to do routing, debugging and CSS.
 
-## Before You Start 
+## Before You Start
 
 You'll need to install Clojure and Leiningen (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/).
 
@@ -26,15 +26,15 @@ The base template includes:
 
 To create an application with just the base template, use this commandline:
 ```sh
-$ lein new re-frame <app-name> 
+$ lein new re-frame <app-name>
 ```
 When using this command, you'll need to substitute in your own `<app-name>` - perhaps `my-killer-app` or `an-early-masterpiece`.
 
-> **Troubleshooting note:** for `<app-name>` don't use `cljs`. That name will confuse the compiler (long story) and you will later see errors like `cljs.core.init is not a function`. 
+> **Troubleshooting note:** for `<app-name>` don't use `cljs`. That name will confuse the compiler (long story) and you will later see errors like `cljs.core.init is not a function`.
 
 ## Extras
 
-The following extras can be nominated on the commandline when you create the template: 
+The following extras can be nominated on the commandline when you create the template:
 
 * CSS
   * [garden](https://github.com/noprompt/garden) (`+garden`)
@@ -44,6 +44,7 @@ The following extras can be nominated on the commandline when you create the tem
   * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
 * Development
   * [cider](https://github.com/clojure-emacs/cider) (`+cider`)
+  * [Calva](https://github.com/BetterThanTomorrow/calva) (`+calva`)
   * [clj-kondo](https://github.com/borkdude/clj-kondo) (`+kondo`)
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
 * Full-stack
@@ -55,12 +56,12 @@ The following extras can be nominated on the commandline when you create the tem
 * Routing
   * [secretary](https://github.com/gf3/secretary) (`+routes`)
 
-To add a `extra` to the base template, append its name to the commandline, with a leading `+`. Here's an example of adding `re-com`: 
+To add a `extra` to the base template, append its name to the commandline, with a leading `+`. Here's an example of adding `re-com`:
 
 ```
 lein new re-frame <app-name> +re-com
 ```
-Note: it is `+re-com`, not just `re-com`. 
+Note: it is `+re-com`, not just `re-com`.
 
 Any combination of `extras` can be added at once:
 
@@ -68,13 +69,29 @@ Any combination of `extras` can be added at once:
 lein new re-frame <app-name> +garden +re-com +routes +test +less +10x
 ```
 
->  Note: to assist debugging, you'll want to include either `+10x` or `+re-frisk` 
+>  Note: to assist debugging, you'll want to include either `+10x` or `+re-frisk`
 
 ## Start Cider from Emacs (if using +cider):
 
 Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#cider).
 
 The mentioned `dir-local.el` file is created by this template.
+
+## Connect Calva from VS Code (if using +calva):
+
+1. Issue the command **Calva: Start a Project REPL and Connect (a.k.a Jack-in)**, `ctrl+alt+c ctrl+alt+j`. (This will start the app, so in this workflow you don't do the **Run application** steps outlined below.)
+    * Wait for the *Calva says* output pane to say: *Creating cljs repl session...*
+1. Open http://localhost:8280 in your browser.
+    * Confirm that it says *Hello from re-frame*. (Depending on how long the app takes to compile, you might need to reload the page a few times.)
+1. Open a `cljs` file from `src/cljs` and issue **Calva: Load Current File and Dependencies**. `ctrl+alt+c enter`.
+
+
+
+See https://calva.io for more on how to use Calva.
+
+### Add Calva settings to an existing project
+
+Do you have a project that was created without the `+calva` option, and want the easy Jack-in anyway? No worries! At https://calva.io/re-frame-template/ you will find the settings needed.
 
 ## Compile CSS (if using +garden or +less):
 
@@ -118,35 +135,35 @@ lein run -m shadow.cljs.devtools.cli --help
 
 So, you now have the application running.
 
-Before you start developing, you should tweak two settings within your 
-browser's `devtools`. These are one-time actions (for each browser and laptop you use). 
-I'll assume Chrome for the purposes of further explanation: 
+Before you start developing, you should tweak two settings within your
+browser's `devtools`. These are one-time actions (for each browser and laptop you use).
+I'll assume Chrome for the purposes of further explanation:
 
 1. Open devtools. Press press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
 1. Open devtool's "Setting" Panel. Press F1. (Careful. Not the Setting panel for Chrome itself!! The Settings panel for devtools)
-1. Under the "Network" heading, tick the option "Disable cache (while DevTools is open)". You don't want shadow-clj's attempts at reloading to be defeated by caching. 
+1. Under the "Network" heading, tick the option "Disable cache (while DevTools is open)". You don't want shadow-clj's attempts at reloading to be defeated by caching.
 1. Under the "Console" heading, tick the option "Enable custom formatters". This allows [cljs-devtools](https://github.com/binaryage/cljs-devtools) to perform its magic.
-1. Close Settings. Close Devtools. 
-1. Reopen Devtools 
+1. Close Settings. Close Devtools.
+1. Reopen Devtools
 
 ![settings](docs/images/devtools-settings.png)
 
 ## Open 10x Panel (if using +10x):
 
-To use `re-frame-10x` for debugging your app: 
+To use `re-frame-10x` for debugging your app:
   1. click on the application, minimal through it is, to give it "input focus" (you want to be sure that any key presses are going to your new app)
   2. press `Ctrl-H` and you should see the `re-frame-10x` panel appear on the right side of the window
 
-Sometimes achieving Step 1 on a really simple app - one without widgets - can be fiddly, 
+Sometimes achieving Step 1 on a really simple app - one without widgets - can be fiddly,
 because the browser itself hogs "input focus" and grabs all the keystrokes (like `Ctrl-H`) which don't
-then make it through to your app. You may need to be determined and creative with Step 1. 
+then make it through to your app. You may need to be determined and creative with Step 1.
 I have every confidence in you.
 
 ## Hot Reloading Is Now Go
 
-If you now edit files, shadow-clj will automatically 
-recompile your changes and "hot load" them into your running app, without your app needing 
-to be re-started. The resulting fast, iterative workflow tends to make you very productive, and 
+If you now edit files, shadow-clj will automatically
+recompile your changes and "hot load" them into your running app, without your app needing
+to be re-started. The resulting fast, iterative workflow tends to make you very productive, and
 is cherished by those lucky enough to experience it.
 
 Start by editting this file: `/src/cljs/<app-name>/views.cljs`.
@@ -212,11 +229,11 @@ git push heroku master
 
 Your new application is built by a tool chain which combines  [shadow-cljs](http://shadow-cljs.org/) (a modern CLJS compiler) and [Leiningen](https://leiningen.org/) (a traditional Clojure build tool). The two are bought together via a Leiningen plugin called [Lien-shadow](https://gitlab.com/nikperic/lein-shadow).
 
-There are three files of interest: 
+There are three files of interest:
   -  `project.clj` - edit this file if you want to add Clojure and ClojureScript dependency as [you would for a normal
 Leiningen project](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies).
   - `package.json` - do not edit this file. With this tool chain, it is a generated file, and your edits will be lost.
-  - `src/cljs/deps.cljs` - edit this file if you want to add a JavaScript and NPM dependency 
+  - `src/cljs/deps.cljs` - edit this file if you want to add a JavaScript and NPM dependency
 
 Within `deps.cljs`, there are two sections of interest:
 ```clojure
@@ -229,9 +246,9 @@ Within `deps.cljs`, there are two sections of interest:
 ```
 
 If you are adding a dependency to your application, like a React component, or a JavaScript library like
-P5, then add it to the `:npm-deps` section. 
+P5, then add it to the `:npm-deps` section.
 
-If you are adding a build or test dependency, like a Karma runner, put it into the `:npm-dev-deps` section. 
+If you are adding a build or test dependency, like a Karma runner, put it into the `:npm-dev-deps` section.
 
 ## Other Templates
 
