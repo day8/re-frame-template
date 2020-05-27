@@ -1,5 +1,12 @@
 ## Unreleased
 
+## 1.1.2 (2020-05-27)
+
+### Added
+
+- Add Calva support. See [#132](https://github.com/day8/re-frame-template/pull/132).
+  Thanks to [@PEZ](https://github.com/PEZ).
+
 ## 1.1.1 (2020-05-15)
 
 ### Changed
