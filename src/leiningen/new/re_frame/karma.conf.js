@@ -14,8 +14,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     client: {
-      args: ['shadow.test.karma.init'],
-      singleRun: true
+      args: ['shadow.test.karma.init']
     },
 
     // the default configuration
