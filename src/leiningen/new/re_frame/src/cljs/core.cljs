@@ -1,6 +1,5 @@
 (ns {{ns-name}}.core
   (:require
-   [reagent.core :as reagent]
    [reagent.dom :as rdom]
    [re-frame.core :as re-frame]{{#re-pressed?}}
    [re-pressed.core :as rp]{{/re-pressed?}}{{#breaking-point?}}
