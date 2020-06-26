@@ -39,6 +39,7 @@ The following extras can be nominated on the commandline when you create the tem
 * CSS
   * [garden](https://github.com/noprompt/garden) (`+garden`)
   * [less](https://github.com/montoux/lein-less) (`+less`)
+  * [scss](https://github.com/montoux/lein-scss) (`+scss`)
 * Debug
   * [re-frame-10x](https://github.com/day8/re-frame-10x) (`+10x`)
   * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
@@ -93,7 +94,7 @@ See https://calva.io for more on how to use Calva.
 
 Do you have a project that was created without the `+calva` option, and want the easy Jack-in anyway? No worries! At https://calva.io/re-frame-template/ you will find the settings needed.
 
-## Compile CSS (if using +garden or +less):
+## Compile CSS (if using +garden, +less or +scss):
 
 To compile CSS files once.
 
@@ -101,6 +102,8 @@ To compile CSS files once.
 lein garden once
 
 lein less once
+
+lein scss once
 ```
 
 
@@ -110,6 +113,8 @@ When developing, to automatically recompile CSS files on each file change, use:
 lein garden auto
 
 lein less auto
+
+lein scss auto
 ```
 
 ## Run application:

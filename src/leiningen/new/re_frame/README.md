@@ -13,7 +13,8 @@ you.
   - Front end ([re-frame](https://github.com/day8/re-frame)): [ClojureScript](https://clojurescript.org/) (CLJS){{#handler?}}
   - Back end/middleware ([Compojure](https://github.com/weavejester/compojure)): [Clojure](https://clojure.org/){{/handler?}}{{#garden?}}
   - CSS compilation ([`lein-garden`](https://github.com/noprompt/lein-garden)): [Clojure](https://clojure.org/){{/garden?}}{{#less?}}
-  - CSS compilation ([`lein-less`](https://github.com/montoux/lein-less)): [Less](http://lesscss.org/features/){{/less?}}
+  - CSS compilation ([`lein-less`](https://github.com/montoux/lein-less)): [Less](http://lesscss.org/features/){{/less?}}{{#scss?}}
+  - CSS compilation ([`lein-scss`](https://github.com/bluegray/lein-scss)): [Scss](https://sass-lang.com/){{/scss?}}
 * Dependencies
   - UI framework: [re-frame](https://github.com/day8/re-frame)
   ([docs](https://github.com/day8/re-frame/blob/master/docs/README.md),
@@ -33,7 +34,8 @@ you.
   - Project task & dependency management: [Leiningen](https://github.com/technomancy/leiningen)
   - CLJS compilation, REPL, & hot reload: [`shadow-cljs`](https://github.com/thheller/shadow-cljs){{#garden?}}
   - CSS compilation: [`lein-garden`](https://github.com/noprompt/lein-garden){{/garden?}}{{#less?}}
-  - CSS compilation: [`lein-less`](https://github.com/montoux/lein-less){{/less?}}{{#test?}}
+  - CSS compilation: [`lein-less`](https://github.com/montoux/lein-less){{/less?}}{{#scss?}}
+  - CSS compilation: [`lein-scss`](https://github.com/bluegray/lein-scss){{/scss?}}{{#test?}}
   - Test framework: [cljs.test](https://clojurescript.org/tools/testing)
   - Test runner: [Karma](https://github.com/karma-runner/karma){{/test?}}
 * Development tools
@@ -51,7 +53,8 @@ you.
 * [`dev/`](dev/): source files compiled only with the [dev](#running-the-app) profile
   - [`cljs/user.cljs`](dev/cljs/user.cljs): symbols for use during development in the
 [ClojureScript REPL](#connecting-to-the-browser-repl-from-a-terminal){{#less?}}
-* [`less/`](less/): CSS compilation source files ([Less](http://lesscss.org/features/)){{/less?}}
+* [`less/`](less/): CSS compilation source files ([Less](http://lesscss.org/features/)){{/less?}}{{#scss?}}
+* [`scss/`](scss/): CSS compilation source files ([Less](https://sass-lang.com/)){{/scss?}}
 * [`resources/public/`](resources/public/): SPA root directory;
 [dev](#running-the-app) / [prod](#production) profile depends on the most recent build{{#re-com?}}
   - [`vendor/`](resources/public/vendor/): UI component CSS, fonts, and images
@@ -68,7 +71,9 @@ you.
     - `css/`: compiled CSS (`lein-garden`, can also be
 [compiled manually](#compiling-css-with-lein-garden)){{/garden?}}{{#less?}}
     - `css/`: compiled CSS (`lein-less`, can also be
-[compiled manually](#compiling-css-with-lein-less)){{/less?}}
+[compiled manually](#compiling-css-with-lein-less)){{/less?}}{{#scss?}}
+    - `css/`: compiled CSS (`lein-scss`, can also be
+[compiled manually](#compiling-css-with-lein-scss)){{/scss?}}
     - `js/compiled/`: compiled CLJS (`shadow-cljs`)
       - Not tracked in source control; see [`.gitignore`](.gitignore){{#handler?}}
 * [`src/clj/{{sanitized}}/`](src/clj/{{sanitized}}/): Backend and middleware source files (Clojure,
@@ -270,7 +275,29 @@ The `resources/public/css/` directory is created, containing the compiled CSS fi
 Enable automatic compiling of CSS files when source `.less` files are changed:
 ```sh
 lein less auto
-```{{/less?}}
+```{{/less?}}{{#scss?}}
+
+### Compiling CSS with `lein-scss`
+
+Use [Scss](https://sass-lang.com/) to edit styles in `.scss` files located in the
+[`scss/`](scss/) directory. CSS files are compiled automatically on [`dev`](#running-the-app)
+or [`prod`](#production) build.
+
+Manually compile CSS files:
+```sh
+lein scss once
+```
+
+The `resources/public/css/` directory is created, containing the compiled CSS files.
+
+#### Compiling CSS with `lein-scss` on change
+
+Enable automatic compiling of CSS files when source `.scss` files are changed:
+```sh
+lein scss :dev auto
+```{{/scss?}}
+
+Substitute :dev for :prod when generating your final build.
 
 ### Running `shadow-cljs` Actions
 

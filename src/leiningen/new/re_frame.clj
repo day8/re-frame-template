@@ -4,6 +4,7 @@
    [leiningen.new.options.base :as base]
    [leiningen.new.options.garden :as garden]
    [leiningen.new.options.less :as less]
+   [leiningen.new.options.scss :as scss]
    [leiningen.new.options.handler :as handler]
    [leiningen.new.options.kondo :as kondo]
    [leiningen.new.options.re-com :as re-com]
@@ -28,6 +29,7 @@
    ;; css
    (when (helpers/option? garden/option options) (garden/files data))
    (when (helpers/option? less/option options) (less/files data))
+   (when (helpers/option? scss/option options) (scss/files data))
 
    ;; debug
    ;;
@@ -57,6 +59,7 @@
    ;; css
    :garden? (helpers/option? garden/option options)
    :less?   (helpers/option? less/option options)
+   :scss?   (helpers/option? scss/option options)
 
    ;; debug
    :re-frisk? (helpers/option? "+re-frisk" options)
@@ -74,6 +77,8 @@
                   ["garden" "once"])
    :prep-less   (when (helpers/option? less/option options)
                   ["less" "once"])
+   :prep-scss   (when (helpers/option? scss/option options)
+                 ["scss" ":dev" "once"])
 
    ;; misc.
    :re-com?     (helpers/option? re-com/option options)
@@ -93,6 +98,7 @@
   #{;; css
     garden/option
     less/option
+    scss/option
 
     ;; debug
     "+re-frisk"

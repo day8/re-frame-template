@@ -20,7 +20,8 @@
 
   :plugins [[lein-shadow "0.2.0"]
             {{#garden?}}[lein-garden "0.3.0"]{{/garden?}}{{#less?}}
-            [lein-less "1.7.5"]{{/less?}}
+            [lein-less "1.7.5"]{{/less?}}{{#scss?}}
+            [lein-scss "0.3.0"]{{/scss?}}
             [lein-shell "0.5.0"]]
 
   :min-lein-version "2.9.0"{{#cider?}}
@@ -35,21 +36,31 @@
                                     "test/js"{{/test?}}{{#garden?}}
                                     "resources/public/css"{{/garden?}}]
 
-{{#garden?}}
+ {{#garden?}}
 
-  :garden {:builds [{:id           "screen"
-                     :source-paths ["src/clj"]
-                     :stylesheet   {{name}}.css/screen
-                     :compiler     {:output-to     "resources/public/css/screen.css"
-                                    :pretty-print? true}}]}
-{{/garden?}}{{#less?}}
+ :garden {:builds [{:id           "screen"
+                    :source-paths ["src/clj"]
+                    :stylesheet   {{name}}.css/screen
+                    :compiler     {:output-to     "resources/public/css/screen.css"
+                                   :pretty-print? true}}]}
+ {{/garden?}}{{#less?}}
   :less {:source-paths ["less"]
          :target-path  "resources/public/css"}
-{{/less?}}
+ {{/less?}}{{#scss?}}
+  :scss {:builds
+         {:dev    {:source-dir "scss/"
+                   :dest-dir   "resources/public/css/"
+                   :executable "sassc"
+                   :args       ["-m" "-I" "scss/" "-t" "nested"]}
+          :prod {:source-dir "scss/"
+                 :dest-dir   "resources/public/css/"
+                 :executable "sassc"
+                 :args       ["-I" "scss/" "-t" "compressed"]}}}
+ {{/scss?}}
 
-  :shell {:commands {"open" {:windows ["cmd" "/c" "start"]
-                             :macosx  "open"
-                             :linux   "xdg-open"}}}
+ :shell {:commands {"open" {:windows ["cmd" "/c" "start"]
+                            :macosx  "open"
+                            :linux   "xdg-open"}}}
 
   :shadow-cljs {:nrepl {:port 8777}
                 
@@ -68,8 +79,8 @@
 
                                :devtools {:http-root "resources/public"
                                           :http-port 8280{{#handler?}}
-                                          :http-handler {{name}}.handler/dev-handler{{/handler?}}
-                                          }}{{#test?}}
+                                          :http-handler {{name}}.handler/dev-handler{{/handler?}}}}
+                              {{#test?}}
                          :browser-test
                          {:target :browser-test
                           :ns-regexp "-test$"
@@ -109,7 +120,8 @@
              :main         {{ns-name}}.server
              :aot          [{{ns-name}}.server]
              :uberjar-name "{{name}}.jar"
-             :prep-tasks   ["compile" ["prod"]{{{prep-garden}}}{{{prep-less}}}]}{{/handler?}}}
+             :prep-tasks   ["compile" ["prod"]{{{prep-garden}}}{{{prep-less}}}{{prep-scss}}]}{{/handler?}}}
 
   :prep-tasks [{{#garden?}}["garden" "once"]{{/garden?}}{{#less?}}
-               ["less" "once"]{{/less?}}])
+               ["less" "once"]{{/less?}}{{#scss?}}
+               ["scss" ":dev" "once"]{{/scss?}}])
