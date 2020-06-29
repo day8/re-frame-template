@@ -3,6 +3,7 @@
 ### Changed
 
 - Upgrade [re-frame-tracing to 0.5.6](https://github.com/day8/re-frame-debux/blob/master/CHANGELOG.md)
+- Upgrade binaryage/devtools to 1.0.2
 
 ## 1.1.2 (2020-05-27)
 
