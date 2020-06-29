@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Changed
+
+- Upgrade [re-frame-tracing to 0.5.6](https://github.com/day8/re-frame-debux/blob/master/CHANGELOG.md)
+
 ## 1.1.2 (2020-05-27)
 
 ### Added
