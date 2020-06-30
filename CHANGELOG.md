@@ -3,6 +3,7 @@
 ### Changed
 
 - Upgrade [re-frame-tracing to 0.5.6](https://github.com/day8/re-frame-debux/blob/master/CHANGELOG.md)
+- Upgrade re-frame-10x to 0.6.6
 - Upgrade binaryage/devtools to 1.0.2
 - Upgrade ClojureScript 1.10.773
 - Upgrade shadow-cljs to 2.10.13
