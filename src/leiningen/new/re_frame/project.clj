@@ -7,7 +7,7 @@
                  [thheller/shadow-cljs "2.10.13"]
                  [reagent "0.10.0"]
                  [re-frame "0.12.0"]{{#10x?}}
-                 [day8.re-frame/tracing "0.5.6"]{{/10x?}}{{#re-com?}}
+                 [day8.re-frame/tracing "0.6.0"]{{/10x?}}{{#re-com?}}
                  [re-com "2.8.0"]{{/re-com?}}{{#routes?}}
                  [clj-commons/secretary "1.2.4"]{{/routes?}}{{#garden?}}
                  [garden "1.3.10"]
@@ -97,8 +97,8 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "1.0.2"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "0.6.6"]{{/10x?}}{{#re-frisk?}}
-                   [re-frisk "1.3.2"]{{/re-frisk?}}]
+                   [day8.re-frame/re-frame-10x "0.7.0"]{{/10x?}}{{#re-frisk?}}
+                   [re-frisk "1.3.4"]{{/re-frisk?}}]
     :source-paths ["dev"]}
 
    :prod {}
