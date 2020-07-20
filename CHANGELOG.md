@@ -1,5 +1,17 @@
 ## Unreleased
 
+## Changed
+
+## 1.1.4 (2020-07-16)
+
+## Changed
+
+- Upgrade re-frame-10x to 0.7.0
+- Upgrade re-frisk to 1.3.4
+- Upgrade re-frame-tracing to 0.6.0
+
+## 1.1.3 (2020-06-30)
+
 ### Changed
 
 - Upgrade [re-frame-tracing to 0.5.6](https://github.com/day8/re-frame-debux/blob/master/CHANGELOG.md)
