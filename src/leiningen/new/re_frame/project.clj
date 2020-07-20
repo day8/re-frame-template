@@ -6,7 +6,7 @@
                                org.clojure/google-closure-library-third-party]]
                  [thheller/shadow-cljs "2.10.17"]
                  [reagent "0.10.0"]
-                 [re-frame "0.12.0"]{{#10x?}}
+                 [re-frame "1.0.0"]{{#10x?}}
                  [day8.re-frame/tracing "0.6.0"]{{/10x?}}{{#re-com?}}
                  [re-com "2.8.0"]{{/re-com?}}{{#routes?}}
                  [clj-commons/secretary "1.2.4"]{{/routes?}}{{#garden?}}
