@@ -2,6 +2,8 @@
 
 ## Changed
 
+- Upgrade shadow-cljs to 2.10.17
+
 ## 1.1.4 (2020-07-16)
 
 ## Changed
