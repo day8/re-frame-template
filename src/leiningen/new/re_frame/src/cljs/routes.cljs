@@ -15,7 +15,7 @@
     (gevents/listen
      EventType/NAVIGATE
      (fn [event]
-       (secretary/dispatch! (.-token event))))
+       (secretary/dispatch! (.-token ^js event))))
     (.setEnabled true)))
 
 (defn app-routes []
