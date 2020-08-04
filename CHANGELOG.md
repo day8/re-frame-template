@@ -1,5 +1,9 @@
 ## Unreleased
 
+## Fixed
+
+- Fix karma lein aliases on Windows
+
 ## Changed
 
 - Upgrade shadow-cljs to 2.10.19

@@ -47,10 +47,6 @@
          :target-path  "resources/public/css"}
 {{/less?}}
 
-  :shell {:commands {"open" {:windows ["cmd" "/c" "start"]
-                             :macosx  "open"
-                             :linux   "xdg-open"}}}
-
   :shadow-cljs {:nrepl {:port 8777}
                 
                 :builds {:app {:target :browser
@@ -82,6 +78,12 @@
                          {:target :karma
                           :ns-regexp "-test$"
                           :output-to "target/karma-test.js"}{{/test?}}}}
+  
+  :shell {:commands {"karma" {:windows         ["cmd" "/c" "karma"]
+                              :default-command "karma"}
+                     "open"  {:windows         ["cmd" "/c" "start"]
+                              :macosx          "open"
+                              :linux           "xdg-open"}}}
 
   :aliases {"dev"          ["with-profile" "dev" "do"
                             ["shadow" "watch" "app"]]
