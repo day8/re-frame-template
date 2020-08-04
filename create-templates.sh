@@ -7,7 +7,7 @@ cd temp
 printf "\ncreating base\n"
 lein new re-frame base
 cd base
-lein prod
+lein release
 cd resources/public
 google-chrome --headless --disable-gpu index.html
 cd ../../..
@@ -15,7 +15,7 @@ cd ../../..
 printf "\ncreating base +routes\n"
 lein new re-frame base-routes +routes
 cd base-routes
-lein prod
+lein release
 cd resources/public
 google-chrome --headless --disable-gpu index.html
 cd ../../..
@@ -23,7 +23,7 @@ cd ../../..
 printf "\ncreating base +re-com\n"
 lein new re-frame base-recom +re-com
 cd base-recom
-lein prod
+lein release
 cd resources/public
 google-chrome --headless --disable-gpu index.html
 cd ../../..
@@ -31,7 +31,7 @@ cd ../../..
 printf "\ncreating base +routes +re-com\n"
 lein new re-frame base-routes-recom +routes +re-com
 cd base-routes-recom
-lein prod
+lein release
 cd resources/public
 google-chrome --headless --disable-gpu index.html
 cd ../../..
@@ -39,7 +39,7 @@ cd ../../..
 printf "\ncreating base +10x +breaking-point +cider +garden +handler +kondo +less +re-com +re-frisk +re-pressed +routes +test\n"
 lein new re-frame everything +10x +breaking-point +cider +garden +handler +kondo +less +re-com +re-frisk +re-pressed +routes +test
 cd everything
-lein prod
+lein release
 npm install -g karma-cli
 lein run -m shadow.cljs.devtools.cli compile karma-test
 cd resources/public

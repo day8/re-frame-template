@@ -154,11 +154,11 @@ the enhancement request in their bug tracker:
 
 ### Running the App
 
-Start a temporary local web server, build the app with the `dev` profile, and serve the app with
-hot reload:
+Start a temporary local web server, build the app with the `dev` profile, and serve the app,
+browser test runner and karma test runner with hot reload:
 
 ```sh
-lein dev
+lein watch
 ```
 
 Please be patient; it may take over 20 seconds to see any output, and over 40 seconds to complete.
@@ -192,8 +192,8 @@ been created for you.
 
 See
 [Shadow CLJS User's Guide: Editor Integration](https://shadow-cljs.github.io/docs/UsersGuide.html#_editor_integration).
-Note that `lein dev` runs `shadow-cljs watch` for you, and that this project's running build id is
-`app`, or the keyword `:app` in a Clojure context.
+Note that `lein watch` runs `shadow-cljs watch` for you, and that this project's running build ids is
+`app`, `browser-test`, `karma-test`, or the keywords `:app`, `:browser-test`, `:karma-test` in a Clojure context.
 
 Alternatively, search the web for info on connecting to a `shadow-cljs` ClojureScript browser REPL
 from your editor and configuration.
@@ -227,10 +227,20 @@ Build the app with the `prod` profile, start a temporary local web server, launc
 Chrome/Chromium, run tests, and stop the web server:
 
 ```sh
-lein karma
+lein ci
 ```
 
-Please be patient; it may take over 15 seconds to see any output, and over 25 seconds to complete.{{/test?}}{{#garden?}}
+Please be patient; it may take over 15 seconds to see any output, and over 25 seconds to complete.
+
+Or, for auto-reload:
+```sh
+lein watch
+```
+
+Then in another terminal:
+```sh
+karma start
+```{{/test?}}{{#garden?}}
 
 ### Compiling CSS with `lein-garden`
 
@@ -307,13 +317,13 @@ Use `debug?` for logging or other tasks that should run only on `dev` builds:
 Build the app with the `prod` profile:{{^handler?}}
 
 ```sh
-lein prod
+lein release
 ```
 
 Please be patient; it may take over 15 seconds to see any output, and over 30 seconds to complete.{{/handler?}}{{#handler?}}
 
 ```sh
-lein with-profile prod uberjar
+lein with-profile release uberjar
 ```
 
 Please be patient; it may take a few seconds to see any output, and over 50 seconds to complete.{{/handler?}}
@@ -350,6 +360,6 @@ The [`resources/public`](resources/public/) directory contains the complete, pro
 end of your app.
 
 Always inspect the `resources/public/js/compiled` directory prior to deploying the app. Running any
-`lein` alias in this project after `lein dev` will, at the very least, run `lein clean`, which
-deletes this generated directory. Further, running `lein dev` will generate many, much larger
+`lein` alias in this project after `lein watch` will, at the very least, run `lein clean`, which
+deletes this generated directory. Further, running `lein watch` will generate many, much larger
 development versions of the files in this directory.{{/handler?}}

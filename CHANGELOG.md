@@ -6,6 +6,11 @@
 
 ## Changed
 
+- Rename lein aliases to align with shadow-cljs terminology. Prints deprecated
+  warning on use of old aliases so that it is not yet a breaking change. Old
+  aliases will be removed in a future release.
+- Change `lein watch` (previously, `lein dev`) to watch all builds including
+  the browser and karma test runners instead of just the application.
 - Upgrade shadow-cljs to 2.10.19
 
 ## 1.2.0 (2020-07-21)

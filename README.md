@@ -121,7 +121,7 @@ lein deps
 
 Then run:
 ```sh
-lein dev
+lein watch
 ```
 
 Wait a bit, perhaps 20 seconds, keeping an eye out for a sign the compile has finished, then browse to [http://localhost:8280](http://localhost:8280).
@@ -193,7 +193,11 @@ npm install -g karma-cli
 And then run your tests
 
 ```
-lein karma
+lein watch
+```
+And in another terminal:
+```
+karma start
 ```
 
 ## Production Build
@@ -201,7 +205,7 @@ lein karma
 To compile clojurescript to javascript:
 
 ```
-lein prod
+lein release
 ```
 
 ### Deploy to heroku (if using `+handler`)
