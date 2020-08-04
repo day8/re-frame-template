@@ -2,6 +2,12 @@
 
 ## Changed
 
+- Upgrade shadow-cljs to 2.10.19
+
+## 1.2.0 (2020-07-21)
+
+## Changed
+
 - Upgrade re-frame to 1.0.0
 - Upgrade shadow-cljs to 2.10.17
 
