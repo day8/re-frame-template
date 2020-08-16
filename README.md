@@ -223,6 +223,12 @@ Create app on heroku
 heroku create
 ```
 
+Specify node.js version:
+
+```
+heroku config:set NODEJS_VERSION=<version-of-choice>
+```
+
 Then deploy the application
 
 ```
