@@ -12,7 +12,7 @@
                  [clj-commons/secretary "1.2.4"]{{/routes?}}{{#garden?}}
                  [garden "1.3.10"]
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
-                 [compojure "1.6.1"]
+                 [compojure "1.6.2"]
                  [yogthos/config "1.1.7"]
                  [ring "1.8.1"]{{/handler?}}{{#re-pressed?}}
                  [re-pressed "0.3.1"]{{/re-pressed?}}{{#breaking-point?}}
