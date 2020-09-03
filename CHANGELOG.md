@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.2.4 (2020-09-04)
+
 ## Fixed
 
 - Fix exception in `server.clj` when port is given from environment. See #140
