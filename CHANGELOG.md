@@ -1,5 +1,15 @@
 ## Unreleased
 
+## Fixed
+
+- Fix exception in `server.clj` when port is given from environment. See #140
+
+## Changed
+
+- Upgrade [karma to 5.2.1](https://github.com/karma-runner/karma/blob/master/CHANGELOG.md#521-2020-09-02)
+
+## 1.2.3 (2020-08-26)
+
 ## Changed
 
 - Upgrade [re-frame to 1.1.1](http://day8.github.io/re-frame/releases/2020/#110-2020-08-24)
