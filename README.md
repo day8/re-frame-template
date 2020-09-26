@@ -8,7 +8,7 @@
 
 # re-frame-template
 
-This is a Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It will only take you 60 seconds to create your first re-frame app and start editting it.
+This is a Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It will only take you 60 seconds to create your first re-frame app and start editing it.
 
 When creating your application, you can pick and choose what "extras" you'd like included into the scaffold - "extras" like libraries to do routing, debugging and CSS.
 
@@ -56,7 +56,7 @@ The following extras can be nominated on the commandline when you create the tem
 * Routing
   * [secretary](https://github.com/gf3/secretary) (`+routes`)
 
-To add a `extra` to the base template, append its name to the commandline, with a leading `+`. Here's an example of adding `re-com`:
+To add an `extra` to the base template, append its name to the commandline, with a leading `+`. Here's an example of adding `re-com`:
 
 ```
 lein new re-frame <app-name> +re-com
@@ -140,7 +140,7 @@ browser's `devtools`. These are one-time actions (for each browser and laptop yo
 I'll assume Chrome for the purposes of further explanation:
 
 1. Open devtools. Press press `F12` or `Ctrl-Shift-i` ([actually there's a variety of ways](https://developer.chrome.com/devtools))
-1. Open devtool's "Setting" Panel. Press F1. (Careful. Not the Setting panel for Chrome itself!! The Settings panel for devtools)
+1. Open the devtools "Settings" panel. Press F1. (Careful. Not the settings panel for Chrome itself!! The settings panel for devtools)
 1. Under the "Network" heading, tick the option "Disable cache (while DevTools is open)". You don't want shadow-clj's attempts at reloading to be defeated by caching.
 1. Under the "Console" heading, tick the option "Enable custom formatters". This allows [cljs-devtools](https://github.com/binaryage/cljs-devtools) to perform its magic.
 1. Close Settings. Close Devtools.
@@ -166,7 +166,7 @@ recompile your changes and "hot load" them into your running app, without your a
 to be re-started. The resulting fast, iterative workflow tends to make you very productive, and
 is cherished by those lucky enough to experience it.
 
-Start by editting this file: `/src/cljs/<app-name>/views.cljs`.
+Start by editing this file: `/src/cljs/<app-name>/views.cljs`.
 
 ### debug?:
 
