@@ -1,8 +1,10 @@
 ## Unreleased
 
+## 1.3.0 (2020-09-28)
+
 ## Changed
 
-- Upgrade lein-shadow to 0.3.1
+- Upgrade [lein-shadow to 0.3.1](https://gitlab.com/nikperic/lein-shadow/-/blob/master/CHANGELOG.md#030-2020-09-22)
 - Upgrade shadow-cljs to 2.11.4
 - Upgrade karma to 5.2.3
 
