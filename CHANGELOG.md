@@ -4,7 +4,7 @@
 
 - Upgrade lein-shadow to 0.3.1
 - Upgrade shadow-cljs to 2.11.4
-- Upgrade karma to 5.2.2
+- Upgrade karma to 5.2.3
 
 ## 1.2.4 (2020-09-04)
 
