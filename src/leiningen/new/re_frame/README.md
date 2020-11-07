@@ -345,12 +345,25 @@ If `port` is not set, the server will run on port 3000 by default.
 
 ### Deploying to Heroku
 
-1. [Create a Heroku app](https://devcenter.heroku.com/articles/creating-apps):
+1. Heroku deploys happen from a git repository:
+    ```sh
+    git init .
+    git add -A
+    git commit -m "Initial commit"
+    ```
+
+2. [Create a Heroku app](https://devcenter.heroku.com/articles/creating-apps):
     ```sh
     heroku create
     ```
 
-2. [Deploy the app code](https://devcenter.heroku.com/articles/git#deploying-code):
+3. [Add the relevant buildpacks](https://devcenter.heroku.com/articles/using-node-js-with-clojure-and-clojurescript-applications)
+    ```sh
+    heroku buildpacks:add heroku/nodejs
+    heroku buildpacks:add heroku/clojure
+    ```
+
+4. [Deploy the app code](https://devcenter.heroku.com/articles/git#deploying-code):
 
     ```sh
     git push heroku master
