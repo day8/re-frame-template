@@ -214,13 +214,18 @@ Create uberjar
 
 ```
 lein clean
-lein with-profile prod uberjar
+lein uberjar
 ```
 
 Create app on heroku
 
 ```
+git init .
+git add -A
+git commit -m "Initial commit"
 heroku create
+heroku buildpacks:add heroku/nodejs
+heroku buildpacks:add heroku/clojure
 ```
 
 Then deploy the application
