@@ -124,7 +124,7 @@
              :main         {{ns-name}}.server
              :aot          [{{ns-name}}.server]
              :uberjar-name "{{name}}.jar"
-             :prep-tasks   ["compile" ["prod"]{{{prep-garden}}}{{{prep-less}}}]}{{/handler?}}}
+             :prep-tasks   ["compile" ["release"]{{{prep-garden}}}{{{prep-less}}}]}{{/handler?}}}
 
   :prep-tasks [{{#garden?}}["garden" "once"]{{/garden?}}{{#less?}}
                ["less" "once"]{{/less?}}])
