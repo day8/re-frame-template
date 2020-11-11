@@ -3,6 +3,7 @@
 ## Changed
 
 - Upgrade [re-frame to 1.1.2](http://day8.github.io/re-frame/)
+- Upgrade shadow-cljs to 2.11.7
 
 ## 1.3.0 (2020-09-28)
 
