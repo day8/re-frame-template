@@ -1,5 +1,11 @@
 ## Unreleased
 
+## Fixed
+
+- Fix uberjar target, +handler profile and Heroku instructions. Thanks to
+  [@dominem](https://github.com/dominem) and [@paulbutcher](https://github.com/paulbutcher).
+  See [#139](https://github.com/day8/re-frame-template/pull/139) and [#145](https://github.com/day8/re-frame-template/pull/145).
+
 ## Changed
 
 - Upgrade [re-frame to 1.1.2](http://day8.github.io/re-frame/)
