@@ -1,5 +1,9 @@
 ## Unreleased
 
+## Changed
+
+- Upgrade [re-frame to 1.1.2](http://day8.github.io/re-frame/)
+
 ## 1.3.0 (2020-09-28)
 
 ## Changed
