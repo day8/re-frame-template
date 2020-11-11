@@ -4,21 +4,21 @@
                   :exclusions [com.google.javascript/closure-compiler-unshaded
                                org.clojure/google-closure-library
                                org.clojure/google-closure-library-third-party]]
-                 [thheller/shadow-cljs "2.10.19"]
+                 [thheller/shadow-cljs "2.11.4"]
                  [reagent "0.10.0"]
-                 [re-frame "1.0.0"]{{#10x?}}
+                 [re-frame "1.1.1"]{{#10x?}}
                  [day8.re-frame/tracing "0.6.0"]{{/10x?}}{{#re-com?}}
-                 [re-com "2.8.0"]{{/re-com?}}{{#routes?}}
+                 [re-com "2.9.0"]{{/re-com?}}{{#routes?}}
                  [clj-commons/secretary "1.2.4"]{{/routes?}}{{#garden?}}
                  [garden "1.3.10"]
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
-                 [compojure "1.6.1"]
+                 [compojure "1.6.2"]
                  [yogthos/config "1.1.7"]
                  [ring "1.8.1"]{{/handler?}}{{#re-pressed?}}
                  [re-pressed "0.3.1"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
-  :plugins [[lein-shadow "0.2.0"]
+  :plugins [[lein-shadow "0.3.1"]
             {{#garden?}}[lein-garden "0.3.0"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}
             [lein-shell "0.5.0"]]
@@ -124,7 +124,7 @@
              :main         {{ns-name}}.server
              :aot          [{{ns-name}}.server]
              :uberjar-name "{{name}}.jar"
-             :prep-tasks   ["compile" ["prod"]{{{prep-garden}}}{{{prep-less}}}]}{{/handler?}}}
+             :prep-tasks   ["compile" ["release"]{{{prep-garden}}}{{{prep-less}}}]}{{/handler?}}}
 
   :prep-tasks [{{#garden?}}["garden" "once"]{{/garden?}}{{#less?}}
                ["less" "once"]{{/less?}}])

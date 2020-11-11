@@ -9,19 +9,22 @@ jobs:
     name: Test
     runs-on: ubuntu-18.04
     container:
-      # Ref: https://github.community/t5/GitHub-Actions/docker-pull-from-public-GitHub-Package-Registry-fail-with-quot/m-p/32782
-      image: superstructor/clojure:openjdk-11-lein-2.9.1-node-browsers
+      # Source: https://github.com/day8/dockerfile-for-dev-ci-image
+      image: day8au/dev-ci:0.0.8
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          # All of the Git history is required for day8/lein-git-inject to determine the version string.
+          fetch-depth: 0
       - name: Maven cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: /root/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('project.clj') }}
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: npm cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('project.clj') }}-${{ hashFiles('**/package.json') }}
@@ -44,22 +47,30 @@ jobs:
     needs: test
     runs-on: ubuntu-18.04
     container:
-      # Ref: https://github.community/t5/GitHub-Actions/docker-pull-from-public-GitHub-Package-Registry-fail-with-quot/m-p/32782
-      image: superstructor/clojure:openjdk-11-lein-2.9.1-node-browsers
+      # Source: https://github.com/day8/dockerfile-for-dev-ci-image
+      image: day8au/dev-ci:0.0.8
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          # All of the Git history is required for day8/lein-git-inject to determine the version string.
+          fetch-depth: 0
       - name: Maven cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: /root/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('project.clj') }}
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Run lein release
+        env:
+          CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+          CLOJARS_TOKEN: ${{ secrets.CLOJARS_TOKEN }}
+          GITHUB_USERNAME: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          CLOJARS_USERNAME=${{ secrets.CLOJARS_USERNAME }} CLOJARS_TOKEN=${{ secrets.CLOJARS_TOKEN }} GITHUB_USERNAME=${{ github.actor }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} lein release
-      # This creates a 'GitHub Release' from the tag and includes link to the CHANGELOG
-      # at that point in the Git history. We do not use draft or prerelease features as
+          lein release
+      # This creates a 'GitHub Release' from the tag and includes link to the CHANGELOG.md
+      # We do not use draft or prerelease features as
       # we always want the latest release to show in the right hand column of the project
       # page regardless of if it is a stable release.
       - name: Create GitHub Release
@@ -70,7 +81,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
           body: |
-            [Changelog](https://github.com/day8/re-frame-template/blob/${{ github.ref }}/CHANGELOG.md)
+            [Changelog](https://github.com/day8/re-frame-template/blob/master/CHANGELOG.md)
           draft: false
           prerelease: false
       - name: Slack notification

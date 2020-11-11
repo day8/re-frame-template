@@ -1,5 +1,42 @@
 ## Unreleased
 
+## 1.3.0 (2020-09-28)
+
+## Changed
+
+- Upgrade [lein-shadow to 0.3.1](https://gitlab.com/nikperic/lein-shadow/-/blob/master/CHANGELOG.md#030-2020-09-22)
+- Upgrade shadow-cljs to 2.11.4
+- Upgrade karma to 5.2.3
+
+## 1.2.4 (2020-09-04)
+
+## Fixed
+
+- Fix exception in `server.clj` when port is given from environment. See #140
+
+## Changed
+
+- Upgrade [karma to 5.2.1](https://github.com/karma-runner/karma/blob/master/CHANGELOG.md#521-2020-09-02)
+
+## 1.2.3 (2020-08-26)
+
+## Changed
+
+- Upgrade [re-frame to 1.1.1](http://day8.github.io/re-frame/releases/2020/#110-2020-08-24)
+
+## 1.2.2 (2020-08-25)
+
+## Changed
+
+- Upgrade [lein-shadow to 0.2.2](https://gitlab.com/nikperic/lein-shadow/-/blob/master/CHANGELOG.md#022-2020-08-07)
+- Upgrade [shadow-cljs to 2.11.0](https://github.com/thheller/shadow-cljs/commit/28169be104149e496b31bad443be7ecb6d16cd4a)
+- Upgrade [re-frame to 1.1.0](http://day8.github.io/re-frame/releases/2020/#110-2020-08-24)
+- Upgrade re-com to 2.9.0
+- Upgrade karma to 5.1.1
+- Upgrade compojure to 1.6.2
+
+## 1.2.1 (2020-08-05)
+
 ## Fixed
 
 - Fix karma lein aliases on Windows
