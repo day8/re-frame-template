@@ -228,6 +228,12 @@ heroku buildpacks:add heroku/nodejs
 heroku buildpacks:add heroku/clojure
 ```
 
+Specify node.js version:
+
+```
+heroku config:set NODEJS_VERSION=<version-of-choice>
+```
+
 Then deploy the application
 
 ```
