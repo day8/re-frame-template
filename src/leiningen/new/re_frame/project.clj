@@ -113,7 +113,7 @@
   {:dev
    {:dependencies [[binaryage/devtools "1.0.2"]{{#10x?}}
                    [day8.re-frame/re-frame-10x "0.7.0"]{{/10x?}}{{#re-frisk?}}
-                   [re-frisk "1.3.4"]{{/re-frisk?}}]
+                   [re-frisk "1.3.10"]{{/re-frisk?}}]
     :source-paths ["dev"]}
 
    :prod {}
