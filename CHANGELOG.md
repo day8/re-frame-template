@@ -1,5 +1,11 @@
 ## Unreleased
 
+## Changed
+
+- Upgrade Clojure to 1.10.2
+
+## 1.3.1 (2020-11-11)
+
 ## Fixed
 
 - Fix uberjar target, +handler profile and Heroku instructions. Thanks to
