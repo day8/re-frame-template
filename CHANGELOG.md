@@ -2,6 +2,7 @@
 
 ## Changed
 
+- Upgrade shadow-cljs to 2.11.18
 - Upgrade Clojure to 1.10.2
 
 ## 1.3.1 (2020-11-11)
