@@ -8,7 +8,7 @@
                  [reagent "1.0.0"]
                  [re-frame "1.1.2"]{{#10x?}}
                  [day8.re-frame/tracing "0.6.0"]{{/10x?}}{{#re-com?}}
-                 [re-com "2.9.0"]{{/re-com?}}{{#routes?}}
+                 [re-com "2.13.2"]{{/re-com?}}{{#routes?}}
                  [clj-commons/secretary "1.2.4"]{{/routes?}}{{#garden?}}
                  [garden "1.3.10"]
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
