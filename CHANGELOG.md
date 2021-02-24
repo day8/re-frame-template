@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.4.0 (2021-02-25)
+
 ## Changed
 
 - Upgrade re-frame to 1.2.0
