@@ -8,6 +8,7 @@
 - Upgrade reagent to 1.0.0
 - Upgrade shadow-cljs to 2.11.18
 - Upgrade Clojure to 1.10.2
+- Upgrade ring to 1.9.1
 
 ## 1.3.1 (2020-11-11)
 
