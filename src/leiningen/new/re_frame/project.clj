@@ -57,7 +57,8 @@
                                                           day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
                                                           re-frisk.preload{{/re-frisk?}}]}}{{#10x?}}
                                :dev {:compiler-options {:closure-defines {re-frame.trace.trace-enabled? true
-                                                                          day8.re-frame.tracing.trace-enabled? true}}}
+                                                                          day8.re-frame.tracing.trace-enabled? true{{#re-com?}}
+                                                                          re-com.config/root-url-for-compiler-output "http://localhost:8290/js/compiled/app/cljs-runtime/"{{/re-com?}}}}}
                                :release {:build-options
                                          {:ns-aliases
                                           {day8.re-frame.tracing day8.re-frame.tracing-stubs}}}{{/10x?}}
