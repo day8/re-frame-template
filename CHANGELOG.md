@@ -2,6 +2,7 @@
 
 ## Changed
 
+- Upgrade re-frame to 1.2.0
 - Upgrade re-frame-10x to 1.0.0
 - Upgrade re-com to 2.13.2
 - Upgrade reagent to 1.0.0
