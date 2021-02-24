@@ -1,7 +1,7 @@
 (ns {{ns-name}}.views
   (:require
    [re-frame.core :as re-frame]
-   [re-com.core :as re-com]{{#breaking-point?}}
+   [re-com.core :as re-com :refer [at]]{{#breaking-point?}}
    [breaking-point.core :as bp]{{/breaking-point?}}
    [{{ns-name}}.subs :as subs]
    ))
@@ -21,24 +21,28 @@
 
      (when-let [rpe @re-pressed-example]
        [re-com/alert-box
+        :src        (at)
         :alert-type :info
-        :body rpe])]))
+        :body       rpe])]))
 
 {{/re-pressed?}}
 (defn home-title []
   (let [name (re-frame/subscribe [::subs/name])]
     [re-com/title
+     :src   (at)
      :label (str "Hello from " @name ". This is the Home Page.")
      :level :level1]))
 
 (defn link-to-about-page []
   [re-com/hyperlink-href
+   :src   (at)
    :label "go to About Page"
-   :href "#/about"])
+   :href  "#/about"])
 
 (defn home-panel []
   [re-com/v-box
-   :gap "1em"
+   :src      (at)
+   :gap      "1em"
    :children [[home-title]
               [link-to-about-page]{{#re-pressed?}}
               [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
@@ -52,17 +56,20 @@
 
 (defn about-title []
   [re-com/title
+   :src   (at)
    :label "This is the About Page."
    :level :level1])
 
 (defn link-to-home-page []
   [re-com/hyperlink-href
+   :src   (at)
    :label "go to Home Page"
-   :href "#/"])
+   :href  "#/"])
 
 (defn about-panel []
   [re-com/v-box
-   :gap "1em"
+   :src      (at)
+   :gap      "1em"
    :children [[about-title]
               [link-to-home-page]]])
 
@@ -81,5 +88,6 @@
 (defn main-panel []
   (let [active-panel (re-frame/subscribe [::subs/active-panel])]
     [re-com/v-box
-     :height "100%"
+     :src      (at)
+     :height   "100%"
      :children [[panels @active-panel]]]))

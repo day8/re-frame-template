@@ -1,7 +1,7 @@
 (ns {{ns-name}}.views
   (:require
    [re-frame.core :as re-frame]
-   [re-com.core :as re-com]{{#breaking-point?}}
+   [re-com.core :as re-com :refer [at]]{{#breaking-point?}}
    [breaking-point.core :as bp]{{/breaking-point?}}{{#re-pressed?}}
    [re-pressed.core :as rp]
    [{{ns-name}}.events :as events]{{/re-pressed?}}
@@ -34,8 +34,9 @@
 
      [:div
       [re-com/button
+       :src      (at)
        :on-click dispatch-keydown-rules
-       :label "set keydown rules"]]
+       :label    "set keydown rules"]]
 
      [:p
       [:span
@@ -46,19 +47,22 @@
 
      (when-let [rpe @re-pressed-example]
        [re-com/alert-box
+        :src        (at)
         :alert-type :info
-        :body rpe])]))
+        :body       rpe])]))
 
 {{/re-pressed?}}
 (defn title []
   (let [name (re-frame/subscribe [::subs/name])]
     [re-com/title
+     :src   (at)
      :label (str "Hello from " @name)
      :level :level1]))
 
 (defn main-panel []
   [re-com/v-box
-   :height "100%"
+   :src      (at)
+   :height   "100%"
    :children [[title]{{#re-pressed?}}
               [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
               [:div
