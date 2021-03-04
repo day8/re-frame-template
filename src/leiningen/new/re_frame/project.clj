@@ -18,8 +18,9 @@
                  [re-pressed "0.3.1"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
-  :plugins [[lein-shadow "0.3.1"]
-            {{#garden?}}[lein-garden "0.3.0"]{{/garden?}}{{#less?}}
+  :plugins [{{#cider?}}[cider/cider-nrepl "0.25.6"]{{/cider?}}
+            [lein-shadow "0.3.1"]{{#garden?}}
+            [lein-garden "0.3.0"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}
             [lein-shell "0.5.0"]]
 
@@ -48,7 +49,7 @@
 {{/less?}}
 
   :shadow-cljs {:nrepl {:port 8777}
-                
+
                 :builds {:app {:target :browser
                                :output-dir "resources/public/js/compiled"
                                :asset-path "/js/compiled"
@@ -79,14 +80,14 @@
                          {:target :karma
                           :ns-regexp "-test$"
                           :output-to "target/karma-test.js"}{{/test?}}}}
-  
+
   :shell {:commands {"karma" {:windows         ["cmd" "/c" "karma"]
                               :default-command "karma"}
                      "open"  {:windows         ["cmd" "/c" "start"]
                               :macosx          "open"
                               :linux           "xdg-open"}}}
 
-  :aliases {"dev"          ["do" 
+  :aliases {"dev"          ["do"
                             ["shell" "echo" "\"DEPRECATED: Please use lein watch instead.\""]
                             ["watch"]]
             "watch"        ["with-profile" "dev" "do"
@@ -118,7 +119,7 @@
     :source-paths ["dev"]}
 
    :prod {}
-   
+
    {{#handler?}}
    :uberjar {:source-paths ["env/prod/clj"]
              :omit-source  true
