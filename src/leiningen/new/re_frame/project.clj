@@ -18,8 +18,8 @@
                  [re-pressed "0.3.1"]{{/re-pressed?}}{{#breaking-point?}}
                  [breaking-point "0.1.2"]{{/breaking-point?}}]
 
-  :plugins [{{#cider?}}[cider/cider-nrepl "0.25.6"]{{/cider?}}
-            [lein-shadow "0.3.1"]{{#garden?}}
+  :plugins [{{#cider?}}[cider/cider-nrepl "0.25.6"]
+            {{/cider?}}[lein-shadow "0.3.1"]{{#garden?}}
             [lein-garden "0.3.0"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}
             [lein-shell "0.5.0"]]
