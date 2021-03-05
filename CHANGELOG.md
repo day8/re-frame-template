@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.4.1 (2021-03-05)
+
 ## Fixed
 
 - Fix cider integration. See [#148](https://github.com/day8/re-frame-template/issues/148). Thanks to [@MrSFGriffin](https://github.com/MrSFGriffin).
