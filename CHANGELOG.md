@@ -2,6 +2,7 @@
 
 ## Changed
 
+- Upgrade re-frame-10x to 1.0.1
 - Upgrade Clojure to 1.10.3
 
 ## 1.4.1 (2021-03-05)

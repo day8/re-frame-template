@@ -114,7 +114,7 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "1.0.2"]{{#10x?}}
-                   [day8.re-frame/re-frame-10x "1.0.0"]{{/10x?}}{{#re-frisk?}}
+                   [day8.re-frame/re-frame-10x "1.0.1"]{{/10x?}}{{#re-frisk?}}
                    [re-frisk "1.3.10"]{{/re-frisk?}}]
     :source-paths ["dev"]}
 
