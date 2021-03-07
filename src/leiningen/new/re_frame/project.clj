@@ -9,7 +9,8 @@
                  [re-frame "1.2.0"]{{#10x?}}
                  [day8.re-frame/tracing "0.6.0"]{{/10x?}}{{#re-com?}}
                  [re-com "2.13.2"]{{/re-com?}}{{#routes?}}
-                 [clj-commons/secretary "1.2.4"]{{/routes?}}{{#garden?}}
+                 [bidi "2.1.6"]
+                 [kibu/pushy "0.3.8"]{{/routes?}}{{#garden?}}
                  [garden "1.3.10"]
                  [ns-tracker "0.4.0"]{{/garden?}}{{#handler?}}
                  [compojure "1.6.2"]

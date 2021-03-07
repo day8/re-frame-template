@@ -1,48 +1,43 @@
 (ns {{ns-name}}.routes
-  (:require-macros [secretary.core :refer [defroute]])
-  (:import [goog History]
-           [goog.history EventType])
   (:require
-   [secretary.core :as secretary]
-   [goog.events :as gevents]
-   [re-frame.core :as re-frame]{{#re-pressed?}}
-   [re-pressed.core :as rp]{{/re-pressed?}}
-   [{{ns-name}}.events :as events]
-   ))
+   [bidi.bidi :as bidi]
+   [pushy.core :as pushy]
+   [re-frame.core :as re-frame]
+   [{{ns-name}}.events :as events]))
 
-(defn hook-browser-navigation! []
-  (doto (History.)
-    (gevents/listen
-     EventType/NAVIGATE
-     (fn [event]
-       (secretary/dispatch! (.-token ^js event))))
-    (.setEnabled true)))
+(defmulti panels identity)
+(defmethod panels :default [] [:div "No panel found for this route."])
 
-(defn app-routes []
-  (secretary/set-config! :prefix "#")
-  ;; --------------------
-  ;; define routes here
-  (defroute "/" []
-    (re-frame/dispatch [::events/set-active-panel :home-panel]){{#re-pressed?}}
-    (re-frame/dispatch [::events/set-re-pressed-example nil])
-    (re-frame/dispatch
-     [::rp/set-keydown-rules
-      {:event-keys [[[::events/set-re-pressed-example "Hello, world!"]
-                     [{:keyCode 72} ;; h
-                      {:keyCode 69} ;; e
-                      {:keyCode 76} ;; l
-                      {:keyCode 76} ;; l
-                      {:keyCode 79} ;; o
-                      ]]]
+(def routes
+  (atom
+    ["/" {""      :home
+          "about" :about}]))
 
-       :clear-keys
-       [[{:keyCode 27} ;; escape
-         ]]}]){{/re-pressed?}}
-    )
+(defn parse
+  [url]
+  (bidi/match-route @routes url))
 
-  (defroute "/about" []
-    (re-frame/dispatch [::events/set-active-panel :about-panel]))
+(defn url-for
+  [& args]
+  (apply bidi/path-for (into [@routes] args)))
 
+(defn dispatch
+  [route]
+  (let [panel (keyword (str (name (:handler route)) "-panel"))]
+    (re-frame/dispatch [::events/set-active-panel panel])))
 
-  ;; --------------------
-  (hook-browser-navigation!))
+(def history
+  (pushy/pushy dispatch parse))
+
+(defn navigate!
+  [handler]
+  (pushy/set-token! history (url-for handler)))
+
+(defn start!
+  []
+  (pushy/start! history))
+
+(re-frame/reg-fx
+  :navigate
+  (fn [handler]
+    (navigate! handler)))

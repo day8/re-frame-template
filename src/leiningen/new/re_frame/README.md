@@ -24,7 +24,7 @@ you.
   ([Wiki](https://github.com/weavejester/compojure/wiki), [API docs](http://weavejester.github.com/compojure)) ->
   [Ring](https://github.com/ring-clojure/ring)
   ([Wiki](https://github.com/ring-clojure/ring/wiki), [API docs](http://ring-clojure.github.com/ring)){{/handler?}}{{#routes?}}
-  - Client-side routing: [Secretary](https://github.com/gf3/secretary){{/routes?}}{{#garden?}}
+  - Client-side routing: [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/kibu-australia/pushy){{/routes?}}{{#garden?}}
   - CSS rendering: [Garden](https://github.com/noprompt/garden){{/garden?}}{{#re-com?}}
   - UI components: [re-com](https://github.com/day8/re-com){{/re-com?}}{{#re-pressed?}}
   - Keyboard event handler: [re-pressed](https://github.com/gadfly361/re-pressed){{/re-pressed?}}{{#breaking-point?}}

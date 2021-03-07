@@ -22,7 +22,7 @@
     (rdom/render [views/main-panel] root-el)))
 
 (defn init []{{#routes?}}
-  (routes/app-routes){{/routes?}}
+  (routes/start!){{/routes?}}
   (re-frame/dispatch-sync [::events/initialize-db]){{#re-pressed?}}
   (re-frame/dispatch-sync [::rp/add-keyboard-event-listener "keydown"]){{/re-pressed?}}{{#breaking-point?}}
   (re-frame/dispatch-sync [::bp/set-breakpoints

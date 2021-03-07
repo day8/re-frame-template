@@ -2,6 +2,8 @@
   (:require
    [re-frame.core :as re-frame]{{#breaking-point?}}
    [breaking-point.core :as bp]{{/breaking-point?}}
+   [{{ns-name}}.events :as events]
+   [{{ns-name}}.routes :as routes]
    [{{ns-name}}.subs :as subs]
    ))
 
@@ -35,7 +37,7 @@
      [:h1 (str "Hello from " @name ". This is the Home Page.")]
 
      [:div
-      [:a {:href "#/about"}
+      [:a {:on-click #(re-frame/dispatch [::events/navigate :about])}
        "go to About Page"]]{{#re-pressed?}}
 
      [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
@@ -44,6 +46,7 @@
       [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]{{/breaking-point?}}
      ]))
 
+(defmethod routes/panels :home-panel [] [home-panel])
 
 ;; about
 
@@ -52,21 +55,13 @@
    [:h1 "This is the About Page."]
 
    [:div
-    [:a {:href "#/"}
+    [:a {:on-click #(re-frame/dispatch [::events/navigate :home])}
      "go to Home Page"]]])
 
+(defmethod routes/panels :about-panel [] [about-panel])
 
 ;; main
 
-(defn- panels [panel-name]
-  (case panel-name
-    :home-panel [home-panel]
-    :about-panel [about-panel]
-    [:div]))
-
-(defn show-panel [panel-name]
-  [panels panel-name])
-
 (defn main-panel []
   (let [active-panel (re-frame/subscribe [::subs/active-panel])]
-    [show-panel @active-panel]))
+    (routes/panels @active-panel)))

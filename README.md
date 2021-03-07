@@ -54,7 +54,7 @@ The following extras can be nominated on the commandline when you create the tem
   * [re-pressed](https://github.com/gadfly361/re-pressed) (`+re-pressed`)
   * [breaking-point](https://github.com/gadfly361/breaking-point) (`+breaking-point`)
 * Routing
-  * [secretary](https://github.com/gf3/secretary) (`+routes`)
+  * [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/kibu-australia/pushy) (`+routes`)
 
 To add an `extra` to the base template, append its name to the commandline, with a leading `+`. Here's an example of adding `re-com`:
 

@@ -3,6 +3,8 @@
    [re-frame.core :as re-frame]
    [re-com.core :as re-com :refer [at]]{{#breaking-point?}}
    [breaking-point.core :as bp]{{/breaking-point?}}
+   [{{ns-name}}.events :as events]
+   [{{ns-name}}.routes :as routes]
    [{{ns-name}}.subs :as subs]
    ))
 
@@ -34,10 +36,10 @@
      :level :level1]))
 
 (defn link-to-about-page []
-  [re-com/hyperlink-href
-   :src   (at)
-   :label "go to About Page"
-   :href  "#/about"])
+  [re-com/hyperlink
+   :src      (at)
+   :label    "go to About Page"
+   :on-click #(re-frame/dispatch [::events/navigate :about])])
 
 (defn home-panel []
   [re-com/v-box
@@ -51,6 +53,7 @@
                [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]{{/breaking-point?}}
               ]])
 
+(defmethod routes/panels :home-panel [] [home-panel])
 
 ;; about
 
@@ -61,10 +64,10 @@
    :level :level1])
 
 (defn link-to-home-page []
-  [re-com/hyperlink-href
-   :src   (at)
-   :label "go to Home Page"
-   :href  "#/"])
+  [re-com/hyperlink
+   :src      (at)
+   :label    "go to Home Page"
+   :on-click #(re-frame/dispatch [::events/navigate :home])])
 
 (defn about-panel []
   [re-com/v-box
@@ -73,21 +76,13 @@
    :children [[about-title]
               [link-to-home-page]]])
 
+(defmethod routes/panels :about-panel [] [about-panel])
 
 ;; main
-
-(defn- panels [panel-name]
-  (case panel-name
-    :home-panel [home-panel]
-    :about-panel [about-panel]
-    [:div]))
-
-(defn show-panel [panel-name]
-  [panels panel-name])
 
 (defn main-panel []
   (let [active-panel (re-frame/subscribe [::subs/active-panel])]
     [re-com/v-box
      :src      (at)
      :height   "100%"
-     :children [[panels @active-panel]]]))
+     :children [(routes/panels @active-panel)]]))
