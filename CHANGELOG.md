@@ -2,6 +2,7 @@
 
 ## Changed
 
+- Upgrade shadow-cljs 2.11.21
 - Upgrade re-frame-10x to 1.0.1
 - Upgrade Clojure to 1.10.3
 
