@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.4.2 (2021-03-08)
+
 ## Changed
 
 - Change to bidi and pushy for `+routes`
