@@ -1,5 +1,9 @@
 ## Unreleased
 
+## Changed
+
+- Upgrade Clojure to 1.10.3
+
 ## 1.4.1 (2021-03-05)
 
 ## Fixed
