@@ -1,4 +1,4 @@
-(defproject {{ns-name}} "0.1.0-SNAPSHOT"
+(defproject {{ns-name}} {{#git-inject?}}"lein-git-inject/version"{{/git-inject?}}{{^git-inject?}}"0.1.0-SNAPSHOT"{{/git-inject?}}
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [org.clojure/clojurescript "1.10.773"
                   :exclusions [com.google.javascript/closure-compiler-unshaded
@@ -23,7 +23,11 @@
             {{/cider?}}[lein-shadow "0.3.1"]{{#garden?}}
             [lein-garden "0.3.0"]{{/garden?}}{{#less?}}
             [lein-less "1.7.5"]{{/less?}}
-            [lein-shell "0.5.0"]]
+            [lein-shell "0.5.0"]
+            [lein-pprint "1.3.2"]{{#git-inject?}}
+            [day8/lein-git-inject "0.0.14"]{{/git-inject?}}]{{#git-inject?}}
+
+  :middleware [leiningen.git-inject/middleware]{{/git-inject?}}
 
   :min-lein-version "2.9.0"{{#cider?}}
 
@@ -57,7 +61,8 @@
                                :modules {:app {:init-fn {{name}}.core/init
                                                :preloads [devtools.preload{{#10x?}}
                                                           day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
-                                                          re-frisk.preload{{/re-frisk?}}]}}{{#10x?}}
+                                                          re-frisk.preload{{/re-frisk?}}]}}{{#git-inject?}}
+                               :compiler-options {:closure-defines { {{name}}.config/version "lein-git-inject/version"}}{{/git-inject?}}{{#10x?}}
                                :dev {:compiler-options {:closure-defines {re-frame.trace.trace-enabled? true
                                                                           day8.re-frame.tracing.trace-enabled? true{{#re-com?}}
                                                                           re-com.config/root-url-for-compiler-output "http://localhost:8290/js/compiled/app/cljs-runtime/"{{/re-com?}}}}}

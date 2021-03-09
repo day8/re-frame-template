@@ -47,6 +47,7 @@ The following extras can be nominated on the commandline when you create the tem
   * [Calva](https://github.com/BetterThanTomorrow/calva) (`+calva`)
   * [clj-kondo](https://github.com/borkdude/clj-kondo) (`+kondo`)
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
+  * [git-inject](https://github.com/day8/lein-git-inject) (`+git-inject`)
 * Full-stack
   * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 * Misc.

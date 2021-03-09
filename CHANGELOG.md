@@ -1,5 +1,9 @@
 ## Unreleased
 
+## Added
+
+- Add `+git-inject`
+
 ## 1.4.2 (2021-03-08)
 
 ## Changed

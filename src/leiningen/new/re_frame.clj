@@ -67,6 +67,7 @@
    :calva?   (helpers/option? calva/option options)
    :kondo?   (helpers/option? kondo/option options)
    :test?    (helpers/option? test/option options)
+   :git-inject? (helpers/option? "+git-inject" options)
 
    ;; full-stack
    :handler?    (helpers/option? handler/option options)
@@ -103,6 +104,7 @@
     calva/option
     kondo/option
     test/option
+    "+git-inject"
 
     ;; full-stack
     handler/option
