@@ -8,13 +8,13 @@
 
 # re-frame-template
 
-This is a Leiningen template for quickly creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only). It will only take you 60 seconds to create your first re-frame app and start editing it.
+This is a `Leiningen` template for creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only).  It will take you 60 seconds to create your first re-frame app and start to edit it.
 
-When creating your application, you can pick and choose what "extras" you'd like included into the scaffold - "extras" like libraries to do routing, debugging and CSS.
+You can pick and choose what "extras" you'd like included into the scaffold - "extras" like libraries to do routing, debugging and CSS.
 
 ## Before You Start
 
-You'll need to install Clojure and Leiningen (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/).
+You'll need to install `Clojure` and `Leiningen` (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/).
 
 ## Basic Usage
 
@@ -34,7 +34,7 @@ When using this command, you'll need to substitute in your own `<app-name>` - pe
 
 ## Extras
 
-The following extras can be nominated on the commandline when you create the template:
+The following "extras" can be nominated on the commandline when you create the template:
 
 * CSS
   * [garden](https://github.com/noprompt/garden) (`+garden`)
