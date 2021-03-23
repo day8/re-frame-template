@@ -5,6 +5,7 @@
 - Upgrade re-frame-10x to 1.0.2. Fixes [#150](https://github.com/day8/re-frame-template/issues/150).
 - Upgrade shadow-cljs to 2.11.24
 - Upgrade re-frisk to 1.3.12
+- Upgrade karma to 6.2.0
 
 ## Added
 
