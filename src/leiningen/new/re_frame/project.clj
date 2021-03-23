@@ -7,7 +7,7 @@
                  [thheller/shadow-cljs "2.11.24"]
                  [reagent "1.0.0"]
                  [re-frame "1.2.0"]{{#10x?}}
-                 [day8.re-frame/tracing "0.6.0"]{{/10x?}}{{#re-com?}}
+                 [day8.re-frame/tracing "0.6.2"]{{/10x?}}{{#re-com?}}
                  [re-com "2.13.2"]{{/re-com?}}{{#routes?}}
                  [bidi "2.1.6"]
                  [kibu/pushy "0.3.8"]{{/routes?}}{{#garden?}}
