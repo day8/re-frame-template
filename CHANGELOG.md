@@ -6,6 +6,7 @@
 - Upgrade shadow-cljs to 2.11.24
 - Upgrade re-frisk to 1.3.12
 - Upgrade karma to 6.2.0
+- Upgrade ring to 1.9.2
 
 ## Added
 
