@@ -1,5 +1,9 @@
 ## Unreleased
 
+## Changed
+
+- Upgrade re-frame-10x to 1.0.2. Fixes [#150](https://github.com/day8/re-frame-template/issues/150).
+
 ## Added
 
 - Add `+git-inject`
