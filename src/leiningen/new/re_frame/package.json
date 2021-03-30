@@ -1,5 +1,17 @@
 {
 	"name": "{{ns-name}}",
+	"scripts": {
+		"watch": "npx shadow-cljs watch app browser-test karma-test",
+		"release": "npx shadow-cljs release app",
+		"build-report": "npx shadow-cljs run shadow.cljs.build-report app target/build-report.html"{{#test?}},
+		"ci": "npx shadow-cljs compile karma-test && npx karma start --single-run --reporters junit,dots"{{/test?}}
+	},
 	"dependencies": {},
-	"devDependencies": {}
+	"devDependencies": {
+		"shadow-cljs": "2.11.26"{{#test?}},
+        "karma": "6.2.0",
+        "karma-chrome-launcher": "3.1.0",
+        "karma-cljs-test": "0.1.0",
+        "karma-junit-reporter": "2.0.1"{{/test?}}
+	}
 }

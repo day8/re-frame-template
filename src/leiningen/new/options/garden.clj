@@ -4,4 +4,4 @@
 (def option "+garden")
 
 (defn files [data]
-  [["src/clj/{{sanitized}}/css.clj" (helpers/render "src/clj/css.clj" data)]])
+  [["src/{{sanitized}}/styles.cljs" (helpers/render "src/styles.cljs" data)]])

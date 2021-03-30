@@ -1,7 +1,8 @@
 (ns {{ns-name}}.views
   (:require
    [re-frame.core :as re-frame]{{#breaking-point?}}
-   [breaking-point.core :as bp]{{/breaking-point?}}
+   [breaking-point.core :as bp]{{/breaking-point?}}{{#garden?}}
+   [{{ns-name}}.styles :as styles]{{/garden?}}
    [{{ns-name}}.events :as events]
    [{{ns-name}}.routes :as routes]
    [{{ns-name}}.subs :as subs]
@@ -34,7 +35,8 @@
 (defn home-panel []
   (let [name (re-frame/subscribe [::subs/name])]
     [:div
-     [:h1 (str "Hello from " @name ". This is the Home Page.")]
+     [:h1 (str "Hello from " @name ". This is the Home Page."){{#garden?}}
+      {:class (styles/level1)}{{/garden?}}]
 
      [:div
       [:a {:on-click #(re-frame/dispatch [::events/navigate :about])}

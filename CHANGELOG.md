@@ -1,5 +1,20 @@
 ## Unreleased
 
+## Changed
+
+- Replace lein with shadow-cljs. Leiningen is still used for templating (i.e. `lein new re-frame ...`), but the resulting
+output is now a pure shadow-cljs build with no dependency on Leiningen. This resolves a whole class of bugs and beginner
+confusion that was being caused by the more complex Leiningen setup. It also enables users to have a `npm` or `yarn`
+focused workflow for dependencies, as we no longer wrap those tools.
+
+## Removed
+
+- Remove `+handler` option. Due to change from Leiningen to pure shadow-cljs. This is a client-focused template, and
+it is not worthwhile for us to maintain a backend implementation when there are other templates focused on that use
+case. We will not re-add this option.
+- Remove `+less` option. Due to change from Leiningen to pure shadow-cljs. We might be amenable to re-adding this
+if/when a shadow-cljs build hook for less is available.
+
 ## 1.5.0 (2021-03-23)
 
 ## Changed

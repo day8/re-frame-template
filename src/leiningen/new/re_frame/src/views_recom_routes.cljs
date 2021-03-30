@@ -2,11 +2,12 @@
   (:require
    [re-frame.core :as re-frame]
    [re-com.core :as re-com :refer [at]]{{#breaking-point?}}
-   [breaking-point.core :as bp]{{/breaking-point?}}
+   [breaking-point.core :as bp]{{/breaking-point?}}{{#garden?}}
+   [{{ns-name}}.styles :as styles]{{/garden?}}
    [{{ns-name}}.events :as events]
    [{{ns-name}}.routes :as routes]
-   [{{ns-name}}.subs :as subs]
-   ))
+   [{{ns-name}}.subs :as subs]))
+
 
 
 ;; home
@@ -33,7 +34,8 @@
     [re-com/title
      :src   (at)
      :label (str "Hello from " @name ". This is the Home Page.")
-     :level :level1]))
+     :level :level1{{#garden?}}
+     :class (styles/level1){{/garden?}}]))
 
 (defn link-to-about-page []
   [re-com/hyperlink
@@ -50,8 +52,8 @@
               [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
               [:div
                [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]
-               [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]{{/breaking-point?}}
-              ]])
+               [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]{{/breaking-point?}}]])
+
 
 (defmethod routes/panels :home-panel [] [home-panel])
 

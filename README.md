@@ -10,13 +10,19 @@
 
 # re-frame-template
 
-This is a `Leiningen` template for creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only).  It will take you 60 seconds to create your first re-frame app and start to edit it.
+This is a `Leiningen` template for creating a [re-frame](https://github.com/day8/re-frame) application scaffold (client only)
+with a [shadow-cljs](https://shadow-cljs.github.io/docs/UsersGuide.html) build.  
+It will take you 60 seconds to create your first re-frame app and start to edit it.
+
+
 
 You can pick and choose what "extras" you'd like included into the scaffold - "extras" like libraries to do routing, debugging and CSS.
 
 ## Before You Start
 
-You'll need to install `Clojure` and `Leiningen` (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/).
+You'll need to install `Leiningen` (a build tool) by following [these instructions](https://purelyfunctional.tv/guide/how-to-install-clojure/).
+
+You'll also need [Node.js](https://nodejs.org/en/download/).
 
 ## Basic Usage
 
@@ -39,8 +45,7 @@ When using this command, you'll need to substitute in your own `<app-name>` - pe
 The following "extras" can be nominated on the commandline when you create the template:
 
 * CSS
-  * [garden](https://github.com/noprompt/garden) (`+garden`)
-  * [less](https://github.com/montoux/lein-less) (`+less`)
+  * [garden](https://github.com/noprompt/garden) with [spade](https://github.com/dhleong/spade) (`+garden`)
 * Debug
   * [re-frame-10x](https://github.com/day8/re-frame-10x) (`+10x`)
   * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
@@ -50,8 +55,6 @@ The following "extras" can be nominated on the commandline when you create the t
   * [clj-kondo](https://github.com/borkdude/clj-kondo) (`+kondo`)
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
   * [git-inject](https://github.com/day8/lein-git-inject) (`+git-inject`)
-* Full-stack
-  * [compojure](https://github.com/weavejester/compojure) (`+handler`)
 * Misc.
   * [re-com](https://github.com/day8/re-com) (`+re-com`)
   * [re-pressed](https://github.com/gadfly361/re-pressed) (`+re-pressed`)
@@ -69,7 +72,7 @@ Note: it is `+re-com`, not just `re-com`.
 Any combination of `extras` can be added at once:
 
 ```
-lein new re-frame <app-name> +garden +re-com +routes +test +less +10x
+lein new re-frame <app-name> +garden +re-com +routes +test +10x
 ```
 
 >  Note: to assist debugging, you'll want to include either `+10x` or `+re-frisk`
@@ -96,42 +99,25 @@ See https://calva.io for more on how to use Calva.
 
 Do you have a project that was created without the `+calva` option, and want the easy Jack-in anyway? No worries! At https://calva.io/re-frame-template/ you will find the settings needed.
 
-## Compile CSS (if using +garden or +less):
-
-To compile CSS files once.
-
-```sh
-lein garden once
-
-lein less once
-```
-
-
-When developing, to automatically recompile CSS files on each file change, use:
-
-```sh
-lein garden auto
-
-lein less auto
-```
-
 ## Run application:
 
-Retrieve dependencies (can take a while the first time):
 ```sh
-lein deps
+npm install
+npm run watch
 ```
 
-Then run:
+or
+
 ```sh
-lein watch
+npm install
+npx shadow-cljs watch app browser-test karma-test
 ```
 
 Wait a bit, perhaps 20 seconds, keeping an eye out for a sign the compile has finished, then browse to [http://localhost:8280](http://localhost:8280).
 
 To see the other available `shadow-cljs` commands run:
 ```
-lein run -m shadow.cljs.devtools.cli --help
+npx shadow-cljs --help
 ```
 
 ## Setting Up Your Browser
@@ -187,17 +173,13 @@ not the `prod` build.
 
 ## Run tests (if using +test):
 
-Install karma and headless chrome
+Run your tests
 
 ```
-npm install -g karma-cli
+npm install
+npm run watch
 ```
 
-And then run your tests
-
-```
-lein watch
-```
 And in another terminal:
 ```
 karma start
@@ -207,66 +189,18 @@ karma start
 
 To compile clojurescript to javascript:
 
-```
-lein release
-```
-
-### Deploy to heroku (if using `+handler`)
-
-Create uberjar
-
-```
-lein clean
-lein uberjar
-```
-
-Create app on heroku
-
-```
-git init .
-git add -A
-git commit -m "Initial commit"
-heroku create
-heroku buildpacks:add heroku/nodejs
-heroku buildpacks:add heroku/clojure
-```
-
-Specify node.js version:
-
-```
-heroku config:set NODEJS_VERSION=<version-of-choice>
-```
-
-Then deploy the application
-
-```
-git push heroku master
+```sh
+npm run release
 ```
 
 ## How to Add Dependencies
 
-Your new application is built by a tool chain which combines  [shadow-cljs](http://shadow-cljs.org/) (a modern CLJS compiler) and [Leiningen](https://leiningen.org/) (a traditional Clojure build tool). The two are brought together via a Leiningen plugin called [Lien-shadow](https://gitlab.com/nikperic/lein-shadow).
+Your new application is built by a tool chain controlled by [shadow-cljs](http://shadow-cljs.org/) (a modern CLJS compiler).
 
-There are three files of interest:
-  -  `project.clj` - edit this file if you want to add Clojure and ClojureScript dependency as [you would for a normal
+There are two files of interest:
+  -  `shadow-cljs.edn` - edit this file if you want to add Clojure and ClojureScript dependency as [you would for a normal
 Leiningen project](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies).
-  - `package.json` - do not edit this file. With this tool chain, it is a generated file, and your edits will be lost.
-  - `src/cljs/deps.cljs` - edit this file if you want to add a JavaScript and NPM dependency
-
-Within `deps.cljs`, there are two sections of interest:
-```clojure
-{:npm-deps     {"pako"                  "1.0.10"}
- :npm-dev-deps {"shadow-cljs"           "2.9.0"
-                "karma"                 "4.4.1"
-                "karma-chrome-launcher" "3.1.0"
-                "karma-cljs-test"       "0.1.0"
-                "karma-junit-reporter"  "2.0.1"}}
-```
-
-If you are adding a dependency to your application, like a React component, or a JavaScript library like
-P5, then add it to the `:npm-deps` section.
-
-If you are adding a build or test dependency, like a Karma runner, put it into the `:npm-dev-deps` section.
+  - `package.json` - edit this file if you want to add a JavaScript and NPM dependency.
 
 ## Other Templates
 
@@ -276,6 +210,8 @@ If you are adding a build or test dependency, like a Karma runner, put it into t
 * [reagent-seed](https://github.com/gadfly361/reagent-seed)
 
 ## Backend Options
+
+This template does NOT include a backend. You may want to look at the following for backend options:
 
 * [ring](https://github.com/ring-clojure/ring) and [liberator](http://clojure-liberator.github.io/liberator/)
 * [duct](https://github.com/duct-framework/duct)
@@ -293,7 +229,7 @@ Contributions are welcomed!  To add a new profile, this is what I'd recommend:
 
 1. Add a file with the name of the profile [here](https://github.com/day8/re-frame-template/tree/master/src/leiningen/new/options)
 2. Look at the existing options in that folder for inspiration for what to include in that file
-3. Update [project.clj](https://github.com/day8/re-frame-template/blob/master/src/leiningen/new/re_frame.clj) with the profile
+3. Update [re_frame.clj](https://github.com/day8/re-frame-template/blob/master/src/leiningen/new/re_frame.clj) with the profile
 4. Add any new files [here](https://github.com/day8/re-frame-template/tree/master/src/leiningen/new/re_frame) and use the {{ var-name }} syntax as needed
 5. Update the [README](https://github.com/day8/re-frame-template/tree/master/src/leiningen/new/re_frame) that will result when the template is used, as well as the top-level [README](https://github.com/day8/re-frame-template/blob/master/README.md) for re-frame-template itself
 6. In a terminal, at the root of re-frame-template, run `lein install`
@@ -310,7 +246,7 @@ Copyright © 2015 Dylan Paris
 Copyright © 2015 Michael Thompson
 Copyright © 2015 Markku Rontu
 Copyright © 2016 Daniel Compton
-Copyright © 2019 Isaac Johnston
+Copyright © 2019-2021 Isaac Johnston
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

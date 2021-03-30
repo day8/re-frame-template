@@ -10,30 +10,21 @@ you.
 * Architecture:
 [Single Page Application (SPA)](https://en.wikipedia.org/wiki/Single-page_application)
 * Languages
-  - Front end ([re-frame](https://github.com/day8/re-frame)): [ClojureScript](https://clojurescript.org/) (CLJS){{#handler?}}
-  - Back end/middleware ([Compojure](https://github.com/weavejester/compojure)): [Clojure](https://clojure.org/){{/handler?}}{{#garden?}}
-  - CSS compilation ([`lein-garden`](https://github.com/noprompt/lein-garden)): [Clojure](https://clojure.org/){{/garden?}}{{#less?}}
-  - CSS compilation ([`lein-less`](https://github.com/montoux/lein-less)): [Less](http://lesscss.org/features/){{/less?}}
+  - Front end is [ClojureScript](https://clojurescript.org/) with ([re-frame](https://github.com/day8/re-frame)){{#garden?}}
+  - CSS compilation is [Garden](https://github.com/noprompt/garden) with [Spade](https://github.com/dhleong/spade){{/garden?}}
 * Dependencies
   - UI framework: [re-frame](https://github.com/day8/re-frame)
   ([docs](https://github.com/day8/re-frame/blob/master/docs/README.md),
   [FAQs](https://github.com/day8/re-frame/blob/master/docs/FAQs/README.md)) ->
   [Reagent](https://github.com/reagent-project/reagent) ->
-  [React](https://github.com/facebook/react){{#handler?}}
-  - Full stack framework: [Compojure](https://github.com/weavejester/compojure)
-  ([Wiki](https://github.com/weavejester/compojure/wiki), [API docs](http://weavejester.github.com/compojure)) ->
-  [Ring](https://github.com/ring-clojure/ring)
-  ([Wiki](https://github.com/ring-clojure/ring/wiki), [API docs](http://ring-clojure.github.com/ring)){{/handler?}}{{#routes?}}
+  [React](https://github.com/facebook/react){{#routes?}}
   - Client-side routing: [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/kibu-australia/pushy){{/routes?}}{{#garden?}}
   - CSS rendering: [Garden](https://github.com/noprompt/garden){{/garden?}}{{#re-com?}}
   - UI components: [re-com](https://github.com/day8/re-com){{/re-com?}}{{#re-pressed?}}
   - Keyboard event handler: [re-pressed](https://github.com/gadfly361/re-pressed){{/re-pressed?}}{{#breaking-point?}}
   - Screen breakpoints tool: [BREAKING-POINT](https://github.com/gadfly361/breaking-point){{/breaking-point?}}
 * Build tools
-  - Project task & dependency management: [Leiningen](https://github.com/technomancy/leiningen)
-  - CLJS compilation, REPL, & hot reload: [`shadow-cljs`](https://github.com/thheller/shadow-cljs){{#garden?}}
-  - CSS compilation: [`lein-garden`](https://github.com/noprompt/lein-garden){{/garden?}}{{#less?}}
-  - CSS compilation: [`lein-less`](https://github.com/montoux/lein-less){{/less?}}{{#test?}}
+  - CLJS compilation, dependency management, REPL, & hot reload: [`shadow-cljs`](https://github.com/thheller/shadow-cljs){{#test?}}
   - Test framework: [cljs.test](https://clojurescript.org/tools/testing)
   - Test runner: [Karma](https://github.com/karma-runner/karma){{/test?}}
 * Development tools
@@ -49,9 +40,8 @@ you.
 * [`.clj-kondo/`](.clj-kondo/): lint config and cache files (cache files are not tracked; see
 [`.gitignore`](.gitignore)){{/kondo?}}
 * [`dev/`](dev/): source files compiled only with the [dev](#running-the-app) profile
-  - [`cljs/user.cljs`](dev/cljs/user.cljs): symbols for use during development in the
-[ClojureScript REPL](#connecting-to-the-browser-repl-from-a-terminal){{#less?}}
-* [`less/`](less/): CSS compilation source files ([Less](http://lesscss.org/features/)){{/less?}}
+  - [`user.cljs`](dev/cljs/user.cljs): symbols for use during development in the
+[ClojureScript REPL](#connecting-to-the-browser-repl-from-a-terminal)
 * [`resources/public/`](resources/public/): SPA root directory;
 [dev](#running-the-app) / [prod](#production) profile depends on the most recent build{{#re-com?}}
   - [`vendor/`](resources/public/vendor/): UI component CSS, fonts, and images
@@ -64,21 +54,14 @@ you.
     - Customizable; add headers, footers, links to other scripts and styles, etc.
   - Generated directories and files
     - Created on build with either the [dev](#running-the-app) or [prod](#production) profile
-    - Deleted on `lein clean` (run by all `lein` aliases before building){{#garden?}}
-    - `css/`: compiled CSS (`lein-garden`, can also be
-[compiled manually](#compiling-css-with-lein-garden)){{/garden?}}{{#less?}}
-    - `css/`: compiled CSS (`lein-less`, can also be
-[compiled manually](#compiling-css-with-lein-less)){{/less?}}
     - `js/compiled/`: compiled CLJS (`shadow-cljs`)
-      - Not tracked in source control; see [`.gitignore`](.gitignore){{#handler?}}
-* [`src/clj/{{sanitized}}/`](src/clj/{{sanitized}}/): Backend and middleware source files (Clojure,
-[Compojure](https://github.com/weavejester/compojure)){{/handler?}}{{#garden?}}
-* [`src/clj/{{sanitized}}/`](src/clj/{{sanitized}}/): CSS compilation source files (Clojure,
+      - Not tracked in source control; see [`.gitignore`](.gitignore){{#garden?}}
+* [`src/{{sanitized}}/styles.cljs`](src/clj/{{sanitized}}/styles.cljs): CSS compilation source file (ClojureScript,
 [Garden](https://github.com/noprompt/garden)){{/garden?}}
-* [`src/cljs/{{sanitized}}/`](src/cljs/{{sanitized}}/): SPA source files (ClojureScript,
+* [`src/{{sanitized}}/`](src/{{sanitized}}/): SPA source files (ClojureScript,
 [re-frame](https://github.com/Day8/re-frame))
-  - [`core.cljs`](src/cljs/{{sanitized}}/core.cljs): contains the SPA entry point, `init`{{#test?}}
-* [`test/cljs/{{sanitized}}/`](test/cljs/{{sanitized}}/): test files (ClojureScript,
+  - [`core.cljs`](src/{{sanitized}}/core.cljs): contains the SPA entry point, `init`{{#test?}}
+* [`test/{{sanitized}}/`](test/{{sanitized}}/): test files (ClojureScript,
 [cljs.test](https://clojurescript.org/tools/testing))
   - Only namespaces ending in `-test` (files `*_test.cljs`) are compiled and sent to the test runner{{/test?}}
 
@@ -90,15 +73,9 @@ Use your preferred editor or IDE that supports Clojure/ClojureScript development
 ### Environment Setup
 
 1. Install [JDK 8 or later](https://openjdk.java.net/install/) (Java Development Kit)
-2. Install [Leiningen](https://leiningen.org/#install) (Clojure/ClojureScript project task &
-dependency management)
-3. Install [Node.js](https://nodejs.org/) (JavaScript runtime environment) which should include
+2. Install [Node.js](https://nodejs.org/) (JavaScript runtime environment) which should include
    [NPM](https://docs.npmjs.com/cli/npm) or if your Node.js installation does not include NPM also install it.{{#test?}}
-4. Install [karma-cli](https://www.npmjs.com/package/karma-cli) (test runner):
-    ```sh
-    npm install -g karma-cli
-    ```
-5. Install [Chrome](https://www.google.com/chrome/) or
+3. Install [Chrome](https://www.google.com/chrome/) or
 [Chromium](https://www.chromium.org/getting-involved/download-chromium) version 59 or later
 (headless test environment)
     * For Chromium, set the `CHROME_BIN` environment variable in your shell to the command that
@@ -106,17 +83,13 @@ dependency management)
         ```bash
         export CHROME_BIN=chromium-browser
        ```{{/test?}}{{#kondo?}}
-6. Install [clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) (linter){{/kondo?}}
-7. Clone this repo and open a terminal in the `{{name}}` project root directory
-8. (Optional) Download project dependencies:
+4. Install [clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) (linter){{/kondo?}}
+5. Clone this repo and open a terminal in the `{{name}}` project root directory{{#kondo?}}
+6. (Optional) Setup [lint cache](https://github.com/borkdude/clj-kondo#project-setup):
     ```sh
-    lein deps
-    ```{{#kondo?}}
-9. (Optional) Setup [lint cache](https://github.com/borkdude/clj-kondo#project-setup):
-    ```sh
-    clj-kondo --lint "$(lein classpath)"
+    clj-kondo --lint "$(npx shadow-cljs classpath)"
     ```
-10. Setup
+7. Setup
 [linting in your editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md){{/kondo?}}
 
 ### Browser Setup
@@ -158,7 +131,8 @@ Start a temporary local web server, build the app with the `dev` profile, and se
 browser test runner and karma test runner with hot reload:
 
 ```sh
-lein watch
+npm install
+npx shadow-cljs watch app
 ```
 
 Please be patient; it may take over 20 seconds to see any output, and over 40 seconds to complete.
@@ -192,7 +166,7 @@ been created for you.
 
 See
 [Shadow CLJS User's Guide: Editor Integration](https://shadow-cljs.github.io/docs/UsersGuide.html#_editor_integration).
-Note that `lein watch` runs `shadow-cljs watch` for you, and that this project's running build ids is
+Note that `npm run watch` runs `npx shadow-cljs watch` for you, and that this project's running build ids is
 `app`, `browser-test`, `karma-test`, or the keywords `:app`, `:browser-test`, `:karma-test` in a Clojure context.
 
 Alternatively, search the web for info on connecting to a `shadow-cljs` ClojureScript browser REPL
@@ -227,67 +201,29 @@ Build the app with the `prod` profile, start a temporary local web server, launc
 Chrome/Chromium, run tests, and stop the web server:
 
 ```sh
-lein ci
+npm install
+npm run ci
 ```
 
 Please be patient; it may take over 15 seconds to see any output, and over 25 seconds to complete.
 
 Or, for auto-reload:
 ```sh
-lein watch
+npm install
+npm run watch
 ```
 
 Then in another terminal:
 ```sh
 karma start
-```{{/test?}}{{#garden?}}
-
-### Compiling CSS with `lein-garden`
-
-Use Clojure and [Garden](https://github.com/noprompt/garden) to edit styles in `.clj` files located
-in the [`src/clj/{{sanitized}}/`](src/clj/{{sanitized}}/) directory. CSS files are compiled
-automatically on [`dev`](#running-the-app) or [`prod`](#production) build.
-
-Manually compile CSS files:
-```sh
-lein garden once
-```
-
-The `resources/public/css/` directory is created, containing the compiled CSS files.
-
-#### Compiling CSS with Garden on change
-
-Enable automatic compiling of CSS files when source `.clj` files are changed:
-```sh
-lein garden auto
-```{{/garden?}}{{#less?}}
-
-### Compiling CSS with `lein-less`
-
-Use [Less](http://lesscss.org/features/) to edit styles in `.less` files located in the
-[`less/`](less/) directory. CSS files are compiled automatically on [`dev`](#running-the-app)
-or [`prod`](#production) build.
-
-Manually compile CSS files:
-```sh
-lein less once
-```
-
-The `resources/public/css/` directory is created, containing the compiled CSS files.
-
-#### Compiling CSS with `lein-less` on change
-
-Enable automatic compiling of CSS files when source `.less` files are changed:
-```sh
-lein less auto
-```{{/less?}}
+```{{/test?}}
 
 ### Running `shadow-cljs` Actions
 
 See a list of [`shadow-cljs CLI`](https://shadow-cljs.github.io/docs/UsersGuide.html#_command_line)
 actions:
 ```sh
-lein run -m shadow.cljs.devtools.cli --help
+npx shadow-cljs --help
 ```
 
 Please be patient; it may take over 10 seconds to see any output. Also note that some actions shown
@@ -295,7 +231,7 @@ may not actually be supported, outputting "Unknown action." when run.
 
 Run a shadow-cljs action on this project's build id (without the colon, just `app`):
 ```sh
-lein run -m shadow.cljs.devtools.cli <action> app
+npx shadow-cljs <action> app
 ```
 ### Debug Logging
 
@@ -314,65 +250,14 @@ Use `debug?` for logging or other tasks that should run only on `dev` builds:
 
 ## Production
 
-Build the app with the `prod` profile:{{^handler?}}
+Build the app with the `prod` profile:
 
 ```sh
-lein release
+npm install
+npm run release
 ```
 
-Please be patient; it may take over 15 seconds to see any output, and over 30 seconds to complete.{{/handler?}}{{#handler?}}
-
-```sh
-lein with-profile release uberjar
-```
-
-Please be patient; it may take a few seconds to see any output, and over 50 seconds to complete.{{/handler?}}
+Please be patient; it may take over 15 seconds to see any output, and over 30 seconds to complete.
 
 The `resources/public/js/compiled` directory is created, containing the compiled `app.js` and
-`manifest.edn` files.{{#handler?}} The `target/` directory is then created, containing the
-standalone `{{name}}.jar`.
-
-### Running the Server
-
-[Run the jar](https://github.com/ring-clojure/ring/wiki/Setup-for-production#run-the-server),
-setting the port the Ring server will use by setting the environment variable, `port`.
-
-```sh
-port=2000 java -jar target/{{name}}.jar
-```
-
-If `port` is not set, the server will run on port 3000 by default.
-
-### Deploying to Heroku
-
-1. Heroku deploys happen from a git repository:
-    ```sh
-    git init .
-    git add -A
-    git commit -m "Initial commit"
-    ```
-
-2. [Create a Heroku app](https://devcenter.heroku.com/articles/creating-apps):
-    ```sh
-    heroku create
-    ```
-
-3. [Add the relevant buildpacks](https://devcenter.heroku.com/articles/using-node-js-with-clojure-and-clojurescript-applications)
-    ```sh
-    heroku buildpacks:add heroku/nodejs
-    heroku buildpacks:add heroku/clojure
-    ```
-
-4. [Deploy the app code](https://devcenter.heroku.com/articles/git#deploying-code):
-
-    ```sh
-    git push heroku master
-    ```{{/handler?}}{{^handler?}}
-
-The [`resources/public`](resources/public/) directory contains the complete, production web front
-end of your app.
-
-Always inspect the `resources/public/js/compiled` directory prior to deploying the app. Running any
-`lein` alias in this project after `lein watch` will, at the very least, run `lein clean`, which
-deletes this generated directory. Further, running `lein watch` will generate many, much larger
-development versions of the files in this directory.{{/handler?}}
+`manifest.edn` files.

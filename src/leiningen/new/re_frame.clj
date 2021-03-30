@@ -3,8 +3,6 @@
    [leiningen.core.main :as main]
    [leiningen.new.options.base :as base]
    [leiningen.new.options.garden :as garden]
-   [leiningen.new.options.less :as less]
-   [leiningen.new.options.handler :as handler]
    [leiningen.new.options.kondo :as kondo]
    [leiningen.new.options.re-com :as re-com]
    [leiningen.new.options.routes :as routes]
@@ -27,7 +25,6 @@
 
    ;; css
    (when (helpers/option? garden/option options) (garden/files data))
-   (when (helpers/option? less/option options) (less/files data))
 
    ;; debug
    ;;
@@ -38,7 +35,6 @@
    (when (helpers/option? calva/option options) (calva/files data))
 
    ;; full-stack
-   (when (helpers/option? handler/option options) (handler/files data))
    (when (helpers/option? cider/option options) (cider/files data))
 
    ;; misc.
@@ -56,7 +52,6 @@
 
    ;; css
    :garden? (helpers/option? garden/option options)
-   :less?   (helpers/option? less/option options)
 
    ;; debug
    :re-frisk? (helpers/option? "+re-frisk" options)
@@ -68,13 +63,6 @@
    :kondo?   (helpers/option? kondo/option options)
    :test?    (helpers/option? test/option options)
    :git-inject? (helpers/option? "+git-inject" options)
-
-   ;; full-stack
-   :handler?    (helpers/option? handler/option options)
-   :prep-garden (when (helpers/option? garden/option options)
-                  ["garden" "once"])
-   :prep-less   (when (helpers/option? less/option options)
-                  ["less" "once"])
 
    ;; misc.
    :re-com?     (helpers/option? re-com/option options)
@@ -93,7 +81,6 @@
 (def available-set
   #{;; css
     garden/option
-    less/option
 
     ;; debug
     "+re-frisk"
@@ -105,9 +92,6 @@
     kondo/option
     test/option
     "+git-inject"
-
-    ;; full-stack
-    handler/option
 
     ;; misc.
     re-com/option

@@ -4,4 +4,4 @@
 (def option "+routes")
 
 (defn routes-cljs [data]
-  [["src/cljs/{{sanitized}}/routes.cljs" (helpers/render "src/cljs/routes.cljs" data)]])
+  [["src/{{sanitized}}/routes.cljs" (helpers/render "src/routes.cljs" data)]])
