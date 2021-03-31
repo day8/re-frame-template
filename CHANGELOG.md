@@ -1,5 +1,11 @@
 ## Unreleased
 
+## Changed
+
+- Upgrade shadow-git-inject to 0.0.3
+
+## 2.0.2 (2021-03-31)
+
 ## Fixed
 
 - Fix `+git-inject` option build hook configuration in `shadow-cljs.edn`.
