@@ -1,5 +1,12 @@
 ## Unreleased
 
+## 2.0.1 (2021-03-31)
+
+## Fixed
+
+- Fix deprecated usage of `:devtools` in `shadow-cljs.edn` by using `:dev-http` instead.
+Thanks to [@thheller](https://github.com/thheller) for reporting the issue and fix.
+
 ## 2.0.0 (2021-03-31)
 
 **BREAKING CHANGES:** `+handler` and `+less` options have been removed.
