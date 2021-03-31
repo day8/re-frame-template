@@ -5,7 +5,8 @@
    [re-pressed.core :as rp]
    [{{ns-name}}.events :as events]{{/re-pressed?}}{{#garden?}}
    [{{ns-name}}.styles :as styles]{{/garden?}}
-   [{{ns-name}}.subs :as subs]
+   [{{ns-name}}.subs :as subs]{{#git-inject?}}
+   [{{ns-name}}.config :as config]{{/git-inject?}}
    ))
 
 {{#re-pressed?}}
@@ -60,7 +61,7 @@
     [:div
      [:h1{{#garden?}}
       {:class (styles/level1)}{{/garden?}}
-      "Hello from " @name]{{#re-pressed?}}
+      "Hello from " @name{{#git-inject?}}". Version " config/version{{/git-inject?}}]{{#re-pressed?}}
      [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
      [:div
       [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]

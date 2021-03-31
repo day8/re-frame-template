@@ -21,7 +21,8 @@
                 [cider/cider-nrepl "0.25.6"]{{/cider?}}{{#git-inject?}}
                 [day8/shadow-git-inject "0.0.1"]{{/git-inject?}}]{{#git-inject?}}
 
- :build-hooks [(shadow-git-inject.core/hook)]{{/git-inject?}}
+ :build-defaults
+ {:build-hooks [(shadow-git-inject.core/hook)]}{{/git-inject?}}
 
  :dev-http
  {8280 "resources/public"
