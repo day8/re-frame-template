@@ -1,5 +1,14 @@
 ## Unreleased
 
+## 2.0.0 (2021-03-31)
+
+**BREAKING CHANGES:** `+handler` and `+less` options have been removed.
+
+**MAJOR COMMAND CHANGES:**` After creating your templated project instead of:
+- `lein watch` now use `npm run watch`
+- `lein shadow ...` now use `npx shadow-cljs ...`
+- `lein release` now use `npm run release`
+
 ## Changed
 
 - Replace lein with shadow-cljs. Leiningen is still used for templating (i.e. `lein new re-frame ...`), but the resulting
