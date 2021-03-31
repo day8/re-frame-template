@@ -1,5 +1,10 @@
 ## Unreleased
 
+## Fixed
+
+- Fix `+git-inject` option build hook configuration in `shadow-cljs.edn`.
+Thanks to [@thheller](https://github.com/thheller) for reporting the issue and fix.
+
 ## 2.0.1 (2021-03-31)
 
 ## Fixed
