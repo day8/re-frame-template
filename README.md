@@ -54,7 +54,7 @@ The following "extras" can be nominated on the commandline when you create the t
   * [Calva](https://github.com/BetterThanTomorrow/calva) (`+calva`)
   * [clj-kondo](https://github.com/borkdude/clj-kondo) (`+kondo`)
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
-  * [git-inject](https://github.com/day8/lein-git-inject) (`+git-inject`)
+  * [git-inject](https://github.com/day8/shadow-git-inject) (`+git-inject`)
 * Misc.
   * [re-com](https://github.com/day8/re-com) (`+re-com`)
   * [re-pressed](https://github.com/gadfly361/re-pressed) (`+re-pressed`)
