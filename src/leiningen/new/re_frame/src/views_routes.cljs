@@ -35,8 +35,9 @@
 (defn home-panel []
   (let [name (re-frame/subscribe [::subs/name])]
     [:div
-     [:h1 (str "Hello from " @name ". This is the Home Page."){{#garden?}}
-      {:class (styles/level1)}{{/garden?}}]
+     [:h1{{#garden?}}
+      {:class (styles/level1)}{{/garden?}}
+      (str "Hello from " @name ". This is the Home Page.")]
 
      [:div
       [:a {:on-click #(re-frame/dispatch [::events/navigate :about])}

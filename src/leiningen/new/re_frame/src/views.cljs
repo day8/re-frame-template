@@ -58,8 +58,9 @@
 (defn main-panel []
   (let [name (re-frame/subscribe [::subs/name])]
     [:div
-     [:h1 "Hello from " @name{{#garden?}}
-      {:class (styles/level1)}{{/garden?}}]{{#re-pressed?}}
+     [:h1{{#garden?}}
+      {:class (styles/level1)}{{/garden?}}
+      "Hello from " @name]{{#re-pressed?}}
      [display-re-pressed-example]{{/re-pressed?}}{{#breaking-point?}}
      [:div
       [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]
