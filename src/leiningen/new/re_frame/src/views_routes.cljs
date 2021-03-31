@@ -2,7 +2,8 @@
   (:require
    [re-frame.core :as re-frame]{{#breaking-point?}}
    [breaking-point.core :as bp]{{/breaking-point?}}{{#garden?}}
-   [{{ns-name}}.styles :as styles]{{/garden?}}
+   [{{ns-name}}.styles :as styles]{{/garden?}}{{#git-inject?}}
+   [{{ns-name}}.config :as config]{{/git-inject?}}
    [{{ns-name}}.events :as events]
    [{{ns-name}}.routes :as routes]
    [{{ns-name}}.subs :as subs]
@@ -37,7 +38,7 @@
     [:div
      [:h1{{#garden?}}
       {:class (styles/level1)}{{/garden?}}
-      (str "Hello from " @name ". This is the Home Page.")]
+      (str "Hello from " @name ". This is the Home Page."{{#git-inject?}}" Git version " config/version{{/git-inject?}})]
 
      [:div
       [:a {:on-click #(re-frame/dispatch [::events/navigate :about])}

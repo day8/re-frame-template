@@ -3,7 +3,8 @@
    [re-frame.core :as re-frame]
    [re-com.core :as re-com :refer [at]]{{#breaking-point?}}
    [breaking-point.core :as bp]{{/breaking-point?}}{{#garden?}}
-   [{{ns-name}}.styles :as styles]{{/garden?}}
+   [{{ns-name}}.styles :as styles]{{/garden?}}{{#git-inject?}}
+   [{{ns-name}}.config :as config]{{/git-inject?}}
    [{{ns-name}}.events :as events]
    [{{ns-name}}.routes :as routes]
    [{{ns-name}}.subs :as subs]))
@@ -33,7 +34,7 @@
   (let [name (re-frame/subscribe [::subs/name])]
     [re-com/title
      :src   (at)
-     :label (str "Hello from " @name ". This is the Home Page.")
+     :label (str "Hello from " @name ". This is the Home Page." {{#git-inject?}}" Git version " config/version{{/git-inject?}})
      :level :level1{{#garden?}}
      :class (styles/level1){{/garden?}}]))
 

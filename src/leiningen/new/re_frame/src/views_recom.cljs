@@ -5,7 +5,8 @@
    [breaking-point.core :as bp]{{/breaking-point?}}{{#re-pressed?}}
    [re-pressed.core :as rp]
    [{{ns-name}}.events :as events]{{/re-pressed?}}{{#garden?}}
-   [{{ns-name}}.styles :as styles]{{/garden?}}
+   [{{ns-name}}.styles :as styles]{{/garden?}}{{#git-inject?}}
+   [{{ns-name}}.config :as config]{{/git-inject?}}
    [{{ns-name}}.subs :as subs]
    ))
 
@@ -57,7 +58,7 @@
   (let [name (re-frame/subscribe [::subs/name])]
     [re-com/title
      :src   (at)
-     :label (str "Hello from " @name)
+     :label (str "Hello from " @name{{#git-inject?}}". Git version " config/version{{/git-inject?}})
      :level :level1{{#garden?}}
      :class (styles/level1){{/garden?}}]))
 
