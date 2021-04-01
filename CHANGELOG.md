@@ -1,5 +1,9 @@
 ## Unreleased
 
+## Changed
+
+- Upgrade shadow-git-inject to 0.0.4
+
 ## 2.0.3 (2021-04-01)
 
 ## Changed
