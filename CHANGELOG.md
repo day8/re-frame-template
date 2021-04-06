@@ -3,6 +3,7 @@
 ## Changed
 
 - Upgrade to shadow-cljs 2.12.1 (includes [ClojureScript 1.10.844](https://github.com/clojure/clojurescript/blob/master/changes.md#110844)).
+- Upgrade karma to 6.3.0
 
 ## 2.0.5 (2021-04-05)
 
