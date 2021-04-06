@@ -35,23 +35,23 @@
    :output-dir "resources/public/js/compiled"
    :asset-path "/js/compiled"
    :modules
-   {:app {:init-fn  {{name}}.core/init
-          :preloads [devtools.preload{{#10x?}}
-                     day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
-                     re-frisk.preload{{/re-frisk?}}]}}{{#git-inject?}}
+   {:app {:init-fn {{name}}.core/init}}{{#git-inject?}}
    :compiler-options
    {:closure-defines
-    { {{name}}.config/version :shadow-git-inject/version}}{{/git-inject?}}{{#10x?}}
+    { {{name}}.config/version :shadow-git-inject/version}}{{/git-inject?}}
+   :devtools
+   {:preloads [{{#10x?}}day8.re-frame-10x.preload{{/10x?}}{{#re-frisk?}}
+               re-frisk.preload{{/re-frisk?}}]}
    :dev
    {:compiler-options
     {:closure-defines
-     {re-frame.trace.trace-enabled? true
-      day8.re-frame.tracing.trace-enabled? true{{#re-com?}}
-      re-com.config/root-url-for-compiler-output "http://localhost:8290/js/compiled/app/cljs-runtime/"{{/re-com?}}}}}
+     { {{#10x?}}re-frame.trace.trace-enabled? true
+      day8.re-frame.tracing.trace-enabled? true{{/10x?}}{{#re-com?}}
+      re-com.config/root-url-for-compiler-output "http://localhost:8290/js/compiled/app/cljs-runtime/"{{/re-com?}}}}}{{#10x?}}
    :release
    {:build-options
     {:ns-aliases
-     {day8.re-frame.tracing day8.re-frame.tracing-stubs}}}{{/10x?}}}{{#test?}}
+     {day8.re-frame.tracing day8.re-frame.tracing-stubs}}}{{/10x?}}{{#test?}}
   :browser-test
   {:target    :browser-test
    :ns-regexp "-test$"
@@ -61,4 +61,4 @@
   :karma-test
   {:target    :karma
    :ns-regexp "-test$"
-   :output-to "target/karma-test.js"}{{/test?}}}}
+   :output-to "target/karma-test.js"}{{/test?}}}}}

@@ -2,6 +2,12 @@
 
 ## Changed
 
+- Move `:preloads` to `:devtools` to align with current [shadow-cljs documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#_preloads)
+
+## 2.1.0 (2021-04-06)
+
+## Changed
+
 - Upgrade to shadow-cljs 2.12.1 (includes [ClojureScript 1.10.844](https://github.com/clojure/clojurescript/blob/master/changes.md#110844)).
 - Upgrade karma to 6.3.0
 
