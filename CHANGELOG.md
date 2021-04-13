@@ -4,6 +4,7 @@
 
 - Upgrade shadow-cljs to 2.12.4
 - Upgrade re-frisk to 1.4.0
+- Upgrade cider-nrepl to 0.25.11
 
 ## 2.1.1 (2021-04-06)
 
