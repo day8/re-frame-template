@@ -3,6 +3,7 @@
 ## Changed
 
 - Upgrade shadow-cljs to 2.12.4
+- Upgrade re-frisk to 1.4.0
 - Move `:preloads` to `:devtools` to align with current [shadow-cljs documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#_preloads)
 
 ## 2.1.0 (2021-04-06)
