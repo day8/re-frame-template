@@ -1,8 +1,12 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade shadow-cljs to 2.12.5
+
 ## 2.1.2 (2021-04-13)
 
-## Changed
+#### Changed
 
 - Upgrade shadow-cljs to 2.12.4
 - Upgrade re-frisk to 1.4.0
@@ -10,45 +14,45 @@
 
 ## 2.1.1 (2021-04-06)
 
-## Changed
+#### Changed
 
 - Move `:preloads` to `:devtools` to align with current [shadow-cljs documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#_preloads)
 
 ## 2.1.0 (2021-04-06)
 
-## Changed
+#### Changed
 
 - Upgrade to shadow-cljs 2.12.1 (includes [ClojureScript 1.10.844](https://github.com/clojure/clojurescript/blob/master/changes.md#110844)).
 - Upgrade karma to 6.3.0
 
 ## 2.0.5 (2021-04-05)
 
-## Changed
+#### Changed
 
 - Upgrade shadow-git-inject to 0.0.5
 
 ## 2.0.4 (2021-04-01)
 
-## Changed
+#### Changed
 
 - Upgrade shadow-git-inject to 0.0.4
 
 ## 2.0.3 (2021-04-01)
 
-## Changed
+#### Changed
 
 - Upgrade shadow-git-inject to 0.0.3
 
 ## 2.0.2 (2021-03-31)
 
-## Fixed
+#### Fixed
 
 - Fix `+git-inject` option build hook configuration in `shadow-cljs.edn`.
 Thanks to [@thheller](https://github.com/thheller) for reporting the issue and fix.
 
 ## 2.0.1 (2021-03-31)
 
-## Fixed
+#### Fixed
 
 - Fix deprecated usage of `:devtools` in `shadow-cljs.edn` by using `:dev-http` instead.
 Thanks to [@thheller](https://github.com/thheller) for reporting the issue and fix.
@@ -62,14 +66,14 @@ Thanks to [@thheller](https://github.com/thheller) for reporting the issue and f
 - `lein shadow ...` now use `npx shadow-cljs ...`
 - `lein release` now use `npm run release`
 
-## Changed
+#### Changed
 
 - Replace lein with shadow-cljs. Leiningen is still used for templating (i.e. `lein new re-frame ...`), but the resulting
 output is now a pure shadow-cljs build with no dependency on Leiningen. This resolves a whole class of bugs and beginner
 confusion that was being caused by the more complex Leiningen setup. It also enables users to have a `npm` or `yarn`
 focused workflow for dependencies, as we no longer wrap those tools.
 
-## Removed
+#### Removed
 
 - Remove `+handler` option. Due to change from Leiningen to pure shadow-cljs. This is a client-focused template, and
 it is not worthwhile for us to maintain a backend implementation when there are other templates focused on that use
@@ -79,7 +83,7 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.5.0 (2021-03-23)
 
-## Changed
+#### Changed
 
 - Upgrade re-frame-10x to 1.0.2. Fixes [#150](https://github.com/day8/re-frame-template/issues/150).
 - Upgrade re-frame tracing to 0.6.2
@@ -88,13 +92,13 @@ if/when a shadow-cljs build hook for less is available.
 - Upgrade karma to 6.2.0
 - Upgrade ring to 1.9.2
 
-## Added
+#### Added
 
 - Add `+git-inject`
 
 ## 1.4.2 (2021-03-08)
 
-## Changed
+#### Changed
 
 - Change to bidi and pushy for `+routes`
 - Upgrade karma 6.1.1
@@ -104,13 +108,13 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.4.1 (2021-03-05)
 
-## Fixed
+#### Fixed
 
 - Fix cider integration. See [#148](https://github.com/day8/re-frame-template/issues/148). Thanks to [@MrSFGriffin](https://github.com/MrSFGriffin).
 
 ## 1.4.0 (2021-02-25)
 
-## Changed
+#### Changed
 
 - Upgrade re-frame to 1.2.0
 - Upgrade re-frame-10x to 1.0.0
@@ -122,13 +126,13 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.3.1 (2020-11-11)
 
-## Fixed
+#### Fixed
 
 - Fix uberjar target, +handler profile and Heroku instructions. Thanks to
   [@dominem](https://github.com/dominem) and [@paulbutcher](https://github.com/paulbutcher).
   See [#139](https://github.com/day8/re-frame-template/pull/139) and [#145](https://github.com/day8/re-frame-template/pull/145).
 
-## Changed
+#### Changed
 
 - Upgrade [re-frame to 1.1.2](http://day8.github.io/re-frame/)
 - Upgrade shadow-cljs to 2.11.7
@@ -136,7 +140,7 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.3.0 (2020-09-28)
 
-## Changed
+#### Changed
 
 - Upgrade [lein-shadow to 0.3.1](https://gitlab.com/nikperic/lein-shadow/-/blob/master/CHANGELOG.md#030-2020-09-22)
 - Upgrade shadow-cljs to 2.11.4
@@ -144,23 +148,23 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.2.4 (2020-09-04)
 
-## Fixed
+#### Fixed
 
 - Fix exception in `server.clj` when port is given from environment. See #140
 
-## Changed
+#### Changed
 
 - Upgrade [karma to 5.2.1](https://github.com/karma-runner/karma/blob/master/CHANGELOG.md#521-2020-09-02)
 
 ## 1.2.3 (2020-08-26)
 
-## Changed
+#### Changed
 
 - Upgrade [re-frame to 1.1.1](http://day8.github.io/re-frame/releases/2020/#110-2020-08-24)
 
 ## 1.2.2 (2020-08-25)
 
-## Changed
+#### Changed
 
 - Upgrade [lein-shadow to 0.2.2](https://gitlab.com/nikperic/lein-shadow/-/blob/master/CHANGELOG.md#022-2020-08-07)
 - Upgrade [shadow-cljs to 2.11.0](https://github.com/thheller/shadow-cljs/commit/28169be104149e496b31bad443be7ecb6d16cd4a)
@@ -171,11 +175,11 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.2.1 (2020-08-05)
 
-## Fixed
+#### Fixed
 
 - Fix karma lein aliases on Windows
 
-## Changed
+#### Changed
 
 - Rename lein aliases to align with shadow-cljs terminology. Prints deprecated
   warning on use of old aliases so that it is not yet a breaking change. Old
@@ -186,14 +190,14 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.2.0 (2020-07-21)
 
-## Changed
+#### Changed
 
 - Upgrade re-frame to 1.0.0
 - Upgrade shadow-cljs to 2.10.17
 
 ## 1.1.4 (2020-07-16)
 
-## Changed
+#### Changed
 
 - Upgrade re-frame-10x to 0.7.0
 - Upgrade re-frisk to 1.3.4
@@ -201,7 +205,7 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.1.3 (2020-06-30)
 
-### Changed
+#### Changed
 
 - Upgrade [re-frame-tracing to 0.5.6](https://github.com/day8/re-frame-debux/blob/master/CHANGELOG.md)
 - Upgrade re-frame-10x to 0.6.6
@@ -211,20 +215,20 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.1.2 (2020-05-27)
 
-### Added
+#### Added
 
 - Add Calva support. See [#132](https://github.com/day8/re-frame-template/pull/132).
   Thanks to [@PEZ](https://github.com/PEZ).
 
 ## 1.1.1 (2020-05-15)
 
-### Changed
+#### Changed
 
 - Upgrade re-frame-10x to [0.6.5](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#065---2020-05-15)
 
 ## 1.1.0 (2020-05-14)
 
-### Changed
+#### Changed
 
 - Upgrade ClojureScript to [1.10.764](https://github.com/clojure/clojurescript/blob/master/changes.md#110764)
 - Raise minimum Leiningen version for the generated project to `2.9.0` or later. Older versions *might*
@@ -235,7 +239,7 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.0.34 (2020-05-14)
 
-### Changed
+#### Changed
 
 - Upgrade `lein-shadow` to 0.2.0.
   See the [`lein-shadow` `CHANGELOG.md`](https://gitlab.com/nikperic/lein-shadow/-/blob/master/CHANGELOG.md)
@@ -250,7 +254,7 @@ if/when a shadow-cljs build hook for less is available.
 
 ## 1.0.33 (2020-05-11)
 
-### Changed
+#### Changed
 
 - Upgrade shadow-cljs to 2.9.0
 

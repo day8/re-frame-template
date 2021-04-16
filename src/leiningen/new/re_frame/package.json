@@ -8,7 +8,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"shadow-cljs": "2.12.4"{{#test?}},
+		"shadow-cljs": "2.12.5"{{#test?}},
         "karma": "6.3.0",
         "karma-chrome-launcher": "3.1.0",
         "karma-cljs-test": "0.1.0",
