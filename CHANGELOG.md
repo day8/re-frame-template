@@ -1,5 +1,12 @@
 ## Unreleased
 
+#### Removed
+
+- Remove broken `+calva` option as Calva has built in support for pure shadow-cljs projects.
+Fixes [#155](https://github.com/day8/re-frame-template/issues/155) and
+[BetterThanTomorrow/calva#1121](https://github.com/BetterThanTomorrow/calva/issues/1121).
+Addresses [BetterThanTomorrow/calva#314](https://github.com/BetterThanTomorrow/calva/issues/314). Thanks to [@PEZ](https://github.com/PEZ).
+
 #### Changed
 
 - Upgrade shadow-cljs to 2.12.5
