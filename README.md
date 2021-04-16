@@ -51,7 +51,6 @@ The following "extras" can be nominated on the commandline when you create the t
   * [re-frisk](https://github.com/flexsurfer/re-frisk) (`+re-frisk`)
 * Development
   * [cider](https://github.com/clojure-emacs/cider) (`+cider`)
-  * [Calva](https://github.com/BetterThanTomorrow/calva) (`+calva`)
   * [clj-kondo](https://github.com/borkdude/clj-kondo) (`+kondo`)
   * [cljs.test](https://github.com/clojure/clojurescript/blob/master/src/main/cljs/cljs/test.cljs) (`+test`)
   * [git-inject](https://github.com/day8/shadow-git-inject) (`+git-inject`)
@@ -83,21 +82,29 @@ Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.githu
 
 The mentioned `dir-local.el` file is created by this template.
 
-## Connect Calva from VS Code (if using +calva):
+## Connect Calva from VS Code:
 
-1. Issue the command **Calva: Start a Project REPL and Connect (a.k.a Jack-in)**, `ctrl+alt+c ctrl+alt+j`. (This will start the app, so in this workflow you don't do the **Run application** steps outlined below.)
-    * Wait for the *Calva says* output pane to say: *Creating cljs repl session...*
-1. Open http://localhost:8280 in your browser.
-    * Confirm that it says *Hello from re-frame*. (Depending on how long the app takes to compile, you might need to reload the page a few times.)
-1. Open a `cljs` file from `src/cljs` and issue **Calva: Load Current File and Dependencies**. `ctrl+alt+c enter`.
+[Calva](https://github.com/BetterThanTomorrow/calva) has built-in support for `shadow-cljs` projects (that's why there is no `+calva` option for creating this project). 
 
+0. `npm install`
+1. From VS Code, issue the command **Calva: Start a Project REPL and Connect (a.k.a Jack-in)**, `ctrl+alt+c ctrl+alt+j`.
+   * Calva will auto-detect that this is a `shadow-cljs` project and ask for which build to compile.
+   * Calva's output window will open and log some progress information.
+1. When prompted for which build to start, select `:app`.
+   * `:app` is the only configured build, but the VS Code menu for this is a bit strange so _make sure the `:app` checkbox is really ticked before proceeding_.
+   * This will start the app, so in this workflow you don't do the **Run application** steps outlined below.
+1. When prompted for which build to connect to, select `:app`.
+    * In the **View** menu of VS Code, you can tell it to show the **Terminal** view, where you see which command the jack-in process is started with, and it's output. `Ctrl+C` in this pane will kill your app and free up all resources it has allocated.
+1. When the app is compiled
+    1. Open http://localhost:8280 in your browser.
+    1. Confirm that it says *Hello from re-frame*. (Depending on how long the app takes to compile, you might need to reload the page a few times.)
+1. Open the `views.cljs` file from `src/<your-project-name>` and issue **Calva: Load Current File and Dependencies**. `ctrl+alt+c enter`.
+    1. Confirm that you are connected by adding evaluating `(js/alert "Hello from Calva")` (`alt+enter` and `ctrl+enter` are your friends).
+    1. Confirm that Shadow is hot reloading by changing the greeting message.
 
 
 See https://calva.io for more on how to use Calva.
 
-### Add Calva settings to an existing project
-
-Do you have a project that was created without the `+calva` option, and want the easy Jack-in anyway? No worries! At https://calva.io/re-frame-template/ you will find the settings needed.
 
 ## Run application:
 

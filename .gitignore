@@ -12,3 +12,5 @@ pom.xml.asc
 /.idea
 *.iml
 temp
+.lsp/sqlite*.db
+.calva/output-window/*.calva-repl

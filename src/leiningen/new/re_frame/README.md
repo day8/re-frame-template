@@ -160,6 +160,11 @@ See
 for more information. Note that the mentioned [`.dir-locals.el`](.dir-locals.el) file has already
 been created for you.
 
+#### Connecting to the browser REPL from VS Code with Calva
+
+See the [re-frame-template README](https://github.com/day8/re-frame-template) for [Calva](https://github.com/BetterThanTomorrow/calva) instuctions. See also https://calva.io for Calva documentation.
+
+
 #### Connecting to the browser REPL from other editors{{/cider?}}{{^cider?}}
 
 #### Connecting to the browser REPL from your editor{{/cider?}}
