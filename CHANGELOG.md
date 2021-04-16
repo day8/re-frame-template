@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2.2.0 (2021-04-17)
+
 #### Removed
 
 - Remove broken `+calva` option as Calva has built in support for pure shadow-cljs projects.
