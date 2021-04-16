@@ -3,6 +3,7 @@
 #### Changed
 
 - Upgrade shadow-cljs to 2.12.5
+- Upgrade karma to 6.3.2
 
 ## 2.1.2 (2021-04-13)
 
