@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2.2.1 (2021-04-20)
+
 #### Changed
 
 - Upgrade re-frisk to 1.5.0
