@@ -1,5 +1,10 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade re-frisk to 1.5.1. Fixes [flexsurfer/re-frisk#63](https://github.com/flexsurfer/re-frisk/issues/63).
+Thanks to [@flexsurfer](https://github.com/flexsurfer).
+
 ## 2.2.1 (2021-04-20)
 
 #### Changed
