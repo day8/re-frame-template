@@ -56,7 +56,7 @@ you.
     - Created on build with either the [dev](#running-the-app) or [prod](#production) profile
     - `js/compiled/`: compiled CLJS (`shadow-cljs`)
       - Not tracked in source control; see [`.gitignore`](.gitignore){{#garden?}}
-* [`src/{{sanitized}}/styles.cljs`](src/clj/{{sanitized}}/styles.cljs): CSS compilation source file (ClojureScript,
+* [`src/{{sanitized}}/styles.cljs`](src/{{sanitized}}/styles.cljs): CSS compilation source file (ClojureScript,
 [Garden](https://github.com/noprompt/garden)){{/garden?}}
 * [`src/{{sanitized}}/`](src/{{sanitized}}/): SPA source files (ClojureScript,
 [re-frame](https://github.com/Day8/re-frame))
