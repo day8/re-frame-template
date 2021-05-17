@@ -2,7 +2,7 @@
 
  {{#cider?}}:jvm-opts ["-Xmx1G"]{{/cider?}}
 
- :source-paths ["src"]
+ :source-paths ["src" "test"]
 
  :dependencies
  [[reagent "1.0.0"]
