@@ -1,5 +1,17 @@
 ## Unreleased
 
+#### Fixed
+
+- Fix `+test` shadow-cljs `karma-test` and `browser-test` configs.
+  See [#159](https://github.com/day8/re-frame-template/pull/159).
+  Thanks to [@ertugrulcetin](https://github.com/ertugrulcetin).
+- Fix styles.cljs path in generated `README.md`.
+  Thanks to [@aaronshim](https://github.com/aaronshim).
+- Fix fallback to `index.html`. See [#161](https://github.com/day8/re-frame-template/issues/161).
+  Thanks to [@mattdamon108](https://github.com/mattdamon108).
+
+## 2.2.2 (2021-04-28)
+
 #### Changed
 
 - Upgrade re-frisk to 1.5.1. Fixes [flexsurfer/re-frisk#63](https://github.com/flexsurfer/re-frisk/issues/63).
