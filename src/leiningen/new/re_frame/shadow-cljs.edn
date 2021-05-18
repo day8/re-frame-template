@@ -51,8 +51,7 @@
    :release
    {:build-options
     {:ns-aliases
-     {day8.re-frame.tracing day8.re-frame.tracing-stubs}}}{{/10x?}}{{#test?}}
-  {{/test?}}}
+     {day8.re-frame.tracing day8.re-frame.tracing-stubs}}}{{/10x?}}}{{#test?}}
   :browser-test
   {:target    :browser-test
    :ns-regexp "-test$"
@@ -61,4 +60,4 @@
   :karma-test
   {:target    :karma
    :ns-regexp "-test$"
-   :output-to "target/karma-test.js"}}}
+   :output-to "target/karma-test.js"}{{/test?}}}}
