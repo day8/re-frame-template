@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2.2.3 (2021-05-18)
+
 #### Fixed
 
 - Fix `+test` shadow-cljs `karma-test` and `browser-test` configs.
