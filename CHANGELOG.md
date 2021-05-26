@@ -1,5 +1,11 @@
 ## Unreleased
 
+#### Fixed
+
+- Fix hot code reloading breaking navigation with `+routes` option.
+See [#163](https://github.com/day8/re-frame-template/issues/163).
+Thanks to [@Sose](https://github.com/Sose).
+
 ## 2.2.3 (2021-05-18)
 
 #### Fixed
