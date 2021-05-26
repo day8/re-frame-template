@@ -26,7 +26,7 @@
   (let [panel (keyword (str (name (:handler route)) "-panel"))]
     (re-frame/dispatch [::events/set-active-panel panel])))
 
-(def history
+(defonce history
   (pushy/pushy dispatch parse))
 
 (defn navigate!
