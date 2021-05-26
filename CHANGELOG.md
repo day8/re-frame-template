@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2.2.4 (2021-05-27)
+
 #### Fixed
 
 - Fix hot code reloading breaking navigation with `+routes` option.
