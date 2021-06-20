@@ -2,6 +2,7 @@
 
 #### Changed
 
+- Upgrade re-frame-10x to 1.1.4
 - Upgrade reagent to 1.1.0
 - Upgrade shadow-cljs to 2.14.5
 
