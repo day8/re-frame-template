@@ -1,5 +1,13 @@
 ## Unreleased
 
+## 2.2.6 (2021-06-22)
+
+#### Changed
+
+- Upgrade re-frame-10x to 1.1.7. Fixes [several bugs](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#117-2021-06-22);
+
+## 2.2.5 (2021-06-20)
+
 #### Changed
 
 - Upgrade re-frame-10x to 1.1.4
