@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2.2.7 (2021-07-07)
+
 #### Changed
 
 - Upgrade shadow-cljs to 2.14.6
