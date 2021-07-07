@@ -4,6 +4,7 @@
 
 - Upgrade shadow-cljs to 2.14.6
 - Upgrade pushy to 0.3.10
+- Upgrade re-frame-10x to 1.1.10
 
 ## 2.2.6 (2021-06-22)
 
