@@ -1,8 +1,20 @@
 ## Unreleased
 
+## 2.3.1 (2021-07-21)
+
 #### Changed
 
-- Upgrade shadow-cljs to 2.15.1
+- Upgrade shadow-cljs to [2.15.2](https://github.com/thheller/shadow-cljs/blob/master/CHANGELOG.md#2152).
+
+## 2.3.0 (2021-07-14)
+
+#### Added
+
+- Add 'npm run ancient' as an alias for [antq](https://github.com/liquidz/antq). Requires `clojure` CLI tools.
+
+#### Changed
+
+- Upgrade shadow-cljs to [2.15.1](https://github.com/thheller/shadow-cljs/blob/master/CHANGELOG.md#2151)
 - Upgrade karma to 6.3.4
 - Upgrade cider-nrepl to 0.26.0
 
@@ -10,7 +22,7 @@
 
 #### Changed
 
-- Upgrade shadow-cljs to 2.14.6
+- Upgrade shadow-cljs to [2.14.6](https://github.com/thheller/shadow-cljs/blob/master/CHANGELOG.md#2146)
 - Upgrade pushy to 0.3.10
 - Upgrade re-frame-10x to 1.1.10
 
@@ -26,7 +38,7 @@
 
 - Upgrade re-frame-10x to 1.1.4
 - Upgrade reagent to 1.1.0
-- Upgrade shadow-cljs to 2.14.5
+- Upgrade shadow-cljs to [2.14.5](https://github.com/thheller/shadow-cljs/blob/master/CHANGELOG.md#2145)
 
 ## 2.2.4 (2021-05-27)
 
@@ -72,14 +84,14 @@ Addresses [BetterThanTomorrow/calva#314](https://github.com/BetterThanTomorrow/c
 
 #### Changed
 
-- Upgrade shadow-cljs to 2.12.5
+- Upgrade shadow-cljs to [2.12.5](https://github.com/thheller/shadow-cljs/blob/master/CHANGELOG.md#2125)
 - Upgrade karma to 6.3.2
 
 ## 2.1.2 (2021-04-13)
 
 #### Changed
 
-- Upgrade shadow-cljs to 2.12.4
+- Upgrade shadow-cljs to [2.12.4](https://github.com/thheller/shadow-cljs/blob/master/CHANGELOG.md#2124)
 - Upgrade re-frisk to 1.4.0
 - Upgrade cider-nrepl to 0.25.11
 
@@ -158,7 +170,7 @@ if/when a shadow-cljs build hook for less is available.
 
 - Upgrade re-frame-10x to 1.0.2. Fixes [#150](https://github.com/day8/re-frame-template/issues/150).
 - Upgrade re-frame tracing to 0.6.2
-- Upgrade shadow-cljs to 2.11.24
+- Upgrade shadow-cljs to [2.11.24](https://github.com/thheller/shadow-cljs/blob/master/CHANGELOG.md#21124)
 - Upgrade re-frisk to 1.3.12
 - Upgrade karma to 6.2.0
 - Upgrade ring to 1.9.2
