@@ -10,6 +10,7 @@
    [leiningen.new.options.views :as views]
    [leiningen.new.options.helpers :as helpers]
    [leiningen.new.options.cider :as cider]
+   [leiningen.new.options.github-actions :as github-actions]
    [clojure.set :as set])
   (:use [leiningen.new.templates :only [name-to-path sanitize-ns ->files]]))
 
@@ -37,6 +38,7 @@
 
    ;; misc.
    (when (helpers/option? re-com/option options) (re-com/assets data))
+   (when (helpers/option? github-actions/option options) (github-actions/files data))
 
    ;; routing
    (when (helpers/option? routes/option options) (routes/routes-cljs data))))
@@ -65,6 +67,7 @@
    :re-com?     (helpers/option? re-com/option options)
    :re-pressed? (helpers/option? "+re-pressed" options)
    :breaking-point? (helpers/option? "+breaking-point" options)
+   :github-actions? (helpers/option? github-actions/option options)
 
    ;; routing
    :routes? (helpers/option? routes/option options)})
@@ -93,6 +96,7 @@
     re-com/option
     "+re-pressed"
     "+breaking-point"
+    github-actions/option
 
     ;; routing
     routes/option})
