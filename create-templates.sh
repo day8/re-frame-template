@@ -10,7 +10,7 @@ cd base
 npm install
 npm run release
 cd resources/public
-google-chrome --headless --disable-gpu index.html
+google-chrome --headless --disable-gpu index.html || chromium --headless --disable-gpu index.html 
 cd ../../..
 
 printf "\ncreating base +routes\n"
@@ -19,7 +19,7 @@ cd base-routes
 npm install
 npm run release
 cd resources/public
-google-chrome --headless --disable-gpu index.html
+google-chrome --headless --disable-gpu index.html || chromium --headless --disable-gpu index.html 
 cd ../../..
 
 printf "\ncreating base +re-com\n"
@@ -28,7 +28,7 @@ cd base-recom
 npm install
 npm run release
 cd resources/public
-google-chrome --headless --disable-gpu index.html
+google-chrome --headless --disable-gpu index.html || chromium --headless --disable-gpu index.html 
 cd ../../..
 
 printf "\ncreating base +routes +re-com\n"
@@ -37,16 +37,16 @@ cd base-routes-recom
 npm install
 npm run release
 cd resources/public
-google-chrome --headless --disable-gpu index.html
+google-chrome --headless --disable-gpu index.html || chromium --headless --disable-gpu index.html 
 cd ../../..
 
-printf "\ncreating base +10x +breaking-point +cider +garden +handler +kondo +re-com +re-frisk +re-pressed +routes +test\n"
-lein new re-frame everything +10x +breaking-point +cider +garden +git-inject +kondo +re-com +re-frisk +re-pressed +routes +test
+printf "\ncreating base +10x +breaking-point +cider +garden +handler +kondo +re-com +re-frisk +re-pressed +routes +test +github-actions\n"
+lein new re-frame everything +10x +breaking-point +cider +garden +git-inject +kondo +re-com +re-frisk +re-pressed +routes +test +github-actions
 cd everything
 npm install
 npm run release
 npm run ci
 cd resources/public
-google-chrome --headless --disable-gpu index.html
+google-chrome --headless --disable-gpu index.html || chromium --headless --disable-gpu index.html 
 
 cd ../../..

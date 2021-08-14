@@ -1,0 +1,26 @@
+name: Run tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Tests
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: docker://mkapiczy/docker-java-node-chrome:latest
+      - uses: actions/checkout@v2
+      - name: install karma
+        run: npm install -g karma karma-cli karma-cljs-test karma-junit-reporter karma-chrome-launcher
+      - name: install all
+        run: 'npm install'
+      - name: run tests
+        run: |
+          nohup npm run watch &
+          sleep 180
+          karma start --single-run
+
+
+
+

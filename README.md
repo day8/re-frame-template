@@ -58,6 +58,7 @@ The following "extras" can be nominated on the commandline when you create the t
   * [re-com](https://github.com/day8/re-com) (`+re-com`)
   * [re-pressed](https://github.com/gadfly361/re-pressed) (`+re-pressed`)
   * [breaking-point](https://github.com/gadfly361/breaking-point) (`+breaking-point`)
+  * [github-actions](https://github.com/features/actions) (`+github-actions`)
 * Routing
   * [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/kibu-australia/pushy) (`+routes`)
 
@@ -191,6 +192,11 @@ And in another terminal:
 ```
 karma start
 ```
+
+## GitHub Actions
+
+Afer a push, head to the actions section of GitHub repo to see the pipeline processing.
+
 
 ## Production Build
 
