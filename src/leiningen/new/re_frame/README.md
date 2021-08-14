@@ -64,6 +64,10 @@ you.
 * [`test/{{sanitized}}/`](test/{{sanitized}}/): test files (ClojureScript,
 [cljs.test](https://clojurescript.org/tools/testing))
   - Only namespaces ending in `-test` (files `*_test.cljs`) are compiled and sent to the test runner{{/test?}}
+* [`.github/workflows/`](.github/workflows/): contains the
+[github actions](https://github.com/features/actions) pipelines.
+  - [`test.yaml`](.github/workflows/test.yaml): Pipeline for testing.
+
 
 ### Editor/IDE
 
