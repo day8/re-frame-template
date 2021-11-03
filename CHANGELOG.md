@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Changed
+
+- Upgrade re-frame-10x to [1.2.0](https://github.com/day8/re-frame-10x/blob/master/CHANGELOG.md#120-2021-11-03)
+
 ## 2.3.1 (2021-07-21)
 
 #### Changed
