@@ -7,7 +7,7 @@ jobs:
     name: Tests
     runs-on: ubuntu-20.04
     container:
-      image: ghcr.io/day8/dockerfile-for-dev-ci-image/chrome-latest:2
+      image: ghcr.io/day8/chrome-latest:2
     steps:
       - uses: actions/checkout@v2
       - name: npm install
