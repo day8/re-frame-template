@@ -195,7 +195,7 @@ karma start
 
 ## GitHub Actions
 
-Afer a push, head to the actions section of GitHub repo to see the pipeline processing.
+After a push, head to the actions section of GitHub repo to see the pipeline processing.
 
 
 ## Production Build
