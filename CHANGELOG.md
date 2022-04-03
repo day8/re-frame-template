@@ -3,6 +3,7 @@
 #### Changed
 
 - Upgrade binaryage/devtools to 1.0.5. This has critical fixes for re-frame-10x.
+- Upgrade re-frame-10x to 1.2.4
 - Upgrade reagent to 1.1.1
 - Upgrade shadow-cljs to 2.17.8
 
