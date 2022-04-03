@@ -2,6 +2,7 @@
 
 #### Changed
 
+- Upgrade reagent to 1.1.1
 - Upgrade shadow-cljs to 2.17.8
 
 ## 2.4.3 
