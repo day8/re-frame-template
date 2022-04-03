@@ -6,6 +6,7 @@
 - Upgrade re-frame-10x to 1.2.4
 - Upgrade reagent to 1.1.1
 - Upgrade shadow-cljs to 2.17.8
+- Upgrade cider-nrepl to 0.28.3
 
 ## 2.4.3 
 
