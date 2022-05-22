@@ -6,6 +6,7 @@
 - Upgrade re-frisk to 1.6.0
 - Upgrade re-pressed to 0.3.2
 - Upgrade cider-nrepl to 0.28.4
+- Upgrade shadow-cljs to 2.19.0
 
 ## 2.4.5
 
