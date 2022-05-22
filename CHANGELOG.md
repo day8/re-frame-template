@@ -5,6 +5,7 @@
 - Upgrade re-frame-10x to 1.2.8
 - Upgrade re-frisk to 1.6.0
 - Upgrade re-pressed to 0.3.2
+- Upgrade cider-nrepl to 0.28.4
 
 ## 2.4.5
 
