@@ -2,6 +2,12 @@
 
 #### Changed
 
+- Upgrade shadow-cljs to 2.19.8
+
+## 2.4.6
+
+#### Changed
+
 - Upgrade re-frame-10x to 1.2.8
 - Upgrade re-frisk to 1.6.0
 - Upgrade re-pressed to 0.3.2
