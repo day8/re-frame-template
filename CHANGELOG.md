@@ -5,6 +5,7 @@
 - Upgrade re-frame to 1.3.0
 - Upgrade shadow-cljs to 2.19.9
 - Upgrade karma to 6.4.0
+- Upgrade karma-chrome-launcher to 3.1.1
 
 ## 2.4.7
 
