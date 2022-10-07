@@ -4,4 +4,4 @@
 (def option "+github-actions")
 
 (defn files [data]
-  [[".github/workflows/test.yaml" (helpers/render ".github/workflows/test.yaml" data)]])
+  [[".github/workflows/test.yaml" (helpers/render "github/workflows/test.yaml" data)]])
