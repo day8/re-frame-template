@@ -18,7 +18,7 @@ you.
   [FAQs](https://github.com/day8/re-frame/blob/master/docs/FAQs/README.md)) ->
   [Reagent](https://github.com/reagent-project/reagent) ->
   [React](https://github.com/facebook/react){{#routes?}}
-  - Client-side routing: [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/kibu-australia/pushy){{/routes?}}{{#garden?}}
+  - Client-side routing: [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/clj-commons/pushy){{/routes?}}{{#garden?}}
   - CSS rendering: [Garden](https://github.com/noprompt/garden){{/garden?}}{{#re-com?}}
   - UI components: [re-com](https://github.com/day8/re-com){{/re-com?}}{{#re-pressed?}}
   - Keyboard event handler: [re-pressed](https://github.com/gadfly361/re-pressed){{/re-pressed?}}{{#breaking-point?}}

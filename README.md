@@ -60,7 +60,7 @@ The following "extras" can be nominated on the commandline when you create the t
   * [breaking-point](https://github.com/gadfly361/breaking-point) (`+breaking-point`)
   * [github-actions](https://github.com/features/actions) (`+github-actions`)
 * Routing
-  * [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/kibu-australia/pushy) (`+routes`)
+  * [bidi](https://github.com/juxt/bidi) and [pushy](https://github.com/clj-commons/pushy) (`+routes`)
 
 To add an `extra` to the base template, append its name to the commandline, with a leading `+`. Here's an example of adding `re-com`:
 
