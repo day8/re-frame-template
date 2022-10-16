@@ -14,5 +14,11 @@
 # shadow-cljs cache, port files
 /.shadow-cljs/{{#kondo?}}
 
-# clj-kondo cache
-/.clj-kondo/.cache{{/kondo?}}
+# clj-kondo cache and configs from libs
+/.clj-kondo/*
+
+# clj-kondo config
+!/.clj-kondo/config.edn
+
+# clojure-lsp cache
+/.lsp/.cache{{/kondo?}}
