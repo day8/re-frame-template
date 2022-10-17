@@ -2,6 +2,12 @@
 
 #### Changed
 
+- Upgrade shadow-cljs to 2.20.5
+
+## 2.4.8
+
+#### Changed
+
 - Upgrade re-frame to 1.3.0
 - Upgrade shadow-cljs to 2.19.9
 - Upgrade karma to 6.4.0
