@@ -254,7 +254,7 @@ Contributions are welcomed!  To add a new profile, this is what I'd recommend:
 ```
 The MIT License (MIT)
 
-Copyright © 2015 Matthew Jaoudi
+Copyright © 2015-2018 Matthew Jaoudi
 Copyright © 2015 Dylan Paris
 Copyright © 2015 Michael Thompson
 Copyright © 2015 Markku Rontu
