@@ -149,10 +149,10 @@ I'll assume Chrome for the purposes of further explanation:
 
 To use `re-frame-10x` for debugging your app:
   1. click on the application, minimal through it is, to give it "input focus" (you want to be sure that any key presses are going to your new app)
-  2. press `Ctrl-H` and you should see the `re-frame-10x` panel appear on the right side of the window
+  2. press `Ctrl-Shift-X` and you should see the `re-frame-10x` panel appear on the right side of the window
 
 Sometimes achieving Step 1 on a really simple app - one without widgets - can be fiddly,
-because the browser itself hogs "input focus" and grabs all the keystrokes (like `Ctrl-H`) which don't
+because the browser itself hogs "input focus" and grabs all the keystrokes (like `Ctrl-Shift-X`) which don't
 then make it through to your app. You may need to be determined and creative with Step 1.
 I have every confidence in you.
 
