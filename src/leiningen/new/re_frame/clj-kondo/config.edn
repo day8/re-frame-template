@@ -7,7 +7,7 @@
            garden.def/defstylesheet clojure.core/def
            garden.units/defunit clojure.core/def
            spade.core/defglobal clojure.core/def
-           spade.core/defclass clojure.core/def{{/garden?}}
+           spade.core/defclass clojure.core/def{{/garden?}}}
  :linters {:unresolved-symbol {:exclude [goog.DEBUG]}
            :unused-namespace {:exclude [cljs.repl]}
            :unused-referred-var {:exclude {cljs.repl [Error->map
