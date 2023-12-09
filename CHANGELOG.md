@@ -1,9 +1,9 @@
-## Unreleased
+## 2.4.10
 
 #### Changed
 
 - Upgrade re-frame-10x to 1.9.3
-- Upgrade shadow-cljs to 2.20.5
+- Upgrade shadow-cljs to 2.26.2
 
 ## 2.4.8
 
