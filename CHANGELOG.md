@@ -4,6 +4,7 @@
 
 - Upgrade re-frame-10x to 1.9.3
 - Upgrade shadow-cljs to 2.26.2
+- Upgrade cider-nrepl to 0.44.0
 
 ## 2.4.8
 
