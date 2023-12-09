@@ -1,3 +1,9 @@
+## 2.4.12
+
+#### Changed
+
+- Conform to [structure best-practices](https://github.com/technomancy/leiningen/blob/master/doc/TEMPLATES.md#structure)
+
 ## 2.4.11
 
 #### Changed
