@@ -1,3 +1,9 @@
+## 2.4.11
+
+#### Changed
+
+- Upgrade re-frame to 1.4.2
+
 ## 2.4.10
 
 #### Changed
