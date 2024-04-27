@@ -1,3 +1,10 @@
+## 2.4.13
+
+#### Fixed
+
+- default shadow build for cider-jack-in-cljs now works correctly 
+  (.dir-locals.el)
+
 ## 2.4.12
 
 #### Changed
