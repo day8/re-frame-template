@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     container:
       # Source: https://github.com/day8/dockerfiles-for-dev-ci-images
       image: ghcr.io/day8/chrome-56:2
@@ -48,7 +48,7 @@ jobs:
   release:
     name: Release
     needs: test
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     container:
       # Source: https://github.com/day8/dockerfiles-for-dev-ci-images
       image: ghcr.io/day8/chrome-56:2
