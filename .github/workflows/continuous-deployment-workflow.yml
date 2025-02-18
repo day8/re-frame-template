@@ -20,14 +20,14 @@ jobs:
           # All of the Git history is required for day8/lein-git-inject to determine the version string.
           fetch-depth: 0
       - name: Maven cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: /root/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('project.clj', '.github/workflows/**') }}
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: npm cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('project.clj') }}-${{ hashFiles('**/package.json') }}
@@ -61,7 +61,7 @@ jobs:
           # All of the Git history is required for day8/lein-git-inject to determine the version string.
           fetch-depth: 0
       - name: Maven cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: /root/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('project.clj', '.github/workflows/**') }}
