@@ -14,3 +14,13 @@ pom.xml.asc
 temp
 .lsp/sqlite*.db
 .calva/output-window/*.calva-repl
+
+# Gas City
+.beads/*
+!.beads/config.yaml
+!.beads/metadata.json
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
