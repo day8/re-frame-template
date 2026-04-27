@@ -1,3 +1,10 @@
+## 2.4.14
+
+#### Changed
+
+- Upgrade re-frame-10x to 1.11.0 (new flows panel, UUID display settings, app-db edit fixes)
+- Upgrade shadow-cljs to 2.28.23 (note: shadow-cljs 3.x is available but requires Java 21)
+
 ## 2.4.13
 
 #### Fixed
