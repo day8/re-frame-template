@@ -57,7 +57,9 @@
    :ns-regexp "-test$"
    :runner-ns shadow.test.browser
    :test-dir  "target/browser-test"}
-  :karma-test
-  {:target    :karma
-   :ns-regexp "-test$"
-   :output-to "target/karma-test.js"}{{/test?}}}}
+  :node-test
+  {:target           :node-test
+   :ns-regexp        "-test$"
+   :output-to        "target/node-test.js"
+   :compiler-options {:closure-defines {re-frame.trace.trace-enabled? true
+                                        goog.DEBUG                    true}}}{{/test?}}}}

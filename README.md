@@ -118,7 +118,7 @@ or
 
 ```sh
 npm install
-npx shadow-cljs watch app browser-test karma-test
+npx shadow-cljs watch app browser-test node-test
 ```
 
 Wait a bit, perhaps 20 seconds, keeping an eye out for a sign the compile has finished, then browse to [http://localhost:8280](http://localhost:8280).
@@ -181,7 +181,14 @@ not the `prod` build.
 
 ## Run tests (if using +test):
 
-Run your tests
+Run your tests once under Node (no browser, no Chrome required):
+
+```
+npm install
+npm run ci
+```
+
+Or, for an auto-recompiling test loop, in one terminal:
 
 ```
 npm install
@@ -189,8 +196,9 @@ npm run watch
 ```
 
 And in another terminal:
+
 ```
-karma start
+node target/node-test.js
 ```
 
 ## GitHub Actions

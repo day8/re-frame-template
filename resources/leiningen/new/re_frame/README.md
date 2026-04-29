@@ -26,7 +26,7 @@ you.
 * Build tools
   - CLJS compilation, dependency management, REPL, & hot reload: [`shadow-cljs`](https://github.com/thheller/shadow-cljs){{#test?}}
   - Test framework: [cljs.test](https://clojurescript.org/tools/testing)
-  - Test runner: [Karma](https://github.com/karma-runner/karma){{/test?}}
+  - Test runner: shadow-cljs `:node-test` target (headless, runs under Node){{/test?}}
 * Development tools
   - Debugging: [CLJS DevTools](https://github.com/binaryage/cljs-devtools){{#10x?}},
   [`re-frame-10x`](https://github.com/day8/re-frame-10x){{/10x?}}{{#re-frisk?}},
@@ -132,7 +132,7 @@ the enhancement request in their bug tracker:
 ### Running the App
 
 Start a temporary local web server, build the app with the `dev` profile, and serve the app,
-browser test runner and karma test runner with hot reload:
+browser test runner and node test runner with hot reload:
 
 ```sh
 npm install
@@ -176,7 +176,7 @@ See the [re-frame-template README](https://github.com/day8/re-frame-template) fo
 See
 [Shadow CLJS User's Guide: Editor Integration](https://shadow-cljs.github.io/docs/UsersGuide.html#_editor_integration).
 Note that `npm run watch` runs `npx shadow-cljs watch` for you, and that this project's running build ids is
-`app`, `browser-test`, `karma-test`, or the keywords `:app`, `:browser-test`, `:karma-test` in a Clojure context.
+`app`, `browser-test`, `node-test`, or the keywords `:app`, `:browser-test`, `:node-test` in a Clojure context.
 
 Alternatively, search the web for info on connecting to a `shadow-cljs` ClojureScript browser REPL
 from your editor and configuration.
@@ -206,8 +206,7 @@ without needing to `require`.{{#test?}}
 
 ### Running Tests
 
-Build the app with the `prod` profile, start a temporary local web server, launch headless
-Chrome/Chromium, run tests, and stop the web server:
+Compile the test build and run it under Node.js — no browser, no Chrome required:
 
 ```sh
 npm install
@@ -216,15 +215,15 @@ npm run ci
 
 Please be patient; it may take over 15 seconds to see any output, and over 25 seconds to complete.
 
-Or, for auto-reload:
+Or, for auto-reload during development:
 ```sh
 npm install
 npm run watch
 ```
 
-Then in another terminal:
+Then in another terminal, run the test build once:
 ```sh
-karma start
+node target/node-test.js
 ```{{/test?}}
 
 ### Running `shadow-cljs` Actions
