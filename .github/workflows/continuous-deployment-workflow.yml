@@ -36,15 +36,16 @@ jobs:
       - name: Test Templates
         run: ./create-templates.sh
       - name: Slack notification
-        uses: homoluctus/slatify@61c6b12d2ae226db04062ff9b43d9679e2d53236 # v2.0.1
+        uses: slackapi/slack-github-action@03ea5433c137af7c0495bc0cad1af10403fc800c # v3.0.2
         if: failure() || cancelled()
         with:
-          type: ${{ job.status }}
-          job_name: re-frame-template Tests
-          channel: '#oss-robots'
-          url: ${{ secrets.SLACK_WEBHOOK }}
-          commit: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          webhook: ${{ secrets.SLACK_WEBHOOK }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": "*re-frame-template Tests*: ${{ job.status }}\nCommit: <https://github.com/${{ github.repository }}/commit/${{ github.sha }}|${{ github.sha }}>"
+            }
+
   release:
     name: Release
     needs: test
@@ -80,23 +81,22 @@ jobs:
       # we always want the latest release to show in the right hand column of the project
       # page regardless of if it is a stable release.
       - name: Create GitHub Release
-        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          name: ${{ github.ref_name }}
           body: |
             [Changelog](https://github.com/day8/re-frame-template/blob/master/CHANGELOG.md)
           draft: false
           prerelease: false
       - name: Slack notification
-        uses: homoluctus/slatify@61c6b12d2ae226db04062ff9b43d9679e2d53236 # v2.0.1
+        uses: slackapi/slack-github-action@03ea5433c137af7c0495bc0cad1af10403fc800c # v3.0.2
         if: always()
         with:
-          type: ${{ job.status }}
-          job_name: re-frame-template Deployment
-          channel: '#oss-robots'
-          url: ${{ secrets.SLACK_WEBHOOK }}
-          commit: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          webhook: ${{ secrets.SLACK_WEBHOOK }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": "*re-frame-template Deployment*: ${{ job.status }}\nCommit: <https://github.com/${{ github.repository }}/commit/${{ github.sha }}|${{ github.sha }}>"
+            }
