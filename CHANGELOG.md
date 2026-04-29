@@ -1,9 +1,26 @@
-## 2.4.14
+## 2.4.14 (2026-04-29)
 
 #### Changed
 
-- Upgrade re-frame-10x to 1.11.0 (new flows panel, UUID display settings, app-db edit fixes)
-- Upgrade shadow-cljs to 2.28.23 (note: shadow-cljs 3.x is available but requires Java 21)
+- **Generated-app dep bumps** — reagent 1.1.1 → 1.2.0; re-frame 1.4.2 → 1.4.5; re-com 2.13.2 → 2.29.2; binaryage/devtools 1.0.6 → 1.0.7; re-frisk 1.6.0 → 1.7.1; cider/cider-nrepl 0.44.0 → 0.59.0; day8/shadow-git-inject 0.0.5 → 0.0.10. React stays on 17.0.2.
+- **shadow-cljs 2.28.23 → 3.4.6** (now requires Java 21+).
+- **re-frame-10x stays at 1.11.0** (current latest; flows panel, UUID display settings, app-db edit fixes).
+
+#### Added
+
+- Generated app's `shadow-cljs.edn` gains a `:node-test` build target with `re-frame.trace.trace-enabled?` and `goog.DEBUG` closure-defines.
+
+#### Removed
+
+- **Karma dropped.** The `:karma-test` shadow-cljs build, the `karma.conf.js`, and the four karma npm devDependencies (`karma`, `karma-chrome-launcher`, `karma-cljs-test`, `karma-junit-reporter`) are gone. The generated app's `npm run ci` now runs `shadow-cljs compile node-test && node target/node-test.js` — headless, no Chrome required.
+
+#### CI/CD
+
+- Generated app's `github/workflows/test.yaml` now runs on `ubuntu-latest` with `setup-node` + `setup-java` (no chrome container needed for `:node-test`).
+- Template's own CI/CD images bumped: `chrome-56:2 → chrome-latest:2`.
+- All workflow actions refreshed to Node 24-compatible SHA-pinned versions: `actions/cache` v5.0.5, `actions/setup-java` v5.2.0, `actions/checkout` v5, `actions/upload-artifact` v7.0.1, `DeLaGuardo/setup-clojure` 13.6.0.
+- `homoluctus/slatify@v2.0.1` (unmaintained since 2020) replaced with `slackapi/slack-github-action@v3.0.2` in webhook mode (existing `SLACK_WEBHOOK` secret keeps working).
+- `actions/create-release@v1` (deprecated by GitHub) replaced with `softprops/action-gh-release@v3.0.0`.
 
 ## 2.4.13
 
