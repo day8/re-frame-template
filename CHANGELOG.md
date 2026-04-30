@@ -1,3 +1,9 @@
+## 2.4.15 (2026-04-30)
+
+#### Changed
+
+- **Generated-app re-frame ecosystem dep bumps** — re-frame `1.4.5 → 1.4.7`, re-frame-10x `1.11.0 → 1.12.0`, re-com `2.29.2 → 2.29.3`, day8.re-frame/tracing `0.6.2 → 0.9.2`. All point releases coordinated together upstream; conservative bumps with no API changes.
+
 ## 2.4.14 (2026-04-29)
 
 #### Changed
